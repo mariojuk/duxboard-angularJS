@@ -1,0 +1,25 @@
+.noDataIndicator {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  max-width: 320px;
+  color: #7A979E;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin: 20px auto;
+}
+.noDataIndicator .noDataTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+.noDataIndicator .noDataIcon {
+  padding: 5px;
+}
+.noDataIndicator .noDataMessage {
+  font-size: 14px;
+  text-align: center;
+}

@@ -1,0 +1,35 @@
+<div ng-show="comments" class="commentsContainer">
+
+	<div class="newComment">
+		<div class="duxProfilePicSmall"
+			ng-style="{'background-image': 'url(' + userPic + ')'}">
+		</div>
+		<post on-post="onComment({text: text, file: file, video: video})"
+			placeholder="Write a comment">
+		</post>
+	</div>
+
+	<div id="{{comm._id}}" class=commentContainer ng-repeat="comm in comments track by comm._id">
+		<div class="duxCommentAdvanced">
+			<a class="duxCommentTime">{{ comm.createdAt | humanizeTime }}</a>
+			<i 	ng-show="userIsOwner || userId == comm.user._id"
+				ng-click="onDelete({commId: comm._id, commIndex: $index})"
+				class="fa fa-close"></i>
+		</div>
+		<div class="duxProfilePicSmall"
+			ng-style="{'background-image': 'url(' + comm.user.profilePicture + ')'}">
+		</div>
+		<div class="duxComm">
+			<div class="commData">
+				<a ui-sref="app.profile({id:comm.user._id})">
+					{{comm.user.firstName}} {{comm.user.secondName}}
+				</a>
+				<p ng-bind-html="comm.text | imagify"></p>
+			</div>	
+			<div ng-show="comm.media.img" class="imageContainer">
+				<img ng-src="/{{comm.media.img}}">
+			</div>
+			<youtube-video ng-if="comm.media.video" video-id="{{comm.media.video}}" size="medium"></youtube-video>
+		</div>
+	</div>	
+</div>

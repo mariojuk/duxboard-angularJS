@@ -1,0 +1,20 @@
+<p class="popupHeader">TERMINATE YOUR ACCOUNT</p>
+<div class="popupContent" ng-controller="terminateAccountController">
+    <form class="settingsTerminate">
+        <div class="centerContent">
+            <h3>We are sorry to see you go! :(</h3>
+        </div>
+        <div class="Conntent">
+            <h2>Are you sure you want to do this?</h2>
+            <p>If you proceed with this proess you will no longer be able to </br> access any of your data on DuxBoard</p>
+            <h2>Tell us why are you leaving ...</h2>
+            <input type="text" placeholder="I'm leaving becouse..." ng-model="loginModel.explanation">
+            <p id="password"><b>YOUR PASSWORD</b></p>
+            <input type="password" placeholder="Enter your password here" ng-model="loginModel.password">
+            <button id="button" class="dux-button red round big no-border" type="submit" ng-click="terminate(loginModel)">
+            CONFIRM
+            </button>
+            <p >{{message}}</p>
+        </div>
+    </form>
+</div>

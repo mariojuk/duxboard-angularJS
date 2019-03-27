@@ -1,0 +1,45 @@
+<div class="headerContainer">
+
+	<div class="mobileHeader">
+		<div class="menuButton"
+			ng-style="{'background-image': 'url(' + currentUser.profilePicture + ')'}"
+			ng-click="toggleSidebar()">
+			<i class="dux-medal small" 
+				ng-class="{true: 'free', false: 'premium'}[currentUser.package == 'free']"></i>
+		</div>
+		<div class="logoContainer">
+			<div class="logo" ui-sref="app"></div>
+		</div>
+		<div class="navButton">
+			<i class="fa fa-bars fa-3x" ng-click="toggleNav()"></i>
+		</div>
+	</div>
+
+	<div class="navigationContainer" ng-class="{hide:!showNav,slideNav:showNav}">
+		<div class="logoContainer">
+			<div class="navButton">
+				<i class="fa fa-bars fa-3x" ng-click="toggleNav()"></i>
+			</div>
+			<div class="logo" ui-sref="app"></div>
+		</div>	
+		<div class="navigation">
+			<a ui-sref="app">HOME</a>
+			<a ui-sref="app.webinars">WEBINARS</a>
+			<a ui-sref="app.elearning">E-LEARNING</a>
+			<a ui-sref="app.freeagent">FREE AGENT</a>
+			<a ui-sref="app.consulting">CONSULTING</a>
+			<a href="#">FAQ</a>
+		</div>
+		<button type="button"
+			class="fa fa-search searchIcon"
+			ng-click="showSearch = !showSearch">
+		</button>
+		<form class="searchForm" ng-submit="searchUsers(searchText)" ng-if="showSearch">
+			<div class="searchWrap">
+				<input  class="search" ng-model="searchText" placeholder="Search for partners">
+				<button type="submit" class="fa fa-search"></button>
+  			</div>
+		</form>
+	</div>
+	
+</div>	

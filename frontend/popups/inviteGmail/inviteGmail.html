@@ -1,0 +1,24 @@
+<p class="popupHeader">IMPORT CONTACTS</p>
+<form name="inviteGmailForm"  class="inviteGmail popupContent" ng-controller="inviteGmailController" >
+   
+   <div class="gmailPicture">
+		<div class="gmailPic"><img class="logoGmail" src="../../img/1491856919_gmail.svg"></img></div>
+	</div>
+	<div class="gmailMainWrap">
+   	  <div class="gmailMain" set-height="240" scrollbar="inviteGmailScroll" always-show-tracks="true">
+		<div class="listGmailFriend" ng-repeat="c in contacts" >
+					<div class="friendProfilePic" ng-style="{'background-image': 'url(' + c.img + ')'}"></div>
+					<div class="infoWrap">
+						<div class="infoField"><p class="fieldData"> {{ c.name }} </p></div>
+						<div class="infoField"><p class="fieldData">{{c.email}}</p></div>
+					</div>
+					<div class="infoPositionThird"><input type="checkbox" name="" class="check" ng-model="selected" ng-checked="exist(c)" ng-click="toggleSelection(c)"/>	</div>	
+		</div>
+		
+	  </div>
+	</div>
+
+		<div class="gmailFooter" >
+			<button ng-click="invite()" type="button" class="gmailButton" ><b>SEND INVITES</b></button>
+		</div>
+</form>

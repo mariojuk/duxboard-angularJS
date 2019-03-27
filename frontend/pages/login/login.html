@@ -1,0 +1,17 @@
+<div class="loginBodyClass">
+<div class="loginContainer">
+	<img id="logo" src="../../img/logo1.png">
+<form class="loginForm" ng-submit="login(loginModel)">
+	<p>USERNAME</p>
+	<input class="dux-input" id="username" type ="text"  ng-model="loginModel.email">
+	<p>PASSWORD</p>
+	<input class="dux-input" id="password" type ="password"  ng-model="loginModel.password">
+	<p class="radioParagraph"><input id="checkbox" type="checkbox" >Remember me</p>
+	<button class="dux-button red round big no-border" type="submit">LOG IN</button>
+	<p class="resetLink">Forgot your password? <a ui-sref="forgotpassword">Reset now!</a> </p>
+	<p class="registrationlink ">Don't have an account? <a ui-sref="register">Register now!</a></p>
+</form>
+<div> {{message}} </div>
+</div>
+</div>
+

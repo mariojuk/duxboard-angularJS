@@ -1,0 +1,82 @@
+@import "../../../../styles/less/global.less";
+
+.profilePartners{
+	display: flex;
+	flex-direction: column;
+	.absolute-center;
+	.deleted{
+		opacity: 0.5;
+	}
+
+	.user{
+		display: flex;
+		flex-direction: row;
+		justify-content:space-between;
+		width: 100%;
+		align-items: center;
+		background-color: @color-light;
+		border-radius: @radius;
+		margin: 2.5px;
+		color: @color-darkest;
+
+		.picContainer{
+			margin-right: 10px;
+			.profilePic{
+				.profile-pic(30px);
+				cursor: pointer;
+			}
+		}
+		.info{
+			margin-right: auto;
+			.name{
+				cursor: pointer;
+				font-weight: bold;
+			}
+			@media @mobile{
+				width: 250px;
+			}
+		}
+		.userActions{
+			display: flex;
+			flex-direction: row;
+
+			.action{
+				width: 180px;
+				.absolute-center;
+				@media @mobile{
+					width: 100px;
+				}
+			}
+			.userPosition{
+				width: 210px;
+				.absolute-center;
+				@media @mobile{
+					display: none;
+				}
+			}
+
+			.act{
+				font-weight: bold;
+				margin: 0px 20px;
+				color: @color-darkest;
+			}
+			.link{ cursor: pointer; }
+		}
+	}
+	.moreUser{
+		border-radius: @radius;
+        background-color: @color-light;
+        margin-top: 1px;
+        width: 120px;
+        font-weight: bolder;
+        text-align: center;
+        padding: 10px;
+		
+        &:hover{
+            cursor: pointer;
+            // text-decoration: underline;
+            background-color: @color-light;
+            color: @color-darkest;	
+        }
+    }
+}

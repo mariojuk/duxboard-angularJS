@@ -1,0 +1,149 @@
+<fieldset class="profileInfoContainer" ng-disabled="!$parent.editable || !$parent.user.tisi">
+
+    <div class="infoSection" ng-if="$parent.editable && $parent.user.tisi">
+        <div class="smallInput">
+            <label>First name</label>
+            <input type="text" placeholder="Enter first name here" ng-model="user.firstName">
+        </div>
+        <div class="smallInput">
+            <label>Last name</label>
+            <input type="text" placeholder="Enter last name here" ng-model="user.secondName">
+        </div>    
+    </div>
+
+    <div class="infoSection" ng-if="user.shortBio || ($parent.editable && $parent.user.tisi)">
+        <div class="largeInput">
+            <label>Short bio</label>
+            <input type="text" placeholder="Enter short biography here" ng-model="user.shortBio">
+        </div>
+    </div>
+
+    <div class="infoSection" ng-if="user.website || ($parent.editable && $parent.user.tisi)">
+        <div class="smallInput" >
+            <label>Website</label>
+           <div data-tip="It must contain http:// or https://">
+               <input type="url" data-tip="It must contain http:// or https://" placeholder="Enter your website here" ng-model="user.website" ng-show="$parent.editable">
+           </div>
+            <a href="{{user.website}}" ng-show="!$parent.editable" >{{user.website}}</a>
+        </div>   
+    </div>
+
+    <div class="infoSection">
+        <div class="smallInput" ng-if="user.phone || ($parent.editable && $parent.user.tisi)">
+            <label>Phone</label>
+            <input type="text" placeholder="Enter phone number here" ng-model="user.phone">
+        </div>
+        <div class="smallInput" ng-if="user.address || ($parent.editable && $parent.user.tisi)">
+            <label>Address</label>
+            <input type="tel" placeholder="Enter your address here" ng-model="user.address">
+        </div> 
+    </div>
+
+    <div class="infoSection" ng-if="$parent.editable && $parent.user.tisi">
+        <div class="smallInput">
+            <label>Profile photo</label>
+            <div class="profilePhoto" ng-click="editProfilePic()" ng-style="{'background-image': 'url(' + user.profilePicture + ')'}">
+            </div>
+        </div>
+        <div class="smallInput">
+            <label>Cover photo</label>
+            <div class="coverPhotoWrapper">
+                <div class="coverPhoto" ng-click="editCoverPhoto()" ng-style="{'background-image': 'url(' + coverPhotoUrl+')'}">
+                </div>      
+            </div>
+        </div>
+    </div>
+
+    <div class="infoSection">
+        <div class="smallInput" ng-if="user.profession.length || ($parent.editable && $parent.user.tisi)">
+            <label>Profession</label>
+            <div list-input
+                placeholder="Add job"
+                list="user.profession"
+                show-input="$parent.editable && $parent.user.tisi">
+            </div>
+        </div>
+        <div class="smallInput" ng-if="user.formerly.length || ($parent.editable && $parent.user.tisi)">
+            <label>Formerly</label>
+            <div list-input
+                placeholder="Add job"
+                list="user.formerly"
+                show-input="$parent.editable && $parent.user.tisi">
+            </div>
+        </div>    
+    </div>
+
+    <div class="infoSection">
+        <div class="smallInput" ng-if="user.education.length || ($parent.editable && $parent.user.tisi)">
+            <label>Education</label>
+            <div list-input
+                placeholder="Add education"
+                list="user.education"
+                show-input="$parent.editable && $parent.user.tisi">
+            </div>
+        </div>
+    </div>
+
+    <div class="infoSection" ng-show="$parent.editable && $parent.user.tisi">
+        <div class="largeInput">
+            <div class="uploadCv" ng-hide="file">
+                <div ngf-drop ngf-select ng-model="file"
+                    class="drop-box" 
+                    ngf-drag-over-class="'dragover'"
+                    ngf-multiple="false"
+                    ngf-allow-dir="false"
+                    accept="application/pdf" 
+                    ng-style="file && { 'height': '85%'}"
+                    ngf-drag-over-class="'dragover'"
+                    ngf-pattern="'application/pdf'">
+                        <i class="fa fa-cloud-upload fa-3x"></i>
+                        <p>Upload CV in .PDF format</p>
+                </div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+            </div>
+            <div class="uploadedCv" ng-show="file">
+                <i class="fa fa-file"></i>
+                {{file.name}}
+                <i class="fa fa-close" ng-click="file = None"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="infoSection" ng-if="user.interests.length || ($parent.editable && $parent.user.tisi)">
+        <div class="smallInput">
+            <label>Interests</label>
+            <div list-input
+                placeholder="Add interest"
+                list="user.interests"
+                sample-data="sampleInterests"
+                show-input="$parent.editable && $parent.user.tisi">
+            </div>
+        </div>
+    </div>
+
+    <button
+        ng-show="$parent.editable && $parent.user.tisi"
+        class="saveBtn dux-button red round big"
+        ng-show="$parent.user.tisi"
+        ng-click="Update();">
+        SAVE CHANGES
+    </button>
+
+</fieldset>
+
+
+<no-data-indicator
+    ng-if=" !user.shortBio &&
+            !user.website &&
+            !user.phone &&
+            !user.address &&
+            !user.profession.length &&
+            !user.formerly.length &&
+            !user.education.length &&
+            !user.interests.length &&
+            !($parent.editable && $parent.user.tisi)"
+    message="{{$parent.user.tisi ? 'Edit your profile and add more info about yourself.' : 'This user has not shared his peronal info yet.'}}"  
+    icon-class="fa-user"
+    full-title="No information to show!">
+    
+</no-data-indicator>

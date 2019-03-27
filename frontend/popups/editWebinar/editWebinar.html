@@ -1,0 +1,87 @@
+<p class="popupHeader">{{ngDialogData.title}}</p>
+<div class="popupContent editWebinarPopup" ng-controller="editWebinarController">
+	
+	<div class="inputWrap">
+        
+        <div class="bigInput">
+            <label>Title</label>
+            <input type="text" ng-model="webinar.title"/>
+        </div>
+
+        <div class="bigInput">
+            <label>Description</label>
+            <input type="text" ng-model="webinar.description"/>
+        </div>
+
+        <div class="smallInput">
+            <label>Starting date</label>
+            <input type="text"
+                uib-datepicker-popup="dd/MM/yyyy"
+                ng-model="webinar.startingDate"
+                is-open="isOpen"
+                placeholder="dd/MM/yyyy"
+                ng-focus="isOpen = true"
+                datepicker-options="dateOptions"
+                ng-required="true"
+                close-text="Close"/>
+        </div>
+
+        <div class="smallInput">
+            <label>Starting time</label>
+            <div uib-timepicker
+                class="timepicker"
+                ng-model="webinar.startingDate"
+                hour-step="1"
+                minute-step="15"
+                show-meridian="false">
+            </div>
+        </div>
+
+        <div class="smallInput">
+            <label>Duration</label>
+            <input type="number" ng-model="webinar.duration"/>
+        </div>
+
+        <div class="smallInput">
+            <label>Price</label>
+            <input type="number" ng-model="webinar.price"/>
+        </div>
+
+        <div class="bigInput">
+            <label>Url</label>
+            <input type="url" ng-model="webinar.url"/>
+        </div>
+
+        <div class="smallInput">
+            <label>Add presenter</label>
+            <div class="withButton">
+                <input type="text"
+                    autocomplete="off"
+                    ng-model="newPresenter"
+                    uib-typeahead="pr as pr.name for pr in presenters | limitTo:8" />
+                <div class="dux-button gray round"
+                    ng-click="addPresenter(newPresenter);">
+                    <i class="fa fa-plus"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="smallInput">
+            <label>Presenters</label>
+            <div ng-repeat="p in webinar.presenters" class="withButton">
+                <p>{{p.name}}</p>
+                <div class="dux-button red round"
+                    ng-click="removePresenter($index)">
+                    <i class="fa fa-trash"></i>
+                </div>
+            </div>
+            <p ng-if="!webinar.presenters.length">No presenters</p>
+        </div>
+
+	</div>
+
+	<div align="center" style="margin-top: 10px;">
+        <button ng-click="submit()" type="button" class="dux-button big red round">Submit</button>
+    </div>
+	
+</div>

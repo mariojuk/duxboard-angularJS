@@ -1,0 +1,31 @@
+<div class="profileArticlesContainer">
+
+	<div ng-if="$parent.user.tisi" class="article newArticle" ui-sref="app.profile.articles.newarticle({id: userId})">
+		<i class="fa fa-plus fa-2x"></i>
+		<p>Create new</p>
+	</div>
+
+	<div class="article userArticle" ng-repeat="article in articles | orderBy:'-_id'"">
+		
+		<div class="editableArticle" ng-if="$parent.editable">
+			<i class="fa fa-edit fa-4x editArticle" ng-click="onEdit(article, $index)"></i>
+		</div>
+
+		<div class="wrap" ui-sref="app.profile.articles.article({id: userId, aid: article._id})">
+		    <img class="image" src="{{article.media.img}}" on-src-error="../../../../img/zec_slika_2.jpg"/>
+		    <p class="title">{{article.title}}</p>
+		    <p>Click here to read the full article</p>
+		    <!-- <div ng-bind-html="article.text"></div> -->
+		</div>
+	</div>
+
+</div>
+
+<no-data-indicator
+    ng-if="articles.length == 0 && !$parent.user.tisi "
+    message="This user has not published an article yet."  
+    icon-class="fa-file-text"
+    full-title="No articles to show!">
+    
+</no-data-indicator>
+

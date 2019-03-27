@@ -1,0 +1,96 @@
+<div class="edxCourseContainer">
+	<div class="backButton" ui-sref="app.elearning.courses">
+		<i class="fa fa-arrow-left"></i>
+		<a>Back to courses</a>
+	</div>
+
+	<div class="courseTitle">
+		<div class="banner"></div>
+		<div class="infoSection">
+			<p class="org">AUAUA</p>
+			<p class="title">Lorem ipsum dolor sit amet</p>
+			<p class="type">Self-paced</p>
+			<p class="shortInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, sunt.</p>
+			<input type="button" class="dux-button big red round no-border" value="Enroll now"/>
+		</div>
+	</div>
+
+	<div class="courseDetails">
+		<div class="about">
+			<p class="title">About this course</p>
+			<p class="longInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus deleniti voluptatum, expedita obcaecati! Adipisci unde, eius perferendis aut reprehenderit itaque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis laudantium quod iure commodi obcaecati maxime aperiam recusandae unde minus aliquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur dolorum, tempora ex, maxime libero cumque molestiae iure accusantium provident, sunt sapiente officia incidunt porro aut a. Iusto, velit cumque quae.</p>
+		</div>
+		<div class="details">
+			<div class="detail">
+				<p class="key">Key</p>
+				<p class="value">Lorem ipsum dolor sit amet.</p>
+			</div>
+			<div class="detail">
+				<p class="key">Key</p>
+				<p class="value">Lorem ipsum dolor sit amet.</p>
+			</div>
+			<div class="detail">
+				<p class="key">Key</p>
+				<p class="value">Lorem ipsum dolor sit amet.</p>
+			</div>
+			<div class="detail">
+				<p class="key">Key</p>
+				<p class="value">Lorem ipsum dolor sit amet.</p>
+			</div>
+			<div class="detail">
+				<p class="key">Key</p>
+				<p class="value">Lorem ipsum dolor sit amet.</p>
+			</div>
+			<div class="detail">
+				<p class="key">Key</p>
+				<p class="value">Lorem ipsum dolor sit amet.</p>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="courseInstructors">
+		<p class="title">Meet the instructors</p>
+		<div class="instructors">
+			<div class="instructor" ng-repeat="i in instructors">
+				<div class="picture" ng-style="{'background-image': 'url(' + i.picture.large + ')'}"></div>
+				<p class="name">{{i.name.first}} {{i.name.last}}</p>
+				<p class="info">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="courseCertificate">
+		<div class="title">
+			<p>Pursue a verified certificate to highlight the knowledge and skills you gain</p>
+			<a href="">View a PDF of a sample edX certificate</a>
+		</div>
+		<div class="info">
+			<div class="details">
+				<div class="detail">
+					<p>Official and Verified</p>
+					<p>Receive an instructor-signed certificate with the institution's logo to verify your achievement and increase your job prospects</p>
+				</div>
+				<div class="detail">
+					<p>Easily Shareable</p>
+					<p>Add the certificate to your CV or resume, or post it directly on LinkedIn</p>
+				</div>
+				<div class="detail">
+					<p>Proven Motivator</p>
+					<p>Give yourself on additional incentive to complete the course</p>
+				</div>
+				<div class="detail">
+					<p>Support our Mission</p>
+					<p>EdX, a non-profit, relies on verified certificates to help fund free eduction for everyone globally</p>
+				</div>
+			</div>
+			<div class="certificate"></div>
+		</div>
+	</div>
+
+	<div class="enroll">
+		<input type="button" class="dux-button big red round no-border" value="Enroll now"/>
+	</div>
+
+</div>

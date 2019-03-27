@@ -1,0 +1,93 @@
+@import "../../styles/less/global.less";
+
+.commentsContainer{
+
+	.imageContainer{
+		padding: 0 20px;
+		margin: 5px 0;
+		background-color: @color-lighter;
+		img{
+			/*ograničit*/
+			max-width: 100%;
+    		max-height: 100%;
+    		display:block;
+   			margin:auto;
+		}
+	}
+	
+	.youtubeVideoContainer{
+		margin: 10px auto;
+	}
+
+	.duxProfilePicSmall{ 
+		.profile-pic(40px);
+		background-size: contain;
+		align-self: flex-start;
+	}
+
+	.newComment{
+
+		display: flex;
+		flex-direction: row;
+
+		post{
+			width: calc(~"100% - 60px");
+			margin-bottom: 10px;
+			// width: calc(100% - 60px);	/* strictMath */
+			
+			// .newPostInput {
+			// 	background-color: @color-bg !important;
+			// 	border-style: none;
+			// }
+			.newPostLimit{ display: none; }
+			.newCommentLimit { display: initial !important;}
+		}
+	}
+
+	.commentContainer{
+
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		align-content: center;
+		position: relative;
+		word-wrap: break-word;
+		border-top: 1px solid @color-light;
+
+		.duxCommentAdvanced{
+			position: absolute;
+			align-self: flex-start;
+			right: 10px;
+			top: 10px;
+			@media @mobile{
+				top: 5px;
+			}
+			.duxCommentTime{
+				font-weight: normal;
+			}
+			i{
+				color: @color-dark;
+				cursor: pointer;
+				margin-left: 5px;
+				&:hover{
+					color: @color-darkest;
+				}
+			}
+		}
+		
+		.duxComm{
+			width: calc(~"100% - 60px");
+			// width: calc(100% - 60px);	/* strictMath */
+			p{ word-wrap: break-word; }
+			.commData{
+				min-height: 20px;
+				//max-height: 40px;
+				margin: 10px 0px;
+				@media @mobile{
+					margin-top: 20px;
+				}
+			}
+		}
+
+	}
+}

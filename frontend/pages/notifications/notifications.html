@@ -1,0 +1,40 @@
+<div class="notificationsPageContainer">
+
+	<div class="selectView">
+		<div ng-click="toggleSelection()" class="notif" ng-class="notifSelected ? 'selected' : ''">
+			Notifications
+		</div>
+		<div ng-click="toggleSelection()" class="activity" ng-class="notifSelected ? '' : 'selected'">
+			Your activity
+		</div>
+	</div>
+
+	<div class="selectFilter">
+		<p ng-repeat="f in filters"
+			ng-class="(f.value == selectedFilter) ? 'selected' : ''"
+			ng-click="setFilter(f.value)">
+			{{f.text}}
+		</p>
+	</div>
+
+	<div class="notifFeed notifications" ng-show="notifSelected">
+		<div class="notif" 
+			ng-click="viewNotification(notif)"
+			ng-repeat="notif in feed | byActionType : selectedFilter">
+		 	<p ng-bind-html="notif | parseAction : true"></p>
+			<p class="time">{{notif.createdAt | humanizeTime}}</p>
+		</div>
+		
+	</div>
+
+	<div class="notifFeed activity" ng-hide="notifSelected">
+		<div class="notif"
+			ng-click="viewNotification(notif)"
+			ng-repeat="notif in activity | byActionType : selectedFilter">
+		 	<p ng-bind-html="notif | parseAction : true"></p>
+			<p class="time">{{notif.createdAt | humanizeTime}}</p>
+		</div>
+		
+	</div>
+
+</div> 

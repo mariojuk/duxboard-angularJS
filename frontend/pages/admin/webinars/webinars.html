@@ -1,0 +1,43 @@
+<div class="adminWebinarsContainer">
+	
+	<div class="buttons">
+		<div class="dux-button round gray no-border"
+			ng-click="addWebinar()">
+			<i class="fa fa-plus"></i>
+			ADD WEBINAR
+		</div>
+		<!-- <div class="dux-button round red no-border">
+			<i class="fa fa-trash"></i>
+			DELETE ALL
+		</div> -->
+	</div>
+
+	<loader data="webinars"></loader>
+	<p ng-if="!webinars.length" style="margin: auto;">No webinars.</p>
+
+	<div class="webinars">
+		<!-- <p class="date">{{d.date | date}}</p> -->
+		<div class="webinar" ng-repeat="w in webinars | orderBy: 'startingDate':true">
+			<p class="title">{{ w.title }}</p>
+			<p><span>Presenters</span>{{ presentersString(w.presenters) }}</p>
+			<p><span>Info</span>{{ w.description }}</p>
+			<p><span>Datetime</span>{{ w.startingDate | date: 'MMM d, y h:mm a' : '+0100'}} CET</p>
+			<p><span>Duration</span>{{ w.duration }} minutes</p>
+			<p><span>Price</span>{{ w.price }} novaca</p>
+			<p><span>Link</span><a href="{{ w.webinarUrl }}">{{ w.webinarUrl }}</a></p>
+			<div class="buttons">
+				<div class="dux-button round gray no-border"
+					ng-click="editWebinar(w)">
+					<i class="fa fa-edit"></i>
+					EDIT
+				</div>
+				<div class="dux-button round red no-border"
+					ng-click="deleteWebinar(w)">
+					<i class="fa fa-trash"></i>
+					DELETE
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

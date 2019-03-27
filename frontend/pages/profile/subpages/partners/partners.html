@@ -1,0 +1,52 @@
+<div class="profilePartners" ng-controller="userListCtrl">
+	<div ng-repeat="user in users track by user._id"
+		ng-class="user.deleted ? 'deleted' : ''"
+		class="user"
+		id="{{user._id}}">
+
+		<div class="picContainer">
+			<div class="profilePic"
+			ui-sref="app.profile({id: user._id})"
+			ng-style="{'background-image': 'url(' + user.profilePicture + ')'}">
+			</div>
+		</div>
+
+		<div class="info">
+			<div class="name" ui-sref="app.profile({id: user._id})">
+				{{ user.firstName }} {{ user.secondName }}
+			</div>
+ 			<div class="userPosition">
+				<p>{{user.sport }} {{user.position}} </p>
+			</div>
+		</div>
+
+		<div class="userActions" ng-if="user.deleted">
+			<div class="act">
+				PARTNER DELETED
+			</div>
+		</div>
+		<div class="userActions" ng-if="!user.deleted">
+			
+			<div class="action">
+
+				<div class="dux-button red round no-border" ng-if="!user.isPartner && !user.hasRequested && !user.isRequested && !user.tisi" ng-click="addPartner(user, $index)">
+					ADD PARTNER
+				</div>
+
+				<div class="act" ng-if="user.isPartner && !editProfile">
+					<i class="fa fa fa-check fa-1x"></i> PARTNERS
+				</div>
+
+				<div class="dux-button act round no-border" ng-if="!user.tisi && editProfile" ng-click="removePartner(user, $index)">
+					REMOVE PARTNER
+				</div>
+
+				<div class="act" ng-if="!user.tisi && (user.isRequested || user.hasRequested)">
+					PENDING
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="moreUser"  ng-model="usersList" ng-click="moreUsers(user._id)">See more </div>
+</div>

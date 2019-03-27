@@ -1,0 +1,150 @@
+@import "../../../styles/less/global.less";
+
+.edxCourseContainer{
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	background-color: @color-lightest;
+	color: @color-darkest;
+
+	.backButton{
+		margin-bottom: 10px;
+	}
+	.courseTitle{
+		display: flex;
+		flex-direction: row;
+		border-bottom: 1px solid @color-light;
+		padding-bottom: 20px;
+		margin-bottom: 10px;
+		.banner{
+			width: 400px;
+			height: 200px;
+			background-color: @color-light;
+		}
+		.infoSection{
+			display: flex;
+			flex-direction: column;
+			padding: 0px 20px;
+			.org{
+				font-weight: bold;
+			}
+			.title{
+				font-weight: bold;
+				font-size: 18px;
+			}
+			.type{
+				color: @color-red;
+			}
+			.shortInfo{
+				margin-top: 10px;
+			}
+			input{
+				margin: 20px auto;
+			}
+		}
+	}
+
+	.courseDetails{
+		display: flex;
+		flex-direction: row;
+		border-bottom: 1px solid @color-light;
+		padding-bottom: 20px;
+		margin-bottom: 10px;
+		.about{
+			width: 60%;
+			padding: 20px;
+			.title{
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			.longInfo{}
+		}
+		.details{
+			width: 40%;
+			display: flex;
+			flex-direction: column;
+			padding: 20px;
+			.detail{
+				display: flex;
+				flex-direction: row;
+				.key{
+					margin: 5px;
+					text-align: right;
+					width: 30%;
+				}
+				.value{
+					margin: 5px;
+					font-weight: bold;
+					text-align: left;
+					width: 70%;
+				}
+			}
+		}
+	}
+	.courseInstructors{
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+		border-bottom: 1px solid @color-light;
+		margin-bottom: 10px;
+		.title{
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		.instructors{
+			display: flex;
+			flex-direction: row;
+			.instructor{
+				.absolute-center;
+				flex-direction: column;
+				text-align: center;
+				margin: 15px;
+				.picture{
+					.profile-pic(100px);
+				}
+				.name{
+					font-weight: bold;
+					text-transform: capitalize;
+				}
+				.info{}
+			}
+		}
+	}
+	.courseCertificate{
+		padding: 20px;
+		border-bottom: 1px solid @color-light;
+		margin-bottom: 10px;
+		.title{
+			p{
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			a{ color: @color-red; }
+		}
+		.info{
+			display: flex;
+			flex-direction: row;
+			.details{
+				width: 70%;
+				padding-right: 20px;
+				.detail{
+					p:first-child{
+						margin-top: 10px;
+						font-weight: bold;
+					}
+				}
+			}
+			.certificate{
+				width: 30%;
+				height: 120px;
+				background-color: @color-light;
+			}
+		}
+	}
+	.enroll{
+		input{
+			margin: 20px auto;
+		}
+	}
+
+}

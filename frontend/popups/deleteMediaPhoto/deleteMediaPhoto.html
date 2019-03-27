@@ -1,0 +1,7 @@
+<p class="popupHeader">DELETE PHOTO</p>
+<div class="popupContent deleteMediaPhotoPopup" ng-controller="deleteMediaPhotoController">
+	<img ng-src='uploads/{{userId}}/profileMedias/{{ngDialogData.picture}}'>
+    <button class="dux-button red round no-border" ng-click="deletePicture()">
+        Delete
+	</button>
+</div>

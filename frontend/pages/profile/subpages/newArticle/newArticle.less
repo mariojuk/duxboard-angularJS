@@ -1,0 +1,33 @@
+@import "../../../../styles/less/global.less";
+
+.newArticleContainer{
+	.back{
+		color: @color-darkest;
+		margin: 5px;
+		font-weight: bold;
+
+		i{
+			margin-right: 5px;
+			margin-left: 5px;
+		}
+
+		&:hover{
+			cursor: pointer;
+			color: @color-dark;
+
+			i{
+				margin-right: 10px;
+				margin-left: 0px;
+			}
+		}
+		
+	}
+	.ql-editor {
+		min-height: 400px;
+		word-wrap: break-word;
+        	width: @page-width/2;
+	}
+	.articlePostContainer{
+		max-width: @page-width - @sidebar-width - 260px;
+	}
+}

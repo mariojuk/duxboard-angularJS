@@ -1,0 +1,732 @@
+@import "../../styles/less/global.less";
+
+@font-xs: 10px;
+@font-s: 12.5px;
+@font-m: 16px;
+@font-l: 22px;
+@font-xl: 28px;
+@font-xxl: 48px;
+
+.lpContainer{
+
+	.lpMainCover, .lpPromoFirst,
+	.lpPromoSecond, .lpWebinars,
+	.lpRegistration, .lpPayment,
+	.lpSoon, .lpFooter{
+		>div{
+			max-width: @page-width;
+			margin: auto;
+		}
+	}
+
+	.lpMainCover{
+		position: relative;
+		background:
+		 	linear-gradient(fade(@color-darker, 60%),fade(@color-red, 30%));
+		.backgroundImage{
+			position: absolute;
+			height: 100%;
+			max-width: 100%;
+			width: 100%;
+			// background:
+			// 	linear-gradient(fade(@color-darker, 60%),fade(@color-red, 30%)),
+			// 	url("/img/bg/landing-bg.jpg") no-repeat center center fixed;
+			background: url("/img/bg/landing-bg.jpg") no-repeat center bottom fixed;
+			background-size: cover;
+			opacity: 0;
+			animation: fadeIn 2s forwards;
+			animation-delay: 1s;
+			z-index: 0;
+		}
+		*{z-index: 1}
+		.shadow;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+
+		.lpHeader{
+			width: 100%;
+			max-width: 100%;
+			height: 10%;
+			display: flex;
+			justify-content: flex-end;
+			padding: 20px 20px 20px 0px;
+			opacity: 0;
+			animation: fadeIn 2s forwards;
+			animation-delay: 1s;
+			@media @mobile{
+				padding: 10px 0px;
+			}
+			a{
+				margin: 5px 20px;
+				@media @mobile{
+					margin: 5px;
+				}
+				font-size: @font-m;
+				font-weight: bold;
+				text-transform: uppercase;
+				color: white;
+				text-decoration: none;
+				&:hover{
+				  .hang;
+				}
+				&:last-child{
+					color: @color-red;
+				}
+			}
+			@media @mobile{
+				justify-content: space-around;
+			}
+		}
+		.lpSubscribe{
+			.absolute-center;
+			justify-content: flex-start;
+			margin-top: 10vh;
+			flex: 1;
+			flex-direction: column;
+			img{
+				max-width: 50%;
+				animation: zoomIn 1.5s;
+				@media @mobile{
+					max-width: 80%;
+				}
+			}
+			form{
+				.absolute-center;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				opacity: 0;
+				animation: fadeInDown 1s forwards;
+				animation-delay: 1.5s;
+				@media @tablet{
+					height: 140px;
+				}
+				@media @mobile{
+					flex-direction: column;
+					width: 80%;
+					height: 200px;
+				}
+				input{
+					border-radius: @radius;
+					background-color: white;
+					color: @color-darker;
+					padding: 8px 10px;
+				}
+				input,button{
+					.shadow;
+					width: 180px;
+					height: 40px;
+					font-weight: bold;
+					margin: 10px 10px;
+					@media @tablet{
+						width: 300px;
+						margin: 10px 20px;
+					}
+					@media @mobile{
+						width: 80%;
+						margin-left: auto;
+						margin-right: auto;
+					}
+				}
+				input.ng-hide {
+					@media @desktop{
+						animation: fadeOutRight 1s;
+					}
+					@media @tablet, @mobile{
+						animation: fadeOutDown 1s;
+					}
+				}
+				input.ng-hide ~ button{
+					@media @desktop{
+						animation: slideOutLeft 1s,
+					}
+					@media @tablet, @mobile{
+						animation: slideOutUp 1s;
+					}
+				}
+				button.invalid{
+					&:active, &:focus{
+						animation: shake 1s;
+					}
+				}
+
+				button:disabled{
+					@media @mobile{
+						width: 90%;
+					}
+					background-color: white;
+					color: @color-red;
+					transition:
+						width 1s ease,
+						background-color 3s ease,
+						color 3s ease;
+				}
+			}
+			span{
+				display: flex;
+				flex-direction: row;
+				margin: 10px;
+				opacity: 0;
+				animation: fadeInUp 1s forwards;
+				animation-delay: 2.5s;
+				color: darken(@color-darkest, 5%);
+				@media @mobile{
+					text-shadow: 0.07em 0 5px white,0 0.07em 5px white,-0.07em 0 5px white,0 -0.07em 5px white;
+					//text-shadow: 0px 0px 5px white, 1px 1px 1px white;
+				}
+				text-align: center;
+			}
+			.error.ng-enter{ animation: fadeIn 1s; }
+			.error.ng-leave{ animation: fadeOut 1s; }
+		}
+		.swipeDown{
+			@media @desktop{ display: none;}
+			.absolute-center;
+			position: absolute;
+			left: 0;
+			bottom: 10px;
+			width: 100%;
+			color: @color-lighter;
+			opacity: 0.8;
+			transition: opacity 1s ease;
+			i{
+				.hang;
+				.hanghover;
+			}
+		}
+	}
+
+	.lpPromoFirst{
+		padding-top: 40px;
+		padding-bottom: 40px;
+
+		.firstContent{
+			display: flex;
+			flex-direction: row;
+			width: 100%;
+			justify-content: space-around;
+			padding-top: 60px;
+			padding-bottom: 60px;
+			@media @tablet, @mobile{
+				flex-direction: column;
+				justify-content: center;
+			}
+			.promoText{
+				padding: 60px 40px;
+			}
+			.promoVideo{
+				.youtubeVideoContainer{
+					margin: auto;
+					//.shadow;
+				}
+			}
+			.promoText,.promoVideo{
+				max-width: 50%;
+				.absolute-center;
+				flex-direction: column;
+				@media @tablet{
+					max-width: 80%;
+					margin: auto;
+					text-align: center;
+				}
+				@media @mobile{
+					max-width: 95%;
+					margin: auto;
+					text-align: center;
+				}
+			}
+			.promoText{
+				.title{
+					font-size: @font-xl;
+					color: @color-darkest;
+				}
+				.text{
+					font-size: @font-m;
+					color: @color-dark;
+					margin: 10px 0px;
+				}
+			}
+		}
+	}
+
+	.lpPromoSecond{
+		background-color: @color-medium;
+		.secondContent{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			padding: 60px 40px;
+			@media @mobile{
+				flex-direction: column;
+				.promoItem{ margin: 10px auto; }
+			}
+			.promoItem{
+				width: 200px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+				@media @tablet{
+					margin: 10px 60px;
+				}
+
+				img{
+					.square(60px);
+					filter: brightness(255);
+				}
+				p{
+					color: white;
+					font-weight: bold;
+					margin: 10px 0px;
+				}
+			}
+		}
+	}
+
+	.lpWebinars{
+		.webinarsContent{
+			display: flex;
+			flex-direction: column;
+			align-content: center;
+			.webinarsTitle{
+				display: flex;
+				flex-direction: row;
+				margin: 60px auto 20px;
+				@media @mobile{
+					flex-direction: column;
+				}
+				span{
+					color: @color-red;
+					font-size: @font-xxl;
+				}
+				p{
+					color: @color-darkest;
+					font-size: @font-xl;
+					line-height: @font-xl;
+					vertical-align: bottom;
+				}
+			}
+			.webinarsAbout{
+				max-width: 60%;
+				margin: 0px auto 60px;
+				text-align: center;
+				color: @color-dark;
+				font-size: @font-m;
+				line-height: @font-xl;
+			}
+
+			.upcoming{
+				padding: 10px;
+				>.title{
+					color: @color-darkest;
+					font-size: @font-m;
+					font-weight: bold;
+					margin-top: 20px;
+					text-transform: uppercase;
+					&:after{ content: ":"; }
+					@media @mobile{
+						text-align: center;
+					}
+				}
+				>div{
+					padding: 10px 0px;
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					justify-content: space-around;
+					@media @tablet{
+						justify-content: space-around;
+					}
+					@media @mobile{
+						flex-direction: column;
+					}
+				}
+				.presenters{
+					.presenter{
+						font-weight: bold;
+						width: 200px;
+						margin: 10px;
+
+						img{ .square(200px); }
+						.name{
+							font-size: @font-m;
+							color: @color-darkest;
+							text-transform: capitalize;
+						}
+						.webinar{
+							margin-top: 5px;
+							font-size: @font-m;
+							color: @color-darkest;
+						}
+						.datetime{
+							font-size: @font-s;
+							color: @color-red;
+							margin-bottom: 5px;
+						}
+						.info{
+							font-size: @font-s;
+							color: @color-dark;
+						}
+
+						@media @mobile{ 
+							margin: 10px auto;
+							width: 240px;
+							img{ .square(240px); }
+						}
+					}
+				}
+				.courses{
+					.course{
+						.shadow(5px, #AAA);
+						text-decoration: none;
+						cursor: pointer;
+						display: flex;
+						flex-direction: column;
+						margin: 10px;
+						width: 220px;
+						@media @mobile{
+							margin: 10px auto;
+						}
+						&:hover{
+							.shadow(10px, #666);
+							.cover{
+								opacity: 1;
+							}
+						}
+						.cover{
+							opacity: 0.8;
+							width: 220px;
+							height: 140px;
+							background-size: contain;
+							background-color: @color-lightest;
+							position: relative;
+							.type{
+								height: 24px;
+								width: 100%;
+								margin-top: auto;
+								text-transform: capitalize;
+								position: absolute;
+								bottom: 0;
+								padding: 4px 10px;
+								color: white;
+								text-align: right;
+								font-size: @font-s;
+								font-weight: bold;
+								background-color: fade(#AA4466, 85%);
+							}
+							.MicroMasters{ background-color: fade(#4466AA, 85%); }
+							.verified{ background-color: fade(#66AA44, 85%); }
+						}
+						.info{
+							width: 220px;
+							height: 140px;
+							padding: 10px;
+							color: @color-darkest;
+							position: relative;
+							.org{
+								font-weight: bold;
+								font-size: @font-s;
+								height: @font-m;
+							}
+							.title{
+								font-size: @font-m;
+								color: @color-dark;
+							}
+							.start{
+								position: absolute;
+								color: @color-red;
+								font-weight: bold;
+								bottom: 10px;
+								left: 10px;
+							}
+							.cert{
+								//zaminit sa bg-img
+								position: absolute;
+								bottom: 10px;
+								right: 15px;
+								max-height: 60px;
+								max-width: 60px;
+								object-fit: contain;
+							}
+						}
+					}
+				}
+
+			}
+
+			.edx{
+				width: 100px;
+				.absolute-center;
+				display: flex;
+				flex-direction: column;
+				margin: 80px auto;
+				text-decoration: none;
+				p{
+					text-transform: uppercase;
+					color: @color-medium;
+					&:after{ content: ":"; }
+				}
+				img{
+					max-width: 80px;
+					opacity: 0.6;
+				}
+				&:hover{
+					cursor: pointer;
+					img{ opacity: 1; }
+					p{ color: @color-dark; }
+				}
+			}
+		}
+	}
+
+	.lpRegistration{
+		background-color: @color-lightest;
+		@media @mobile{
+			background-color: white;
+		}
+		.registrationContent{
+			padding: 100px 60px 0px;
+			@media @mobile{
+				padding: 20px 0px 0px;
+				.title{ text-align: center; }
+			}
+			@media @tablet{
+				padding: 80px 20px 0px;
+			}
+			.title{
+				font-size: @font-xl;
+				color: @color-darkest;
+				width: 100%;
+			}
+			.packages{
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				@media @mobile{
+					flex-direction: column;
+				}
+				.package{
+					width: 50%;
+					padding: 30px 60px 70px;
+					position: relative;
+					@media @tablet{
+						padding: 20px 30px 70px;
+					}
+					@media @mobile{
+						width: 100%;
+						pading: 30px 15px 70px;
+					}
+					p{
+						margin: 10px 0px;
+						word-wrap: break-word;
+					}
+					button{
+						width: 50%;
+						height: 40px;
+						font-weight: bold;
+						//prominit
+						position: absolute;
+						left: 60px;
+						bottom: 20px;
+						@media @tablet{
+							left: 30px;
+						}
+						@media @mobile{
+							margin-left: auto;
+							margin-right: auto;
+							left: 0;
+							right: 0;
+						}
+					}
+					.packageName{
+						font-size: @font-l;
+						margin-bottom: 20px;
+					}
+				}
+				.free{
+					background-color: white;
+					color: @color-darkest;
+					margin-top: 60px;
+					@media @mobile{
+						margin-top: 0px;
+					}
+					button{
+						background-color: @color-darkest;
+						&:hover{ background-color: @color-darker; }
+					}
+				}
+				.premium{
+					background-color: @color-darkest;
+					color: white;
+				}
+			}
+		}
+	}
+	.lpPayment{
+		.paymentContainer{
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			padding: 100px;
+			@media @mobile{
+				flex-direction: column;
+				padding: 30px 0px;
+				width: 100%;
+			}
+			.payment{
+				position: relative;
+				padding: 60px 20px 20px;
+				margin: 10px;
+				color: @color-darkest;
+				@media @mobile{
+					margin: 20px auto;
+				}
+				// &:hover{
+				// 	cursor: pointer;
+				// 	transform: scale(1.2);
+				// }
+				.square(200px);
+				.shadow(20px, #AAA);
+				.name{
+					font-size: @font-m;
+					margin-bottom: 10px;
+				}
+				.oldPrice{ text-decoration: line-through; }
+				.price{
+					display: flex;
+					flex-direction: row;
+					font-size: @font-m;
+					line-height: @font-xl;
+					.big{ font-size: @font-xl; }
+					.red{ color: @color-red; }
+				}
+				.single{ font-size: @font-xs; }
+				.best{
+				    .absolute-center;
+				    background: @color-badge;
+				    color: white;
+				    top: 10px;
+				    right: 0px;
+				    padding: 0px 10px 0px 20px;
+				    font-size: @font-xs;
+				    font-weight: bold;
+				    text-transform: uppercase;
+				    position: absolute;
+				    height: 30px;
+					&:after {
+					    content: ""; 
+					    border-top: 15px solid transparent;
+					    border-bottom: 15px solid transparent;
+					    border-left: 10px solid white;
+					    position: absolute;
+					    left: 0;
+					    top: 0;
+					}
+				}
+			}
+		}
+	}
+	.lpSoon{
+		background-color: @color-base;
+		padding: 60px 10px;
+		p{
+			text-align: center;
+			font-size: @font-xl;
+			// text-transform: uppercase;
+			color: @color-darkest;
+			// &:after{ content: "..."}
+		}
+	}
+	.lpFooter{
+		padding: 60px 5px;
+		background-color: @color-medium;
+		color: white;
+		.footerContainer{
+			.absolute-center;
+			flex-direction: column;
+			text-align: center;
+			.contact{
+				padding-bottom: 20px;
+				p{
+					font-size: @font-l;
+					text-transform: uppercase;
+					font-weight: bold;
+				}
+				.socialMedia{
+					display: flex;
+					flex-direction: row;
+					a{
+						.absolute-center;
+						.circle(40px);
+						color: white;
+						border: 2px solid white;
+						padding: 5px;
+						margin: 10px 15px;
+						text-decoration: none;
+						transition: background-color 0.5s ease;
+						transition: background 0.5s ease;
+						i{ font-size: @font-l;}
+						&:hover{
+							border: none
+						}
+						&:nth-child(1):hover{
+							background-color: #3b5998;
+						}
+						&:nth-child(2):hover{
+							background-color: #4099FF;
+						}
+						//instagram
+						// &:nth-child(3):hover{
+						// 	background-color: black;
+						// 	background:
+						// 		radial-gradient(circle at 33% 100%, #FED373 4%, #F15245 30%, #D92E7F 62%, #9B36B7 85%, #515ECF);
+						// }
+						&:nth-child(3):hover{
+							background-color: #dd4b39;
+						}
+						&:nth-child(4):hover{
+							background-color: #0077b5;
+						}
+					}
+				}
+				.email{
+					color: @color-darker;
+					// color: white;
+					font-size: @font-m;
+				}
+			}
+		}
+		.legal{
+			font-size: @font-m;
+			position: relative;
+			&:before{
+				content : "";
+				position: absolute;
+				margin: auto;
+				top: 0;
+				left: 0;
+				right: 0;
+				width: 80%;
+  				border-top:1px solid white;
+			}
+			div{
+				display: flex;
+				flex-direction: row;
+				text-transform: uppercase;
+				@media @mobile{
+					flex-direction: column;
+				}
+				a{
+					color: white;
+					font-weight: bold;
+					text-decoration: none;
+					margin: 20px 40px;
+					min-width: 120px;
+					&:hover{ color: darken(@color-base, 2%); }
+				}
+			}
+		}
+	}
+}

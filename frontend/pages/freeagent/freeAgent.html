@@ -1,0 +1,26 @@
+<div class="freeAgentBody">
+    
+    <div class="bannerPromo">
+        <p class="big">If you're an athlete looking for a new club to further your career, or management professional seeking available players, the Free agnet board is the right place for you!</p>
+        
+        <p>As a free agent on the Duxboard platform, you can create an ad to showcase your talent across the sports world and your ad banner will apear on your targeted group home page</p>
+
+        <button class="dux-button big round no-border red"
+            ng-click="createBanner()">
+            CREATE BANNER
+        </button>
+    </div>
+        
+    <p class="pageTitle">YOUR BANNERS</p>    
+    <banner data="banner"
+        editable="true"
+        on-edit="editBanner(banner, $index)"
+        ng-repeat="banner in myBanners">
+    </banner> 
+    <p  ng-show="!myBanners.length">You have not created your Ad banner yet</p>
+    <p class="pageTitle">FREE AGENT BOARD</p>
+    <banner data="banner"
+        ng-repeat="banner in agentBanners">
+    </banner>
+
+</div>

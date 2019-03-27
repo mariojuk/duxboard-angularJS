@@ -1,0 +1,93 @@
+@import "../../styles/less/global.less";
+
+.notificationsPageContainer{
+	width: 100%;
+	padding: 10px;
+	background-color: @color-lightest;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+
+	.selectView{
+		display: flex;
+		flex-direction: row;
+		margin: 10px auto;
+
+		@svheight: 35px;
+
+		.notif, .activity{
+			.absolute-center;
+			width: 140px;
+			height: @svheight;
+			border: 1px solid @color-dark;
+			background: transparent;
+			color: @color-darkest;
+			cursor: pointer;
+			text-transform: uppercase;
+			font-weight: bold;
+			&:hover{ background-color: @color-light;}
+		}
+		.notif{
+			border-top-left-radius: @svheight;
+			border-bottom-left-radius: @svheight;
+		}
+		.activity{
+			border-top-right-radius: @svheight;
+			border-bottom-right-radius: @svheight;	
+		}
+		.selected{
+			background-color: @color-darkest;
+			color: white;
+			border: none;
+			&:hover{ background-color: @color-darker;}
+		}
+	}
+
+	.selectFilter{
+		display: flex;
+		flex-direction: row;
+		margin: 15px auto;
+		color: @color-darkest;
+		.selected{ font-weight: bold; }
+		p{
+			padding: 0px 30px;
+			@media @mobile{ padding: 0px 5px; }
+			text-transform: uppercase;
+			border-right: 1px solid @color-darkest;
+			&:last-child{ border-right: none; }
+			&:hover{
+				cursor: pointer;
+				font-weight: bold;
+			}
+		}
+	}
+
+	.notifFeed{
+		width: 100%;
+		&.activity .notif{
+			.reward, .dux-medal{ display: none; }
+		}
+		.notif{
+			display: flex;
+			flex-direction: row;
+			background-color: @color-base;
+			border-radius: @radius;
+			margin: 10px 0px;
+			padding: 10px 10px;
+			color: @color-darkest;
+			>p::first-letter { text-transform: capitalize; }
+			i{ margin-left: 5px; }
+
+			.type80, .type100, .type200{
+				color: @color-red;
+				font-weight: bold;
+				cursor: pointer;
+			}
+
+			.time{
+				margin-left: auto;
+				color: lighten(@color-dark, 10%);
+			}
+		}
+	}
+}

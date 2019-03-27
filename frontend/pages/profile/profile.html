@@ -1,0 +1,127 @@
+<div class="profileContainer">
+
+	<div class=profileCoverWrapper>
+		<div class="profileCover"
+		ng-style="{'background-image': 'url(' + coverPhotoUrl + ')'}">
+			<div ng-show = "toggleCoverOptions && user.tisi" class="coverPhotoOptions">
+				<i class="fa fa fa-eye"></i>
+					<div></div>
+				<i class="fa fa fa-edit" ng-click="editCoverPhoto()"></i>
+			</div>
+			<div class="profileActions">
+				<!-- ui-sref="app.profilePicture({id: userId})" -->
+				<div class="profilePicture" ng-style="{'background-image': 'url(' + user.profilePicture + ')'}" >
+					<div ng-show="togglePicOptions && user.tisi" class="profilePictureOptions">
+						<i class="fa fa fa-eye"></i>
+						<div></div>
+						<i class="fa fa fa-edit" ng-click="editProfilePic($event)"></i>
+					</div>
+				</div>
+				<div class="userInfo">
+					<p class="userName">{{user.firstName}} {{user.secondName}}</p>
+					<div class="onlineStatus">
+						<div class="onlineIcon {{user.onlineStatus}}"></div>
+						<p>{{user.onlineStatus}}</p>
+					</div>
+				</div>
+				<div class="profileButtons" ng-if="user">
+					<div class="partnership">
+					<div class="dux-button red round no-border" ng-show="!user.isPartner && !user.isRequested && !user.hasRequested && !user.tisi" ng-click="addPartner()">
+							<i class="fa fa fa-users fa-1x"></i>
+							<p>SEND REQUEST</p>
+					</div>
+					<div class="dux-button red round no-border" ng-show="user.hasRequested" ng-click="acceptPartner()">
+							<i class="fa fa fa-users fa-1x"></i>
+							<p>ACCEPT</p>
+					</div>
+					<div class="dux-button gray round no-border" ng-show="user.hasRequested" ng-click="denyPartner()">
+							<i class="fa fa fa-users fa-1x"></i>
+							<p>DENY</p>
+					</div>
+					<div class="dux-button gray round no-border" ng-show="user.isRequested" ng-click="cancelPartner()">
+							<i class="fa fa fa-users fa-1x"></i>
+							<p>CANCEL REQUEST</p>
+					</div>
+					<div class="dux-button gray round no-border" ng-show="user.isPartner" ng-click="removePartner()">
+							<i class="fa fa fa-users fa-1x"></i>
+							<p>REMOVE PARTNER</p>
+					</div>
+					</div>
+					
+					<div class="other">
+					<div class="dux-button round" ng-show="!user.tisi" ng-click="newMessage()">MESSAGE</div>
+					
+					<a class="dux-button round"
+						ng-if="user.CV"
+						target="_self"
+						ng-href="{{user.CV}}"
+						download="{{user.firstName + '_' + user.secondName + '_CV.pdf'}}">
+							DOWNLOAD CV
+					</a>
+
+					<div ng-show="user.tisi" class="dux-button round" >
+						<div class="toggleEdit" ng-click="toggleEdit()">
+							{{editable ? 'VIEW PROFILE' : 'EDIT PROFILE'}}
+						</div>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="profileBody">
+
+		<div class="sideNavContainer">
+	
+			<div class="sideNav" sticky
+				ng-click="showNav = !showNav"
+				offset="70"
+				disabled-sticky="$parent.isMobile"
+				ng-class="showNav ? 'visible' : ''">
+				<div class="option active"
+					ng-click=""
+					ui-sref-active="active"
+					ui-sref="app.profile.statements({id: userId})">
+					<i class="fa fa-comment"></i>
+					<span>STATEMENTS</span>
+				</div>
+				<div class="option active"
+					ng-click=""
+					ui-sref-active="active"
+					ui-sref="app.profile.about({id: userId})">
+					<i class="fa fa-info"></i>
+					<span>PERSONAL INFO</span>
+				</div>
+				<div class="option active"
+					ng-click=""
+					ui-sref-active="active"
+					ui-sref="app.profile.photos({id: userId})">
+					<i class="fa fa-camera"></i>
+					<span>PHOTOS</span>
+				</div>
+
+				<div class="option active"
+					ng-click=""
+					ui-sref-active="active"
+					ui-sref="app.profile.articles({id: userId})">
+					<i class="fa fa-newspaper-o"></i>
+					<span>ARTICLES</span>
+				</div>
+				<div class="option active"
+					ng-click=""
+					ui-sref-active="active"
+					ui-sref="app.profile.partners({id: userId})">
+					<i class="fa fa-users"></i>
+					<span>PARTNERS</span>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="profileContent" ui-view="profileContent">	</div>
+
+	</div>
+
+</div>
+

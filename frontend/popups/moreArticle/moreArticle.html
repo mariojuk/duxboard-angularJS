@@ -1,0 +1,32 @@
+<p class="popupHeader">{{ngDialogData.title}}</p>
+<div class="popupContent" ng-controller="moreArticleController">
+	<div class="articlesWrap"
+		set-height
+		scrollbar
+		name="moreArticlesScrollbar"
+		always-show-tracks="true">	
+
+	<div class="article" ng-repeat="article in users">
+        <div class="articleAuthor">
+          <div class="authorPic"
+            ng-style="{'background-image': 'url(' + article.user.profilePicture + ')'}"
+            ui-sref="app.profile({id: article.user._id})">
+          </div>
+          <a class="authorName" ui-sref="app.profile({id: article.user._id})">
+            {{article.user.firstName}} {{article.user.secondName}}
+          </a>
+        </div>
+        <div class="articleContent"  ui-sref="app.profile.article({id: article.user._id, aid: article._id})">
+          <div
+            class="articlePic"
+            ng-style="{'background-image': 'url(' + article.media.img + ')'}">
+          </div>
+          <div class="articleText" >
+            <a>{{article.title}}</a>
+            <p ng-bind-html="article.text| limitTo: 80"></p>
+		           {{article.text.length < 80 ? '' : '...'}}
+          </div>
+        </div>
+      </div>
+      </div>
+</div>

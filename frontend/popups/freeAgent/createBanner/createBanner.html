@@ -1,0 +1,91 @@
+<p class="popupHeader">CREATE YOUR AD BANNER</p>
+<div class="popupContent createBannerPopup" ng-controller="createBannerController">
+    
+    <div class="inputWrap">
+        
+        <div class="bigInput">
+            <label>Headline</label>
+            <input type="text" placeholder="Headline" ng-model="model.headline">
+        </div>
+
+        <div class="smallInput">
+            <label>Sport</label>
+            <input type="text" placeholder="Name a sport" autocomplete="off"  ng-model="model.sport" uib-typeahead="sport for sport in sports | filter:$viewValue | limitTo:8"/>
+        </div>
+
+        <div class="smallInput">
+            <label>Position</label>
+            <input type="text" ng-model="model.position" placeholder="Position"/>
+        </div>
+
+        <div class="smallInput">
+            <label>Former club</label>
+            <input id="formerclub" type="text" ng-model="model.formerClub" placeholder="Former club name">
+        </div>
+
+     </div>
+
+        <div class="imageInputContainer">
+
+            <div class="imageInput" >
+                <div class="imageUpload">
+                    <div ngf-drop ngf-select ng-model="model.file[0]"
+                        ng-hide="model.file[0]"
+                         class="drop-box"
+                         ngf-drag-over-class="'dragover'"
+                         ngf-multiple="false"
+                         ngf-allow-dir="false"
+                         accept="image/*,video/*"
+                         ngf-pattern="image/*,video/*">
+
+                        <i class="fa fa-cloud-upload fa-3x" ng-show="pictures[0]==null"></i>
+                        <p >Upload Photo/Video</p>
+                    </div>
+                    <img class="imgThumbnail" ngf-thumbnail='model.file[0]'/>
+                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                </div>
+
+            </div>
+
+            <div class="imageInput" >
+                <div class="imageUpload">
+                    <div ngf-drop ngf-select ng-model="model.file[1]"
+                        ng-hide="model.file[1]"
+                         class="drop-box"
+                         ngf-drag-over-class="'dragover'"
+                         ngf-multiple="false"
+                         ngf-allow-dir="false"
+                         accept="image/*,video/*"
+                         ngf-pattern="image/*,video/*">
+
+                        <i class="fa fa-cloud-upload fa-3x" ng-show="model.file[1]==null"></i>
+                        <p >Upload Photo/Video</p>
+                    </div>
+                    <img class="imgThumbnail" ngf-thumbnail='model.file[1]'/>
+                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                </div>
+            </div>
+
+            <div class="imageInput" >
+                <div class="imageUpload">
+                    <div ngf-drop ngf-select ng-model="model.file[2]"
+                        ng-hide="model.file[2]"
+                         class="drop-box"
+                         ngf-drag-over-class="'dragover'"
+                         ngf-multiple="false"
+                         ngf-allow-dir="false"
+                         accept="image/*,video/*"
+                         ngf-pattern="image/*,video/*">
+
+                        <i class="fa fa-cloud-upload fa-3x" ng-show="model.file[2]==null"></i>
+                        <p >Upload Photo/Video</p>
+                    </div>
+                    <img class="imgThumbnail" ngf-thumbnail='model.file[2]'/>
+                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                </div>
+            </div>
+
+        </div>
+    <button class="dux-button big round no-border red" ng-click="publishBanner(model)">CREATE BANNER</button>
+</div>
+

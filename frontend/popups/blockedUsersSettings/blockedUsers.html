@@ -1,0 +1,20 @@
+<p class="popupHeader">BLOCK USER</p>
+<div class="popupContent" ng-controller="blockedUsersController">
+<form class="BlockUser">
+        <div class="centerContent">
+            <form class="searchBox" ng-submit="searchUsers(searchText)">
+                <input autocomplete="off" class="search" ng-change="searchUser(search)" ng-model="search" placeholder="Search user name"
+                       uib-typeahead="search as search.firstName+' '+search.secondName for search in searches | filter:$viewValue | limitTo:8" >
+                <button class="fa fa-search" type="submit" ng-click="searchUser(search)"></button>
+                <input type="text" ng-model="search._id" ng-show="false">
+            </form>
+            <p><b>Tell us why you want to block this user...</b></p>
+            <input placeholder="I want to block him becouse..." type="text" ng-model="explanation">
+            <button class="dux-button red round big no-border" type="submit" ng-click="blockUserProfile(explanation, search._id)">
+            CONFIRM
+            </button>
+            <p>{{message}}</p>
+        </div>
+    </form>
+</div>
+

@@ -1,0 +1,249 @@
+@import "../../styles/less/global.less";
+
+.webinarsContainer{
+	background-color: @color-lightest;
+	padding: 20px;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+
+	.selectView{
+		display: flex;
+		flex-direction: row;
+		margin: 10px auto;
+
+		@svheight: 35px;
+
+		.live, .archive{
+			.absolute-center;
+			@media @desktop, @tablet{
+				&:after{
+					content: " webinars";
+					white-space: pre;
+				}
+			}
+			width: 180px;
+			height: @svheight;
+			border: 1px solid @color-dark;
+			background: transparent;
+			color: @color-darkest;
+			cursor: pointer;
+			text-transform: uppercase;
+			font-weight: bold;
+			&:hover{ background-color: @color-light;}
+		}
+		.live{
+			border-top-left-radius: @svheight;
+			border-bottom-left-radius: @svheight;
+		}
+		.archive{
+			border-top-right-radius: @svheight;
+			border-bottom-right-radius: @svheight;	
+		}
+		.selected{
+			background-color: @color-darkest;
+			color: white;
+			border: none;
+			&:hover{ background-color: @color-darker;}
+		}
+	}
+	
+	.webinarsWrap{
+		display: flex;
+		flex-direction: row;
+		@media @mobile{
+			flex-direction: column;
+		}
+
+		no-data-indicator{ width: 100%; }
+
+		.webinarsFeed{
+			display: flex;
+			flex-direction: column;
+			margin: 10px 10px 10px 0px;
+			width: 100%;
+
+			.feed{
+				.date{
+					color: @color-darkest;
+					padding: 5px 0px;
+					font-size: 18px;
+					border-bottom: 1px solid @color-darkest;
+				}
+				.webinar{
+					background-color: @color-base;
+					border-radius: @radius;
+					margin: 20px 0px;
+					padding: 20px;
+					color: @color-darkest;
+					position: relative;
+
+					.liveIndicator{
+						position: absolute;
+						top: 10px;
+						right: 10px;
+						color: @color-red;
+						i{ margin-right: 5px; }
+					}
+
+					.title{
+						font-size: 18px;
+						font-weight: bold;
+					}
+					.datetime{
+						font-weight: bold;
+						margin: 5px 0px;
+						&.live{ color: @color-red; }
+					}
+					.description{}
+					.detailsWrap{
+						display: flex;
+						flex-direction: row;
+					}
+					.details{
+						border-top: 1px solid @color-medium;
+						margin-top: 20px;
+						padding-top: 10px;
+						display: flex;
+						flex-direction: row;
+						justify-content: space-between;
+
+						.presenters, .duration, .rating, .price{
+							.subtitle{
+								text-transform: uppercase;
+								font-weight: bold;
+							}
+							color: @color-darkest;
+							min-width: 100px;
+							font-size: 12px;
+							&:last-child{
+								min-width: 0px;
+								margin-right: 20px;
+							}
+							@media @mobile{
+								min-width: 0px;
+								margin-right: 10px;
+								&:last-child{ margin-right: 0px; }
+							}
+						}
+						.novaca{
+							color: @color-red;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+
+		.webinarsSidebar{
+			display: flex;
+			flex-direction: column;
+			width: 300px;
+			margin: 10px 0px 10px 10px;
+			@media @mobile{
+				width: 100%;
+			}
+			
+			.calendar{
+				@media @mobile{
+					display: none;
+				}
+				background-color: @color-darkest;
+				border-radius: @radius;
+				padding: 10px;
+				color: white;
+
+				//overrides
+				table{ margin: auto; }
+				button{
+					border: none;
+					background-color: transparent;
+					color: white;
+					&:focus{ outline: none; }
+				}
+				.uib-right:after{
+					content: "\2192";
+				}
+				.uib-left:after{
+					content: "\2190";
+				}
+				.uib-right, .uib-left{
+					color: @color-medium;
+					&:hover{ color: white; }
+				}
+				.uib-right, .uib-left, .uib-title{
+					font-size: 18px;
+				}
+				small{
+					text-transform: uppercase;
+					font-size: 10px;
+				}
+				.uib-day, .uib-month, .uib-year{
+					.circle(30px);
+					.active{
+						.circle(30px);
+						border: 1px solid white;
+					}
+					.text-info{ color: white }
+					.text-muted{ color: @color-dark}
+				}
+
+			}
+
+			.upcomingPresenters{
+				>p{
+					font-weight: bold;
+					font-size: 18px;
+					margin: 25px 10px 10px;
+					color: @color-darkest;
+				}
+				.presentersWrap{
+					display: flex;
+					flex-direction: column;
+					@media @mobile{
+						flex-direction: row;
+						flex-wrap: wrap;
+						justify-content: space-around;
+					}
+				}
+				.presenter{
+					display: flex;
+					flex-direction: row;
+					padding: 15px 0px;
+					@media @mobile{
+						flex-direction: column;
+						margin: 10px;
+						max-width: 220px;
+					}
+
+					.picture{
+						@media @desktop, @tablet{
+							.profile-pic(80px);
+						}
+						@media @mobile{
+							.profile-pic(120px);
+						}
+					}
+
+					.name{
+						text-transform: capitalize;
+						color: @color-darkest;
+						font-size: 18px;
+					}
+					.datetime{
+						color: @color-red;
+						font-weight: bold;
+					}
+					.bio{
+						color: @color-dark;
+					}
+					.title{
+						color: @color-darkest;
+						font-weight: bold;
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,56 @@
+   @import "../../styles/less/global.less";
+    .article{
+            
+            margin: 1px 5px 0px;
+            padding: 5px 5px 10px;
+            background-color: @color-lighter;
+            .articleAuthor{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .authorPic{
+                    .profile-pic(25px);
+                    // border: 1px solid @color-dark;
+                    cursor: pointer;
+                }
+                .authorName{
+
+                }
+            }
+            .articleContent{
+                display: flex;
+                flex-direction: row;
+                
+                .articlePic{
+                    .square(80px);
+                    flex: 0 0 80px;
+                    margin: 5px 10px;
+                    background-size: cover;
+                    border: 1px solid @color-medium;
+                    cursor: pointer;
+                    background-repeat: no-repeat;
+                }
+                .articleText{
+                        
+                    a{
+                        // color: @color-darker;
+                        font-weight: bold;
+                    }
+                      p{
+                        word-break: break-all;
+                        white-space: -moz-pre-wrap; /* Mozilla */
+                        white-space: -o-pre-wrap; /* Opera 7 */
+                        white-space: pre-wrap;  /* CSS 2.1 */
+                        white-space: pre-line; /* CSS 3 */
+                        word-wrap: break-word; /* IE */
+                       
+                    }
+                    img{
+                        max-height: 100%;
+                        max-width: 100%;
+                    }
+                   
+                   
+                }
+            }
+        }

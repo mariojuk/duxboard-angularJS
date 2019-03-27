@@ -1,0 +1,33 @@
+@import "../../../styles/less/global.less";
+.adminPreordersContainer{
+	display:flex;
+	flex-direction:column;
+	margin: 10px;
+	p{
+		margin:10px;
+	}
+	.listPreorder{
+		display:flex;
+		flex-direction:row;
+		justify-content: space-between;
+		background-color: @color-light;
+	    border-radius: @radius;
+	    
+	    width: 100%;
+	    
+	    .check{
+	    	.absolute-center;
+	    	 cursor: pointer;
+	    }
+
+	}
+		textarea{
+			margin-top: 10px;
+			padding: 10px;
+			min-height: 200px;
+			background-color: white;
+			border: none;
+			border-radius: @radius;
+			resize: vertical;
+		}
+}

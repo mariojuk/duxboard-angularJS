@@ -1,0 +1,136 @@
+
+<div class="settingsGeneral">
+    <div class="leftContainer">
+        <label>SETTINGS</label>
+        <label>General information</label>
+        <label>EMAIL:</label>
+        <p>{{user.email}}</p>
+    </div>
+
+    <div class="rightContainer">
+        <label><a ng-click="changeEmailSettings()">CHANGE EMAIL</a></label>
+        <label><a ng-click="changePasswordSettings()">CHANGE PASSWORD</a></label>
+        <label> <a ng-click="terminateAccount()">TERMINATE YOUR ACCOUNT</a></label>
+        <label><a ng-click="blockUser()">BLOCK/MUTE USERS</a></label>
+        <label><a ng-click="blockUserList()">UNBLOCK USER</a></label>
+        <p>{{message}}</p>
+    </div>
+    <div id="settingsContent" ui-view="settingsContent">
+        <div class="settingsUpgrade">
+    <div class="container">
+        <button type="button" class="btn btn-info" ng-click=" displaySettings = !displaySettings" data-toggle="collapse">+ SHOW SUBSCRIPTION</button>
+        <div id="demo" class="collapse cssSlideUp "  ng-show="displaySettings">
+            <div class="premiumSettings" ng-show="card.firstName" >
+                <label>Your current plan is:
+                </label>
+                <img class="premiumImg" src="img/medal-premium.png"> <span class="premiumSpan">Premium</span>
+                <p class="bilingPlan"><span >Billing Plan:</span> Monthly: $15,11/month </p>
+                <button class="dux-button round no-border" ng-click="addCreditCard()">Change Billing plan</button>
+            </div>
+            <div class="freeSettings" ng-show="!card.firstName">
+                <label>Your current plan is:
+                </label>
+                <img class="freeImg" src="img/medal-free.png"> <span class="freeSpan">Free</span>
+                <button class="dux-button round no-border red" ng-click="addCreditCard()">Change Billing plan</button>
+            </div>
+            <label>Credit card infrormation:</label>
+            <table class="tableInfo">
+                <tr>
+                    <td>
+                        <label>FIRST NAME:</label>
+                        <input ng-readonly=true placeholder="Enter first name here" class="dux-input" type="text" ng-model="card.firstName">
+                    </td>
+                    <td>
+                        <label>LAST NAME:</label>
+                        <input ng-readonly=true placeholder="Enter last name here" class="dux-input" type="text" ng-model="card.lastName">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>CARD NUMBER</label>
+                        <input ng-readonly=true placeholder="Enter card number" class="dux-input" type="text" ng-model="card.cardNumber" minlength="12" maxlength="12">
+                    </td>
+                    <td>
+                        <label>TYPE OF CREDIT CARD</label>
+                        <select ng-readonly=true class="dux-input" ng-model="card.typeOfCreditCard">
+                            <option value="VISA">VISA</option>
+                            <option value="MASTERCARD">MASTERCARD</option>
+                            <option value="American">American</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td clas="leftTableRow">
+                        <label>EXPIRATION DATE</label>
+                        <select ng-readonly=true class="dux-input" ng-model="card.expirationMonth"   ng-options="month for month in months"></select>
+                        <span>/</span>
+                        <select ng-readonly=true class="dux-input" ng-model="card.expirationYear"   ng-options="year for year in years"></select>
+                    </td>
+                    <td class="rightTableRow">
+                        <label>CVV</label>
+                        <input ng-readonly=true placeholder="***" id="myPassword"  class="dux-input" type="password">
+                    </td>
+                </tr>
+            </table>
+            <label class="secondTable">Billing Address:</label>
+            <table class="tableBilling">
+                <tr>
+                    <td>
+                        <label>FIRST NAME:</label>
+                        <input ng-readonly=true class="dux-input" placeholder="Enter first name here" ng-model="card.firstNameBilling">
+                    </td>
+                    <td>
+                        <label>LAST NAME:</label>
+                        <input ng-readonly=true class="dux-input" placeholder="Enter last name here" type="text" ng-model="card.lastNameBilling">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>STREET ADDRESS</label>
+                        <input ng-readonly=true placeholder="Enter street adress here" class="dux-input" type="text"
+                               ng-model="card.streetAddress">
+                    </td>
+                    <td>
+                        <label>STREET NUMBER</label>
+                        <input ng-readonly=true placeholder="Enter street number here" class="dux-input" type="text"
+                               ng-model="card.streetNumber">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>CITY</label>
+                        <input ng-readonly=true placeholder="Enter city name here" ng-model="card.city" class="dux-input" type="text">
+                    </td>
+                    <td>
+                        <label>STATE/PROVINCE</label>
+                        <input ng-readonly=true placeholder="Eneter state province name" ng-model="card.state" class="dux-input" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>ZIP/POSTAL CODE</label>
+                        <input ng-readonly=true placeholder="Enter zip/postal code" ng-model="card.postalCode" class="dux-input" type="text">
+                    </td>
+                    <td>
+                        <label>COUNTRY</label>
+                        <input ng-readonly=true placeholder="Enter name of country" ng-model="card.country" class="dux-input" type="text">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+
+
+    <div class="settingsSecurity">
+        <label> SECURITY</label>
+        <div class="whoSeesMe">
+            <span>Who can see my profile <select id="securitySelect" class="dux-input" ng-model="whoCanSeeMyProfile" ng-change="whoCanSeeMe()">
+                                <option value="true">Everybody</option>
+                                <option value="false">Just partners</option>
+            </select> </span>
+        </div>
+        <p>{{messageWhoCanSee}}</p>
+    </div>
+</div>
+    </div>

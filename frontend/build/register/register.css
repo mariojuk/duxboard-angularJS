@@ -1,0 +1,117 @@
+.registerBodyClass {
+  background: linear-gradient(rgba(65, 70, 101, 0.7), rgba(81, 107, 124, 0.3)), url("/img/bg/register-bg.jpg") no-repeat center center fixed;
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+}
+.registerBodyClass #logo {
+  width: 50% ;
+  margin: 0 auto;
+  display: block;
+}
+@media only screen and (max-width: 767px) {
+  .registerBodyClass #logo {
+    width: 95% !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .registerBodyClass .registerForm {
+    margin-left: 8% !important;
+    margin-top: 1% !important;
+  }
+  .registerBodyClass .registerBodyClass .floatleft {
+    float: left !important;
+    width: 47% !important;
+  }
+  .registerBodyClass #cofirmpassword {
+    font-size: 12px !important;
+  }
+  .registerBodyClass .floatright {
+    float: right !important;
+    margin-right: 0% !important;
+    width: 48% !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .registerBodyClass .registerForm {
+    margin-left: 38% !important;
+    margin-top: 1%;
+  }
+  .registerBodyClass #cofirmpassword {
+    margin-top: -1% !important;
+  }
+}
+.registerBodyClass #goToLogin {
+  color: #ff7a7a;
+  font-size: 15px;
+}
+.registerBodyClass .firstbrake {
+  padding-top: 10%;
+}
+.registerBodyClass #cofirmpassword {
+  margin-top: 0.5%;
+}
+.registerBodyClass p {
+  color: white;
+  padding-top: 12px;
+}
+.registerBodyClass .registerLineBrake {
+  margin-top: 13%;
+}
+.registerBodyClass .registerForm {
+  margin-left: 55%;
+  margin-top: 1%;
+}
+.registerBodyClass .loginLogo {
+  background-image: url(/img/logo1.png);
+  width: 503px;
+  height: 156px;
+  margin-left: 59%;
+  background-size: cover;
+}
+.registerBodyClass .terms a {
+  color: #FF6666;
+}
+.registerBodyClass #Registerbutton {
+  border: 1px solid #ff7a7a;
+  border-radius: 6px;
+  width: 248px;
+  height: 45px;
+  margin-top: 6%;
+  margin-left: 22%;
+  background-color: #ff7a7a;
+  color: white;
+}
+@media only screen and (max-width: 767px) {
+  .registerBodyClass #Registerbutton {
+    width: 180px !important;
+  }
+}
+.registerBodyClass .floatleft {
+  float: left;
+  width: 77%;
+}
+@media only screen and (max-width: 767px) {
+  .registerBodyClass .floatleft {
+    width: 100% !important;
+  }
+}
+.registerBodyClass .floatleft input[type=date] {
+  width: 90%;
+  padding: 13px;
+}
+.registerBodyClass .floatleft input[type=text],
+.registerBodyClass .floatleft select,
+.registerBodyClass .floatleft input[type=password] {
+  width: 90%;
+  height: 45px;
+  padding: 14px;
+}
+.registerBodyClass .hiddenPlaceholder {
+  visibility: hidden;
+}
+.registerBodyClass table {
+  width: 100%;
+}

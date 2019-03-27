@@ -1,0 +1,24 @@
+<loader data="posts"></loader>	
+<div class="postContainer"
+	ng-repeat="post in posts track by post._id"
+	in-view="$inview && seenPost($index)" >	
+
+		<statement
+			statement-data="post"
+			on-share="sharePost(post)"
+			editable="editable"
+			on-edit="onEdit({post: post, index: $index})"
+			on-delete="deletePost(post._id, $index)"
+			on-comments-click="toggleComments(post)">
+		</statement>
+
+
+		<comments
+			ng-if="post.showComments || comms"
+			comments-data="post.comments"
+			on-comment="postComment(post._id, $index, text, file, video)"
+			on-delete="deleteComment(post._id, $index, commId, commIndex)"
+			user-is-owner="post.user._id == userId">
+		</comments>
+
+</div>

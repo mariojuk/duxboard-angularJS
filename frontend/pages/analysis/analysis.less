@@ -1,0 +1,211 @@
+@import "../../styles/less/global.less";
+
+.analysisPageContainer{
+	width: 100%;
+	padding: 20px;
+	background-color: @color-lightest;
+
+	.medalsCount{
+		.absolute-center;
+		flex-direction: column;
+
+		.full{
+			width: 90%;
+			height: 5px;
+			background-color: darken(@color-light, 10%);
+			border-radius: 5px;
+			.percent{
+				left: 0;
+				width: 0%;
+				height: 100%;
+				background-color: @color-darkest;
+				border-radius: @radius;
+				transition: 0.5s width ease;
+			}
+		}
+
+		.total{
+			.absolute-center;
+			flex-direction: column;
+			margin: 10px;
+			width: 100%;
+			color: @color-darkest;
+			.value{ font-weight: bold; }
+			.percentage{
+				.absolute-center;
+				width: 100%;
+				.full{
+					height: 7px;
+					border-radius: 7px;
+					margin: 5px;
+				}
+			}
+			p{ font-size: 15px; }
+		}
+
+		.action{
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			margin: 5px;
+			.value{
+				width: 10%;
+				display: flex;
+				@media @mobile{
+					width: 30%;
+				}
+				div{
+					width: 50%;
+					display: flex;
+					align-items: center;
+					padding: 0px 2px;
+					color: @color-darkest;
+					font-weight: bold;
+					&:first-child{ justify-content: flex-end;}
+					&:last-child{ justify-content: flex-start;}
+				}
+			}
+			.name{ 
+				width: 45%;
+				@media @mobile{
+					width: 70%;
+				}
+				display: flex;
+				justify-content: flex-end;
+				text-transform: uppercase;
+				text-align: right;
+				font-weight: bold;
+				color: @color-darkest;
+				font-size: 12px;
+			}
+			.percentage{ 
+				width: 45%;
+				@media @mobile{
+					display: none;
+				}
+				.full{ width: 60%; }
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+			}
+		}
+	}
+
+	.topStatements{
+		margin: 5px;
+		border-radius: @radius;
+		background-color: @color-bg;
+		.header{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			height: 40px;
+			background-color: @color-medium;
+			border-top-left-radius:  @radius;
+			border-top-right-radius: @radius;
+			color: white;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 12px;
+			.selection{
+				width: 55%;
+				@media @mobile{
+					width: 100%;
+				}
+				padding: 0px 10px;
+				display: flex;
+				flex-direction: row;
+				select{
+					color: @color-red;
+					margin-left: 5px;
+					text-transform: uppercase;
+					cursor: pointer;
+				}
+				option{ color: @color-darkest; }
+			}
+			.description{
+				@media @mobile{
+					display: none;
+				}
+				width: 45%;
+				display: flex;
+				flex-direction: row;
+				padding: 0px 10px;
+				p{ 
+					flex: 1;
+					text-align: center;
+					&:not(:last-child){
+						border-right: 1px solid white;
+					}
+				}
+			}
+		}
+		.statementsData{
+			padding: 5px;
+			.strow{
+				display: flex;
+				@media @mobile{
+					flex-direction: column;
+				}
+			}
+			.statementWrap{
+				width: 55%;
+				padding: 5px;
+				@media @mobile{
+					width: 100%;
+				}
+			}
+			.statementDetails{
+				width: 45%;
+				@media @mobile{
+					width: 100%;
+				}
+				color: @color-darkest;
+				display: flex;
+				flex-direction: row;
+				.reach, .engagements, .rate{
+					flex: 1;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					span{ margin: 5px; }
+				}
+				.rate span {
+					font-weight: bold;
+					&:after{
+						content: "%";
+						@media @mobile{
+							content: "% rate";
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.medalsContainer{
+		padding: 10px;
+		.notif{
+			display: flex;
+			flex-direction: row;
+			background-color: @color-base;
+			border-radius: @radius;
+			margin: 10px 0px;
+			padding: 10px 10px;
+			color: @color-darkest;
+			>p::first-letter { text-transform: capitalize; }
+			i{ margin-left: 5px; }
+
+			.reward{
+				color: @color-darkest;
+				margin-left: 5px;
+				font-weight: bold;
+			}
+
+			.time{
+				margin-left: auto;
+				color: lighten(@color-dark, 10%);
+			}
+		}
+	}
+}

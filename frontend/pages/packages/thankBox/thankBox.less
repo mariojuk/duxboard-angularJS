@@ -1,0 +1,56 @@
+@import "../../../styles/less/global.less";
+
+@font-xs: 10px;
+@font-s: 12.5px;
+@font-m: 16px;
+@font-l: 22px;
+@font-xl: 28px;
+@font-xxl: 48px;
+.bodyThank{
+	background: 
+    @bg-fade-overlay,
+    url("/img/bg/packages-bg.jpg") no-repeat center center fixed;
+  	background-attachment: fixed;
+ 	background-size: cover;
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+	.absolute-center;
+
+	.thankBox{
+		background-color:@bg-register-box;
+		padding: 20px 20px 20px;
+		width:40%;
+		height: 20%;
+		margin: 10px;
+		color: @color-bg;
+		@media @mobile{
+			margin: 20px auto;
+			width: 90%;
+		}
+		.shadow();
+		.thankDiv{
+			
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			h1{
+				font-weight: bold;
+				text-align: center;
+			}
+			p{
+			text-align: center;
+				margin:10px;
+				
+			}
+			.smallTxt{
+			font-size: @font-s;
+			text-align: center;
+				a{
+					color: lighten(@color-red, 4%);
+	    			font-weight: bold;
+				}
+			}
+		}
+	}
+}

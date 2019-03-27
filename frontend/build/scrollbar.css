@@ -1,0 +1,81 @@
+.scroll-content {
+  width: 100%;
+}
+scrollbar,
+[scrollbar],
+[data-scrollbar] {
+  display: -webkit-box;
+  display: flex;
+  position: relative;
+}
+scrollbar .scroll-content,
+[scrollbar] .scroll-content,
+[data-scrollbar] .scroll-content {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+scrollbar .scroll-content.sticky .scrollbar-track,
+[scrollbar] .scroll-content.sticky .scrollbar-track,
+[data-scrollbar] .scroll-content.sticky .scrollbar-track {
+  background: rgba(122, 151, 158, 0.35);
+}
+scrollbar .scrollbar-track,
+[scrollbar] .scrollbar-track,
+[data-scrollbar] .scrollbar-track {
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.5s ease-out, background 0.5s ease-out;
+  background: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 5px;
+}
+scrollbar .scrollbar-track.show,
+[scrollbar] .scrollbar-track.show,
+[data-scrollbar] .scrollbar-track.show,
+scrollbar .scrollbar-track:hover,
+[scrollbar] .scrollbar-track:hover,
+[data-scrollbar] .scrollbar-track:hover {
+  opacity: 1;
+}
+scrollbar .scrollbar-track:hover,
+[scrollbar] .scrollbar-track:hover,
+[data-scrollbar] .scrollbar-track:hover {
+  background: rgba(122, 151, 158, 0.35);
+}
+scrollbar .scrollbar-track-x,
+[scrollbar] .scrollbar-track-x,
+[data-scrollbar] .scrollbar-track-x {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+}
+scrollbar .scrollbar-track-y,
+[scrollbar] .scrollbar-track-y,
+[data-scrollbar] .scrollbar-track-y {
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100%;
+}
+scrollbar .scrollbar-thumb,
+[scrollbar] .scrollbar-thumb,
+[data-scrollbar] .scrollbar-thumb {
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background: rgba(73, 99, 116, 0.75);
+  border-radius: 5px;
+}
+scrollbar .overscroll-glow,
+[scrollbar] .overscroll-glow,
+[data-scrollbar] .overscroll-glow {
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}

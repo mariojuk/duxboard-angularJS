@@ -1,0 +1,13 @@
+<p class="popupHeader">Change email</p>
+<form class="changeEmailPopup popupContent" ng-controller="changeEmailSettingsController">
+
+            <p>New email</p>
+            <input placeholder="Enter your new email here" type="text" ng-model="changeEmailModel.email">
+            <p>Your password</p>
+            <input placeholder="Enter your password here" type="password" ng-model="changeEmailModel.password">
+            
+            <div align="center">
+             <button ng-click="changeMail(changeEmailModel)" type="button" class="dux-button big red round" >Confirm</button>
+            </div>
+            
+</form>

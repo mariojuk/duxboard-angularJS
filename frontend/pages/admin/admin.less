@@ -1,0 +1,47 @@
+@import "../../styles/less/global.less";
+
+.adminPanelContainer{
+	width: 100%;
+	background-color: @color-lightest;
+	padding: 20px;
+	
+	.panelMenu{
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		.item{
+			text-transform: uppercase;
+			background-color: @color-light;
+			color: @color-darkest;
+			padding: 10px;
+			margin-left: 2px;
+			border-top-left-radius: @radius;
+			border-top-right-radius: @radius;
+			font-weight: bold;
+			&:hover{
+				cursor: pointer;
+				background-color: @color-lighter;
+			}
+			&.active{
+				background-color: @color-bg;
+			}
+		}
+	}
+
+	.panel{
+		border-radius: @radius;
+		background-color: @color-bg;
+		padding: 10px;
+		min-height: 90%;
+		.buttons{
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			padding-bottom: 10px;
+			border-bottom: 1px solid @color-lighter;
+			.dux-button{
+				margin-left: 5px;
+			}
+		}
+	}
+}

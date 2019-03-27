@@ -1,0 +1,119 @@
+<div class="newPostContainer">
+
+	<textarea class="newPostInput"
+		ng-model="text"
+		ng-change="onInputChange()"
+		placeholder="{{placeholder}}"
+		maxlength="{{maxChars}}"
+		ng-keyup="$event.keyCode == 13 && publishClick()"
+		auto-grow>
+
+	</textarea>
+	
+	<p class="newCommentLimit" ng-style="file && {'bottom': '50px'}">{{ maxChars - text.length }}</p>
+
+	<div class="slideContainer" ng-style="{'min-height': scMin, 'max-height': scHeight}">
+
+		<statement
+			ng-show="isStatementVisible"
+			ng-if="media && media.hasOwnProperty('post')"
+			statement-data="media.post">
+		</statement>
+
+		<!-- hax -->
+		<ui-cropper image="mediaImg" result-image="file" ng-hide="true"></ui-cropper>
+
+		<div class="imageUpload" ng-show="isImageOpen">
+		    <div ngf-drop ngf-select
+		    	ng-hide="file"
+		    	ng-model="file"
+		    	class="drop-box" 
+		        ngf-drag-over-class="'dragover'"
+		        ngf-multiple="false"
+		        ngf-allow-dir="false"
+		        accept="image/*" 
+		        ngf-drag-over-class="'dragover'"
+		        ngf-pattern="'image/*'">
+		        <p>Drop image here or click to upload</p>
+		        <i class="fa fa-camera fa-3x"></i>
+	    	</div>
+		    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+		  	<img class="imgThumbnail" ngf-thumbnail='file'/>
+		   	<div ng-show="file" class="removeImage" ng-click="file = None">
+	    		<i class="fa fa-close fa-1x"></i>
+	    	</div>
+		    <!-- Upload Log:
+		    <pre>{{log}}</pre> -->
+		</div>
+
+		<div class="youtubeVideo" ng-show="isVideoOpen">
+		
+			<div class="videoInput">
+				<p>Youtube:</p>
+				<input type="text" placeholder="e.g. https://www.youtube.com/watch?v=izGwDsrQ1eQ" ng-model="ytLink" ng-change="updateVideo(ytLink)">
+			</div>
+
+			<div class="preview">
+				<p ng-hide="videoId">No video.</p>
+				<youtube-video ng-if="videoId" video-id="{{videoId}}" size="smallest"></youtube-video>
+				<div ng-show="videoId" class="removeVideo" ng-click="videoId = ''; ytLink = ''">
+	    			<i class="fa fa-close fa-1x"></i>
+	    		</div>
+			</div>
+
+		</div>
+
+		<span class="emojiPicker" ng-click="emojiPick()" emoji-picker="text"></span>
+		
+	</div>
+
+	<div class="fileInfo" ng-show="(file && !isImageOpen)">
+		<p style="font:smaller">Image: {{file.name}} {{file.$error}} {{file.$errorParam}}</p>
+		<i class="fa fa-close fa-1x" ng-click="file = ''"></i>
+   </div>
+
+   <div class="fileInfo" ng-show="(videoId && !isVideoOpen)">
+		<p style="font:smaller">Video: {{videoId}}</p>
+		<i class="fa fa-close fa-1x" ng-click="videoId = '';"></i>
+   </div>
+
+</div>
+<div class="newPostOptions">
+
+		<div class="newPostButton"
+			ng-click="emojiClick()"
+			ng-class="(isEmojiOpen) ? 'selectedButton' : ''">
+			<i class="fa fa-smile-o fa-1x"></i>
+		</div>
+
+		<div class="newPostButton"
+			ng-click="imageClick()"
+			ng-disabled="hasPost || videoId"
+			ng-class="(isImageOpen) ? 'selectedButton' : ''">
+			<i class="fa fa-camera fa-1x"></i>
+		</div>
+
+		<div class="newPostButton"
+			ng-disabled="hasPost || file"
+			ng-click="videoClick()"
+			ng-class="(isVideoOpen) ? 'selectedButton' : ''">
+			<i class="fa fa-video-camera fa-1x"></i>
+		</div>
+
+		<div class="newPostButton"
+			ng-disabled="hasPost"
+			ng-if="showArticleButton"
+			ng-click="openNewArticlePopup()">
+			<i class="fa fa-newspaper-o"></i>
+		</div>
+
+		<div class="newPostLimit">
+			<p>{{ maxChars - text.length }} letters left</p>
+		</div>
+
+		<!-- prominit u button -->
+		<div class="newPostPublish" ng-click="publishClick()">
+			<p>{{buttonLabel}}</p>
+		</div>
+
+</div>

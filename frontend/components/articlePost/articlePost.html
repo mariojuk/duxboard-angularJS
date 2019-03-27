@@ -1,0 +1,51 @@
+<div class="articlePostContainer">
+	<div class="articleInput">
+		<textarea class="titleInput" ng-model="articleTitle" placeholder="Type title here" maxlength="{{maxChars}}">
+		</textarea>
+		<div class="imageInput">
+	        <div class="imageUpload" ng-hide="file">
+		        <div ngf-drop ngf-select ng-model="file"
+		            class="drop-box" 
+		            ngf-drag-over-class="'dragover'"
+		            ngf-multiple="false"
+		            ngf-allow-dir="false"
+		            accept="image/*" 
+		            ng-style="file && { 'height': '85%'}"
+		            ngf-drag-over-class="'dragover'"
+		            ngf-pattern="'image/*'">
+		            	<i class="fa fa-cloud-upload fa-3x"></i>
+		            	<p>Drop image here or click to upload</p>
+	        	</div>
+		        <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+	    	</div>
+	    	<!-- prominit da bude background-image -->
+	    	<img ngf-thumbnail="file" class="imageThumbnail">
+	    	<div ng-show="file" class="removeImage" ng-click="file = None">
+	    		<i class="fa fa-close fa-1x"></i>
+	    	</div>
+
+	    	<!-- hax -->
+	    	<ui-cropper image="image" result-image="file" ng-hide="true"></ui-cropper>
+
+    	</div>
+		</div>
+	<div class="articleContent">
+		<ng-quill-editor on-editor-created="onCreated(editor)"
+			ng-model="articleContent"
+			placeholder="Type text here"
+			on-content-changed="updateArticleLength(text)">	
+		</ng-quill-editor>
+
+		<div class="footer">
+			<div class="contentInfo">
+				<p>{{articleLength}}</p>
+				<p>{{articleWords}}</p>	
+			</div>
+			<div class="publishButton"
+				ng-click="onPost({title: articleTitle, text: articleContent, file: file})">
+					{{buttonLabel}}
+			</div>
+		</div>
+	</div>
+	
+</div>

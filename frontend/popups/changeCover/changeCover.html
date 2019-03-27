@@ -1,0 +1,35 @@
+<form name="coverPhotoForm" class="coverPhotoChange" ng-controller="changeCoverController">
+    <p class="popupHeader">Crop Image and Upload</p>
+    <div class="popupContent">
+        <div class="cropArea">
+            <div class="imageUpload" ng-hide="file">
+                <div ngf-drop ngf-select ng-model="file"
+                    class="drop-box" 
+                    ngf-drag-over-class="'dragover'"
+                    ngf-multiple="false"
+                    ngf-allow-dir="false"
+                    accept="image/*" 
+                    ng-style="file && { 'height': '85%'}"
+                    ngf-drag-over-class="'dragover'"
+                    ngf-pattern="'image/*'">Drop image here or click to upload</div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+            </div>
+            <ui-cropper image="file"
+                        area-type="rectangle"
+                        result-image-size='{w: 792,h: 297}'
+                        aspect-ratio="2.666666667"
+                        chargement="'Loading'"
+                        result-image="croppedDataUrl"
+                        result-image-format="image/jpeg"
+                        init-max-area="true"
+                        area-init-size="500"></ui-cropper>
+        </div>
+
+        <div ng-click="upload(croppedDataUrl)" class="dux-button red no-border">UPLOAD</div> 
+            
+        <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+        <span class="progress" ng-show="progress >= 0">
+          <div style="width:{{progress}}%"></div>
+        </span>
+    </div>
+</form>

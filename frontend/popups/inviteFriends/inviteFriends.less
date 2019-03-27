@@ -1,0 +1,124 @@
+@import "../../styles/less/global.less";
+.ngdialog-content{
+	
+	.inviteFriend{
+		border-radius: @radius;
+		display:flex;
+		flex-direction:column;
+			
+		.headerTxt{
+		   
+			color: @color-darker !important ;
+			font-size: 24px;
+			text-align:center;
+		    font-weight: bold;
+		}
+		.invTxt{
+			padding-left:20px;
+			padding-right:20px;
+			color: @color-dark !important;
+			padding-top:10px;
+			font-size: 12px;
+			text-align:center;
+		}
+		.inp{
+			padding-top: 20px;
+			padding-bottom: 10px;
+			display:flex;
+			 
+		 .inviteMail{
+			margin:auto;
+			border-radius:@radius;
+			background-color:#BDCCD4;
+			border:1px solid #BDCCD4;
+			opacity:0.9%;
+			color: @color-darkest !important ;
+			width:80%;
+			text-align: center;
+			padding: 1.5vmin 9vmin;
+			// cursor: pointer;
+				
+			}
+		}
+		
+		.inviteMain{
+			
+			display: -webkit-flex;
+			display: flex;
+			justify-content:center;
+			align-items:center;
+			
+			
+				.circleMain{
+					.absolute-center;
+					margin-right:10px; 
+					margin-left:10px;
+					font-size:12px;
+					width: 20px;
+					height: 20px;
+					-moz-border-radius: 10px;
+					-webkit-border-radius: 10px;
+					border-radius:10px;
+						 .duxProfilePicSmall{ 
+							.profile-pic(20px);
+							background-size: contain;
+							
+						}
+
+				}
+				
+		}
+		
+		.inviteButton{
+				background-color:@color-red;
+				border-radius: @radius;
+				border:0;
+				padding: 1.5vmin 9vmin;
+				color: white;
+				cursor: pointer;
+				margin-top:30px;
+				}
+		
+		.footer{
+			margin-top:30px;
+			background-color:@color-dark;
+			display:flex;
+			flex-direction:column;
+			align-items:center;			
+				.footerTxt{
+					margin-top:20px;
+					margin-bottom:20px;
+					color: @color-bg ;
+					text-align:center;
+					font-weight: bold;
+				}
+				
+				.footerDivSecond{
+					display: -webkit-flex;
+					display: flex;
+					justify-content:center;
+					align-items:center;
+					margin-bottom:30px;
+					
+					
+					.circleFooter{
+						.absolute-center;
+						margin-right:20px; 
+						margin-left:20px;
+						list-style:none;
+						font-size:24px;
+						width: 40px;
+						height: 40px;
+						background-color: @color-bg;
+						-moz-border-radius: 20px;
+						-webkit-border-radius: 20px;
+						border-radius:20px;
+						color:#BDCCD4;
+					}
+				}
+					
+			
+		}
+	}
+	
+}

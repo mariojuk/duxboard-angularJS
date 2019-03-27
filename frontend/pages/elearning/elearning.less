@@ -1,0 +1,82 @@
+@import "../../styles/less/global.less";
+
+.elearningContainer{
+	padding: 20px;
+	background-color: @color-lightest;
+	.welcome{
+		width: 90%;
+		margin: auto;
+		margin-top: 20px;
+		margin-bottom: 60px;
+		color: @color-darkest;
+		p{
+			font-weight: bold;
+			text-align: center;
+		}
+		.edxAbout{
+			display: flex;
+			width: 80%;
+			flex-direction: row;
+			margin: 20px auto;
+			border-top: 1px solid @color-light;
+			border-bottom: 1px solid @color-light;
+			div{ margin: 10px; }
+			ul{ font-size: 13px; }
+			.absolute-center;
+			@media @mobile{
+				flex-direction: column;
+			}
+			p{
+				font-weight: normal;
+				text-align: left;
+			}
+			.edx{
+				width: 100px;
+				.absolute-center;
+				display: flex;
+				flex-direction: column;
+				text-decoration: none;
+				p{
+					text-transform: uppercase;
+					color: @color-medium;
+					&:after{ content: ":"; }
+				}
+				img{
+					max-width: 80px;
+					opacity: 0.6;
+				}
+				&:hover{
+					cursor: pointer;
+					img{ opacity: 1; }
+					p{ color: @color-dark; }
+				}
+			}
+		}
+	}
+	.subjects{
+		padding: 10px;
+		border-top: 1px solid @color-light;
+		.subtitle{
+			margin: 10px 0px 20px 0px;
+			font-weight: bold;
+			color: @color-darkest;
+			text-transform: uppercase;
+		}
+		.list{
+			@media @desktop, @tablet{
+				max-height: 340px;
+			}
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			align-content: center;
+			a{
+				width: 220px;
+				color: @color-dark;
+				font-size: 16px;
+				font-weight: normal;
+				margin: 5px;
+			}
+		}
+	}
+}

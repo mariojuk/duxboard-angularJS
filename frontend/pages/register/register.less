@@ -1,0 +1,118 @@
+@import "../../styles/less/global.less";
+.registerBodyClass {
+  background: 
+    @bg-fade-overlay,
+    url("/img/bg/register-bg.jpg") no-repeat center center fixed;
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  #logo {
+    width: 50% ;
+    margin: 0 auto;
+    display: block;
+    @media @mobile{
+      width: 95% !important; ;
+    }
+    @media @tablet{
+    }
+  }
+  @media @mobile {
+    .registerForm {
+      margin-left: 8% !important;
+      margin-top: 1% !important;
+    }
+    .registerBodyClass .floatleft {
+      float: left !important;
+      width: 47% !important;
+    }
+    #cofirmpassword {
+        font-size: 12px !important;
+    }
+    .floatright {
+      float: right !important;
+      margin-right: 0% !important;
+      width: 48% !important;
+    }
+  }
+  @media @tablet {
+
+    .registerForm {
+      margin-left: 38% !important;
+      margin-top: 1%;
+    }
+
+    #cofirmpassword {
+      margin-top: -1% !important;
+    }
+
+  }
+  #goToLogin {
+    color: lighten(@color-red, 4%);
+    font-size: 15px;
+  }
+  .firstbrake{
+    padding-top: 10%;
+  }
+  #cofirmpassword {
+    margin-top: 0.5%;
+  }
+  p {
+    color: white;
+    padding-top: 12px;
+  }
+  .registerLineBrake {
+    margin-top: 13%;
+  }
+  .registerForm {
+    margin-left: 55%;
+    margin-top: 1%;
+  }
+  .loginLogo {
+    background-image: url(/img/logo1.png);
+    width: 503px;
+    height: 156px;
+    margin-left: 59%;
+    background-size: cover;
+  }
+  .terms{
+    a{ color: @color-red; }
+  }
+  #Registerbutton {
+    border: 1px solid lighten(@color-red, 4%);
+    border-radius: 6px;
+    width: 248px;
+    height: 45px;
+    margin-top: 6%;
+    margin-left: 22%;
+    background-color: lighten(@color-red, 4%);
+    color: white;
+  @media @mobile{
+    width: 180px !important;
+  }
+  }
+  .floatleft {
+    float: left;
+    width: 77%;
+    @media @mobile{
+      width: 100% !important;
+    }
+    input[type=date] {
+      width: 90%;
+      padding: 13px;
+    }
+    input[type=text], select, input[type=password] {
+      width: 90%;
+      height: 45px;
+      padding: 14px;
+    }
+  }
+  .hiddenPlaceholder {
+    visibility: hidden;
+  }
+  table{
+    width:100%
+  }
+
+}

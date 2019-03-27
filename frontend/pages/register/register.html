@@ -1,0 +1,109 @@
+<div class="registerBodyClass">
+    <div class="registerContainer">
+        <form class="registerForm">
+
+            <div class="registerfloat">
+                <div class="floatleft">
+                    <img id="logo" src="../../img/logo1.png">
+                    <table>
+                        <tr>
+                            <td>
+                                <p>FIRST NAME</p>
+                                <input class="dux-input" type="text" ng-model="registrationModel.firstName">
+                            </td>
+                            <td>
+                                <p>LAST NAME</p>
+                                <input class="dux-input" type="text" ng-model="registrationModel.secondName">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>DATE OF BIRTH</p>
+                                <input type="text"
+                                    class="dux-input"
+                                    uib-datepicker-popup="dd/MM/yyyy"
+                                    ng-model="registrationModel.birthDay"
+                                    is-open="isOpen"
+                                    placeholder="dd/MM/yyyy"
+                                    ng-focus="isOpen = true"
+                                    ng-required="true"
+                                    close-text="Close"/>
+                            </td>
+                            <td>
+                                <p>GENDER</p>
+                                <input type="text"
+                                    id="gender"
+                                    class="dux-input"
+                                    autocomplete="off"
+                                    ng-model="registrationModel.gender"
+                                    uib-typeahead="gender for gender in genders" 
+                                    typeahead-min-length="0"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>COUNTRY</p>
+                                <input type="text"
+                                    class="dux-input"
+                                    autocomplete="off"
+                                    ng-model="registrationModel.country"
+                                    uib-typeahead="country for country in countrys | filter:$viewValue | limitTo:8"
+                                    typeahead-min-length="0"/>
+                            </td>
+
+                        </tr>
+                        <tr >
+                            <td class="firstbrake">
+                                <p>SPORT</p>
+                                <input type="text"
+                                    id="sports"
+                                    class="dux-input"
+                                    autocomplete="off"
+                                    ng-model="registrationModel.sport"
+                                    uib-typeahead="sport for sport in sports | filter:$viewValue | limitTo:8"
+                                    typeahead-min-length="0"/>
+                            </td>
+                            <td class="firstbrake">
+                                <p>POSITION</p>
+                                <input type="text"
+                                    id="position"
+                                    class="dux-input"
+                                    autocomplete="off"
+                                    ng-model="registrationModel.position"
+                                    uib-typeahead="position for position in positions | filter:$viewValue | limitTo:8"
+                                    typeahead-min-length="0"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="firstbrake">EMAIL</p>
+                                <input class="dux-input" type="text" ng-model="registrationModel.email"  placholder="email">
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <p >CREATE PASSWORD</p>
+                                <input class="dux-input" type="password" ng-model="registrationModel.password">
+                            </td>
+                            <td >
+                                <p id="cofirmpassword">CONFIRM PASSWORD</p>
+                                <input class="dux-input" type="password" ng-model="registrationModel.confirmPassword">
+                            </td>
+                        </tr>
+
+                    </table>
+                    <p class="terms">By clicking register, you agree to the Duxboard <a ng-click="showPrivacyPolicy()">Privacy Policy</a> and <a ng-click="showTermsOfUse()">Terms of Use.</a></p>
+                    <button id="Registerbutton" type="submit" ng-click="register(registrationModel)">REGISTER</button>
+
+                    <p>Already have account <a id="goToLogin" ui-sref="login">Login</a></p>
+                    <div ng-repeat="error in registrationErrors">
+                        <p>{{error}}</p>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

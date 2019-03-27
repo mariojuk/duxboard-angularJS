@@ -1,0 +1,113 @@
+@import "../../styles/less/global.less";
+@font-xs: 10px;
+@font-s: 12.5px;
+@font-m: 16px;
+@font-l: 22px;
+@font-xl: 28px;
+@font-xxl: 48px;
+
+	
+	.packagesContainer{
+	background: 
+    @bg-fade-overlay,
+    url("/img/bg/packages-bg.jpg") no-repeat center center fixed;
+	background-attachment: fixed;
+	background-size: cover;
+	position: absolute;
+	width: 100%;
+	min-height: 100%;
+		
+	
+		
+		.packagesContent{
+			max-width: @page-width;
+			margin: auto;
+			padding: 100px 60px 0px;
+			@media @mobile{
+				padding: 20px 0px 0px;
+				.title{ text-align: center; }
+			}
+			@media @tablet{
+				padding: 80px 20px 0px;
+			}
+			.title{
+				font-size: @font-xl;
+				color: @color-bg;
+				width: 100%;
+			}
+			.packages{
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				@media @mobile{
+					flex-direction: column;
+				}
+				
+				.package{
+					width: 50%;
+					padding: 30px 60px 70px;
+					position: relative;
+					background-color: @bg-register-box;
+					outline: 10px solid @bg-register-box;
+					transition: 0.5s outline ease;
+					color: @color-bg;
+					&:hover{ 
+						background: fade(@bg-register-box, 85%);
+						outline: 10px solid transparent;
+						.shadow();
+					}
+					
+					@media @tablet{
+						padding: 20px 30px 70px;
+					}
+					@media @mobile{
+						width: 100%;
+						pading: 30px 15px 70px;
+					}
+					p{
+						margin: 10px 0px;
+						word-wrap: break-word;
+					}
+					button{
+						width: 50%;
+						height: 40px;
+						font-weight: bold;
+						//prominit
+						position: absolute;
+						left: 60px;
+						bottom: 20px;
+						@media @tablet{
+							left: 30px;
+						}
+						@media @mobile{
+							margin-left: auto;
+							margin-right: auto;
+							left: 0;
+							right: 0;
+						}
+					}
+					.packageName{
+						font-size: @font-l;
+						margin-bottom: 20px;
+						color:@color-bg;
+					}
+				}
+
+				.free{		
+    				margin-top: 60px;
+    				margin-right: 10px;
+					@media @mobile{
+						margin-top: 0px;
+					}
+					button{
+						background-color:@color-bg;
+						color:@color-darkest;
+					}
+				}
+				.premium{
+					margin-left: 10px;
+				}
+			}
+		}
+	
+}

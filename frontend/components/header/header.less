@@ -1,0 +1,151 @@
+@import "../../styles/less/global.less";
+
+.headerContainer{
+	height: @header-height;
+	max-width: @page-width;
+	margin: auto;
+
+	.logo{
+		height: 100%;
+		cursor: pointer;
+		background-image: url('/img/logo1.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+	.navButton{
+		.square(60px);
+		padding: 10px;
+		color: white;
+		.fa{ cursor: pointer; }
+	}
+	
+	.mobileHeader{
+		@media @desktop, @tablet{ display: none; }
+		@media @mobile{ display: flex; }
+		height: 100%;
+		flex-direction: row;
+		justify-content: space-between;
+
+		.logoContainer{
+			padding: 0px 10px;
+			width: 100%;
+			height: @header-height;
+		}
+		.menuButton{
+			.profile-pic(@header-height - 20px);
+			cursor: pointer;
+			position: relative;
+			.dux-medal{
+				position: absolute;
+				bottom: 0px;
+				right: 0px;
+			}
+		}
+	}
+
+	.navigationContainer{
+		height: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		position: relative;
+
+		@media @mobile{
+			position: fixed;
+			top: 0px;
+			right: 0px;
+			height: 100%;
+			z-index: 5;
+			flex-direction: column;
+			background-color: @color-medium;
+			.shadow();
+		}
+		
+		.logoContainer{
+			width: @sidebar-width;
+			padding: 0px;
+			height: @header-height;
+			.navButton{ display: none; }
+			@media @mobile{
+				display: flex;
+				flex-direction: row;
+				width: @right-sidebar-width;
+				.navButton{ display: initial; }
+				.logo{ width: 100%; }
+			}
+		}
+
+		.navigation{
+			max-width: @page-width - @sidebar-width - @right-sidebar-width;
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-around;
+			a{ color: white; }
+			@media @mobile{
+				flex-direction: column;
+				justify-content: center;
+				a{
+					margin: 5px auto;
+					font-size: 18px;
+				}
+			}
+		}
+
+		.searchIcon{
+			@media @tablet{
+				.square(@header-height);
+				.absolute-center;
+				color: white;
+				display: initial;
+			}
+			@media @desktop, @mobile{
+				display: none;
+			}			
+		}
+
+		.searchForm{
+			width: @right-sidebar-width;
+			padding: 15px 20px;
+			height: @header-height;
+			@media @tablet{
+				position: absolute;
+				right: 0px;
+				top: @header-height;
+				z-index: 2;
+				background: @color-darkest;
+				.shadow;
+			}
+			&.ng-enter{ animation: slideInRight 0.5s; }
+			&.ng-leave{ animation: slideOutRight 0.5s; }
+			.searchWrap{
+				//background-color: @color-light;
+				border-radius: @radius;
+				display: flex;
+				flex-direction: row;
+				height: 100%;
+				color: white;
+				input{
+					background-color: @color-lightest;
+					border-top-left-radius: @radius; 
+					border-bottom-left-radius: @radius;
+					color: @color-darkest;
+					width: 80%;
+					padding: 0px 5px;
+				}
+				button{
+					width: 20%;
+					background-color: @color-light;
+					border-top-right-radius: @radius; 
+					border-bottom-right-radius: @radius;
+					&:hover{
+						background-color: @color-lighter;
+					}
+				}
+			}
+		}
+	}
+}

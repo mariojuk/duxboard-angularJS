@@ -1,0 +1,15 @@
+<div class="noDataIndicator">
+	<p class="noDataTitle">
+		{{
+			$ctrl.fullTitle ? 
+			$ctrl.fullTitle :
+			"There are no "  + $ctrl.title + "!"
+		}}
+	</p>
+	<p class="noDataIcon">
+		<i class="fa fa-2x" ng-class="$ctrl.iconClass"></i>
+	</p>
+	<p class="noDataMessage">
+		{{$ctrl.message}}
+	</p>
+</div>

@@ -1,0 +1,171 @@
+@import "../../styles/less/global.less";
+
+@input-height: 100px;
+
+.articlePostContainer{
+	[ng-quill-editor] { display: block; }
+	.ql-toolbar{
+		border: none !important;
+		border-bottom: 1px solid @color-lighter !important;
+	}
+	.ql-container{
+		border: none !important;
+		min-height: 300px;
+	}
+	.ql-editor {
+		min-height: 400px;
+	}
+	display: flex;
+	flex-direction: column;
+	background-color: @color-lightest;
+	// padding: 15px 20px;
+	width: 100%;
+	
+	.articleInput{
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+
+		@media @mobile, @tablet{
+			flex-direction: column;
+		}
+
+		.titleInput{
+			border-width: 0px;
+			border-radius: @radius;
+			align-content: start;
+			display: flex;
+			height: @input-height;
+			padding: 10px;
+			width: 70%;
+		    background-color: @color-bg;
+		    outline: none;
+		    resize: none;
+		    font-weight: bold;
+
+		    @media @mobile, @tablet{
+				width: 100%;
+			}
+		}
+
+		.imageInput{
+			height: @input-height;
+			width: 28%;
+			border-radius: @radius;
+			background-color: transparent;
+			margin-left: auto;
+			position: relative;
+
+
+			@media @mobile, @tablet{
+				margin-top: 10px;
+				width: 100%;
+			}
+
+			.imageUpload{
+				height: 100%;
+
+				.drop-box{
+				    border: 5px dashed @color-base;
+				    border-radius: @radius;
+				    width: 100%;
+				    height: 100%;
+				    .absolute-center;
+				    flex-direction: column;
+				    text-align: center;
+				    i, p { color: @color-darker;}
+				}
+
+				.dragover{ border-color: @color-dark; }
+			}
+
+			.imageThumbnail{
+				overflow: hidden;
+				height: 100%;
+				width: 100%;
+				border-radius: @radius;
+				// nije podržano u Edge i IE. zaminit sa background-image
+				object-fit: cover;
+
+				@media @mobile, @tablet{
+					height: 100%;
+					width: auto;
+					object-fit: cover;
+				}
+			}
+
+			.removeImage{
+				.circle(20px);
+				.absolute-center;
+				position: absolute;
+				top: 5px;
+				right: 5px;
+				background-color: gray;
+				cursor: pointer;
+
+				i{color: white;}
+			}
+		}
+	}
+
+	.articleContent{
+		margin-top: 10px;
+		background: @color-bg;
+		border-radius: @radius;
+		
+		.footer{
+			height: 30px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			background-color: @color-base;
+			border-bottom-left-radius: @radius;
+			.contentInfo{
+				display: flex;
+				flex-direction: row;
+				height: 30px;
+				line-height: 30px;
+				color: @color-darkest;
+				p {
+					width: 120px;
+					@media @mobile{
+						width: 80px;
+					}
+					text-align: right;
+					padding: 0px 10px;
+					border-right: 1px solid @color-lightest;
+					&:nth-child(1):after{
+						@media @desktop, @tablet{
+							content: " letters"
+						}
+						@media @mobile{
+							content: " l"
+						}
+					}
+					&:nth-child(2):after{
+						@media @desktop, @tablet{
+							content: " words"
+						}
+						@media @mobile{
+							content: " w"
+						}
+					}
+					
+				}
+			}
+			.publishButton{
+				width: 120px;
+				height: 30px;
+				text-align: center;
+				line-height: 30px;
+				color: white;
+				background-color: @color-darkest;
+				border-bottom-right-radius: @radius;
+				&:hover{
+					cursor: pointer;
+					background-color: @color-dark;
+				}
+			}
+		}
+	}
+}

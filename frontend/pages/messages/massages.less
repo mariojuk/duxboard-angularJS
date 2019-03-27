@@ -1,0 +1,192 @@
+@import "../../styles/less/global.less";
+
+.messagesContainer{
+	background-color: @color-lightest;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+
+	.dux-button{
+		margin-bottom: 5%;
+	}
+	post{
+		.newPostContainer{
+			border: none;
+		}
+	}
+
+	.selectConv{
+		@media @mobile{
+			display: none !important;
+		}
+		@media @tablet{
+			display: none !important;
+		}
+	}
+
+	.messagesWrap{
+		display: flex;
+		flex-direction: row;
+
+
+		.contactsContainer{
+			width: 200px;
+			// height: 100%;
+			margin-bottom: auto;
+			padding: 10px 0;
+			background-color: @color-light;
+			border-radius: @radius;
+			@media @tablet{ width: 100%; }
+			@media @mobile{ width: 100%; }
+			.contact{
+				height: auto;
+				display: flex;
+				align-items: center;
+				color: @color-darkest;
+				@media @tablet{ flex-direction: column; }
+				.contactPic{
+					.profile-pic(35px);
+					background-size: contain;
+				}
+
+				.newMessages{
+					margin: 0px 5px 0px auto;
+					background-color: @color-red;
+					color: white;
+					height: 20px;
+					min-width: 20px;
+					border-radius: 20px;
+					text-align: center;
+				}
+
+				&:hover{
+					cursor: pointer;
+					background-color: @color-base;
+				}
+			}
+			.selected{
+				background-color: @color-darkest;
+				color: @color-bg;
+				&:hover{ background-color: @color-darkest; }
+			}
+		}
+
+
+		.selectConv { margin: 40px auto auto; }
+		.convContainer{
+			width: 100%;
+			height: 100%;
+			margin-left: 20px;
+			@media @mobile{
+				width: 100%;
+			}
+
+			.convTitle{
+				width: 100%;
+				background-color: @color-bg;
+				border-radius: @radius;
+				padding: 10px;
+				margin-bottom: 10px;
+				height: 80px;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				position: relative;
+
+				.convPicture{
+					position: absolute;
+					margin-top: -60px;
+					.duxProfilePic{
+						.profile-pic(80px);
+						background-size: contain;
+						cursor: pointer;
+					}
+				}
+
+				.convName{
+					position: absolute;
+					bottom: 10px;
+				}
+			}
+			.convMessages{
+				width: 100%;
+				max-height: 400px;
+				overflow-x: hidden;
+				background-color: @color-bg;
+				border-radius: @radius;
+				margin-bottom: 10px;
+				padding-bottom: 10px;
+				position: relative;
+
+				.loadMore{
+					.absolute-center;
+					background-color: @color-lighter;
+					color: @color-darkest;
+					margin-bottom: 10px;
+					height: 30px;
+				}
+
+				.message{
+					display: flex;
+					margin: 4px 0;
+
+					.msgPic{
+						.profile-pic(35px);
+						margin: 0px 10px;
+						background-size: contain;
+						cursor: pointer;
+					}
+					.msgArrow{
+						width: 0;
+						height: 0;
+						margin: auto 0;
+						border-style: solid;
+					}
+					.msgBubble{
+						border-radius: @radius;
+						margin: auto 60px;
+						padding: 5px;
+						word-wrap: break-word;
+						max-width: 60%;
+
+						.time{
+							font-size: 12px;
+						}
+						
+						@keyframes blink {50% { color: transparent }}
+						.loader__dot { animation: 1s blink infinite }
+						.loader__dot:nth-child(2) { animation-delay: 250ms }
+						.loader__dot:nth-child(3) { animation-delay: 500ms }
+					}
+				}
+				.sent{
+					flex-direction: row-reverse;
+					.msgArrow{
+						border-width: 5px 0 5px 4.3px;
+						border-color: transparent transparent transparent @color-light;
+					}
+					.msgBubble{
+						background-color: @color-lighter;
+						color: @color-darkest;
+						text-align: right;
+						.time{ color: @color-dark; }
+					}
+
+				}
+				.received{
+					flex-direction: row;
+					.msgArrow{
+						border-width: 5px 4.3px 5px 0;
+						border-color: transparent @color-darkest transparent transparent;
+					}
+					.msgBubble{
+						background-color: @color-darkest;
+						color: @color-bg;
+						text-align: left;
+						.time{ color: @color-medium; }
+					}
+				}
+			}
+		}
+	}
+}

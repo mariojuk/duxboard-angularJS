@@ -1,0 +1,61 @@
+@import "../../styles/less/global.less";
+
+.requestsContainer{
+	background-color: @color-lightest;
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+
+	.partnershipRequest{
+		padding: 10px;
+		margin: 5px;
+		background-color: @color-light;
+		border-radius: @radius;
+		display: flex;
+		flex-direction: row;
+		position: relative;
+
+		@media @mobile{
+			flex-direction: column;
+			text-align: center;
+			.absolute-center;
+		}
+		.picContainer{
+			width: 80px;
+			.profilePic{
+				.profile-pic(60px);
+				background-size: contain;
+				background-color: @color-dark;
+			}
+		}
+		
+		.info{
+
+		}
+		.action{
+			display: flex;
+			flex-direction: row;
+			margin: auto;
+			justify-content: space-around;
+			width: 240px;
+			.deny{
+				i{ 
+					margin: 5px;
+					color: @color-dark;
+
+					&:hover{
+						color: @color-darker;
+						cursor: pointer;
+						transform: scale(1.2);
+					}
+				}
+				@media @mobile{
+					position: absolute;
+					top: 10px;
+					right: 10px;
+				}
+			}
+		}		
+	}
+}

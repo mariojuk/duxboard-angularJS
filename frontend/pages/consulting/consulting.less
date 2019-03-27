@@ -1,0 +1,96 @@
+@import "../../styles/less/global.less";
+
+.consultingContainer{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	.welcomeWrap{
+		background-color: lighten(@color-lightest, 2%);
+		padding:40px;
+		.welcome{
+			margin: auto;
+			.absolute-center;
+			flex-direction: column;
+			width: 80%;
+			@media @mobile{
+				width: 100%;
+			}
+			text-align: center;
+			color: @color-darkest;
+			p{
+				font-weight: bold;
+				font-size: 15px;
+			}
+			span{ color: @color-red;}
+			.categories{
+				margin: 10px auto;
+				p{ font-weight: normal;}
+				ul{
+					max-width: 300px;
+					text-align: left;
+					margin-left: 5px;
+				}
+			}
+		}
+	}
+	.formWrap{
+		padding: 20px;
+		background-color: @color-lightest;
+	}
+	form{
+		input, textarea{
+			&::-webkit-input-placeholder { color: @color-light; }
+			&:-moz-placeholder { color: @color-light; }
+			&::-moz-placeholder { color: @color-light; }
+			&:-ms-input-placeholder { color: @color-light; }
+		}
+
+		display: flex;
+		flex-direction: column;
+		padding: 10px;
+		width: 80%;
+		@media @mobile{
+			width: 100%;
+		}
+		margin: 0px auto;
+
+		label{
+			margin-top: 20px;
+			color: @color-darkest;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		input, select{
+			height: 40px;
+			line-height: 40px;
+			font-size: 16px;
+			border-bottom: 1px solid @color-medium;
+			color: @color-dark;
+			padding: 0px 5px;
+			background-color: transparent;
+			transition: border-bottom 0.5s ease; 
+			&:active,&:focus{
+				color: @color-darkest;
+				border-bottom: 2px solid @color-darkest;
+			}
+		}
+
+		textarea{
+			margin-top: 10px;
+			padding: 10px;
+			min-height: 200px;
+			background-color: white;
+			border: none;
+			border-radius: @radius;
+			resize: vertical;
+		}
+
+		button{
+			width: 200px;
+			margin: 20px auto;
+		}
+
+	}
+}

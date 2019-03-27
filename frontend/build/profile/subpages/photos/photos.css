@@ -1,0 +1,69 @@
+.ProfilePhotos .drop-box {
+  border: 5px dashed #D9E2E6;
+  border-radius: 5px;
+  width: 100%;
+  height: 133px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  color: #7A979E;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  text-align: center;
+  font-size: 18px;
+}
+.ProfilePhotos .ProfilePicturesContainer {
+  padding: 10px 5px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.ProfilePhotos .ProfilePicturesContainer:after {
+  content: "";
+  -webkit-box-flex: 1;
+          flex: auto;
+}
+.ProfilePhotos .picture {
+  height: 100px;
+  width: 120px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-size 0.1s linear;
+  margin: 5px;
+}
+.ProfilePhotos .picture:hover {
+  cursor: pointer;
+  background-size: 110% auto;
+  opacity: 0.8;
+}
+.ProfilePhotos .picture .edit {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.ProfilePhotos .picture .edit i {
+  display: none;
+  color: white;
+}
+.ProfilePhotos .picture .edit:hover {
+  background-color: rgba(73, 99, 116, 0.8);
+}
+.ProfilePhotos .picture .edit:hover i {
+  display: initial;
+  cursor: pointer;
+}

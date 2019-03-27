@@ -1,0 +1,298 @@
+.analysisPageContainer {
+  width: 100%;
+  padding: 20px;
+  background-color: #F4F7F8;
+}
+.analysisPageContainer .medalsCount {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+.analysisPageContainer .medalsCount .full {
+  width: 90%;
+  height: 5px;
+  background-color: #bacbd2;
+  border-radius: 5px;
+}
+.analysisPageContainer .medalsCount .full .percent {
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #496374;
+  border-radius: 5px;
+  transition: 0.5s width ease;
+}
+.analysisPageContainer .medalsCount .total {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin: 10px;
+  width: 100%;
+  color: #496374;
+}
+.analysisPageContainer .medalsCount .total .value {
+  font-weight: bold;
+}
+.analysisPageContainer .medalsCount .total .percentage {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 100%;
+}
+.analysisPageContainer .medalsCount .total .percentage .full {
+  height: 7px;
+  border-radius: 7px;
+  margin: 5px;
+}
+.analysisPageContainer .medalsCount .total p {
+  font-size: 15px;
+}
+.analysisPageContainer .medalsCount .action {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  margin: 5px;
+}
+.analysisPageContainer .medalsCount .action .value {
+  width: 10%;
+  display: -webkit-box;
+  display: flex;
+}
+@media only screen and (max-width: 767px) {
+  .analysisPageContainer .medalsCount .action .value {
+    width: 30%;
+  }
+}
+.analysisPageContainer .medalsCount .action .value div {
+  width: 50%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  padding: 0px 2px;
+  color: #496374;
+  font-weight: bold;
+}
+.analysisPageContainer .medalsCount .action .value div:first-child {
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+.analysisPageContainer .medalsCount .action .value div:last-child {
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+}
+.analysisPageContainer .medalsCount .action .name {
+  width: 45%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  text-transform: uppercase;
+  text-align: right;
+  font-weight: bold;
+  color: #496374;
+  font-size: 12px;
+}
+@media only screen and (max-width: 767px) {
+  .analysisPageContainer .medalsCount .action .name {
+    width: 70%;
+  }
+}
+.analysisPageContainer .medalsCount .action .percentage {
+  width: 45%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+          align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  .analysisPageContainer .medalsCount .action .percentage {
+    display: none;
+  }
+}
+.analysisPageContainer .medalsCount .action .percentage .full {
+  width: 60%;
+}
+.analysisPageContainer .topStatements {
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+}
+.analysisPageContainer .topStatements .header {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 40px;
+  background-color: #C0D0D6;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.analysisPageContainer .topStatements .header .selection {
+  width: 55%;
+  padding: 0px 10px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+@media only screen and (max-width: 767px) {
+  .analysisPageContainer .topStatements .header .selection {
+    width: 100%;
+  }
+}
+.analysisPageContainer .topStatements .header .selection select {
+  color: #FF6666;
+  margin-left: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.analysisPageContainer .topStatements .header .selection option {
+  color: #496374;
+}
+.analysisPageContainer .topStatements .header .description {
+  width: 45%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  padding: 0px 10px;
+}
+@media only screen and (max-width: 767px) {
+  .analysisPageContainer .topStatements .header .description {
+    display: none;
+  }
+}
+.analysisPageContainer .topStatements .header .description p {
+  -webkit-box-flex: 1;
+          flex: 1;
+  text-align: center;
+}
+.analysisPageContainer .topStatements .header .description p:not(:last-child) {
+  border-right: 1px solid white;
+}
+.analysisPageContainer .topStatements .statementsData {
+  padding: 5px;
+}
+.analysisPageContainer .topStatements .statementsData .strow {
+  display: -webkit-box;
+  display: flex;
+}
+@media only screen and (max-width: 767px) {
+  .analysisPageContainer .topStatements .statementsData .strow {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+.analysisPageContainer .topStatements .statementsData .statementWrap {
+  width: 55%;
+  padding: 5px;
+}
+@media only screen and (max-width: 767px) {
+  .analysisPageContainer .topStatements .statementsData .statementWrap {
+    width: 100%;
+  }
+}
+.analysisPageContainer .topStatements .statementsData .statementDetails {
+  width: 45%;
+  color: #496374;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+@media only screen and (max-width: 767px) {
+  .analysisPageContainer .topStatements .statementsData .statementDetails {
+    width: 100%;
+  }
+}
+.analysisPageContainer .topStatements .statementsData .statementDetails .reach,
+.analysisPageContainer .topStatements .statementsData .statementDetails .engagements,
+.analysisPageContainer .topStatements .statementsData .statementDetails .rate {
+  -webkit-box-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.analysisPageContainer .topStatements .statementsData .statementDetails .reach span,
+.analysisPageContainer .topStatements .statementsData .statementDetails .engagements span,
+.analysisPageContainer .topStatements .statementsData .statementDetails .rate span {
+  margin: 5px;
+}
+.analysisPageContainer .topStatements .statementsData .statementDetails .rate span {
+  font-weight: bold;
+}
+.analysisPageContainer .topStatements .statementsData .statementDetails .rate span:after {
+  content: "%";
+}
+@media only screen and (max-width: 767px) {
+  .analysisPageContainer .topStatements .statementsData .statementDetails .rate span:after {
+    content: "% rate";
+  }
+}
+.analysisPageContainer .medalsContainer {
+  padding: 10px;
+}
+.analysisPageContainer .medalsContainer .notif {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  background-color: #EBF0F2;
+  border-radius: 5px;
+  margin: 10px 0px;
+  padding: 10px 10px;
+  color: #496374;
+}
+.analysisPageContainer .medalsContainer .notif > p::first-letter {
+  text-transform: capitalize;
+}
+.analysisPageContainer .medalsContainer .notif i {
+  margin-left: 5px;
+}
+.analysisPageContainer .medalsContainer .notif .reward {
+  color: #496374;
+  margin-left: 5px;
+  font-weight: bold;
+}
+.analysisPageContainer .medalsContainer .notif .time {
+  margin-left: auto;
+  color: #97aeb4;
+}

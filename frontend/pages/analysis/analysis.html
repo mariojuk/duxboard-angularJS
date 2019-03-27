@@ -1,0 +1,111 @@
+<div class="analysisPageContainer">
+
+	<p class="pageTitle">Analysis</p>
+
+	<div class="medalsCount">
+
+		<div class="total">
+			<div class="value">
+				<i class="dux-medal blue"></i>
+				{{medalsCount}}/250
+			</div>
+			<div class="percentage">
+				<div class="full">
+					<div class="percent" ng-style="{'width': medalsCount / 250 * 100 + '%'}">
+					</div>
+				</div>
+			</div>
+			<p>DuxBoard medals</p>
+		</div>
+
+		<div class="action" ng-repeat="action in actions">
+			<p class="name">{{action.name}}</p>
+			<div class="value">
+				<div><i class="dux-medal blue"></i></div>
+				<div>{{action.value}}</div>
+			</div>
+			<div class="percentage">
+				<div class="full">
+					<div class="percent" ng-style="{'width': action.value / 250 * 100 + '%'}">
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div class="medalsContainer">
+
+		<canvas id="line" class="chart chart-line" chart-data="chartData"
+			chart-labels="chartLabels" chart-series="chartSeries" chart-click="chartOnClick">
+		</canvas>
+
+		<div class="notif" ng-repeat="notif in medals | filter : {date: selectedDate} track by notif._id">
+		 	<p ng-bind-html="notif | parseAction : true"></p>
+			<p class="time">{{notif.createdAt | humanizeTime}}</p>
+		</div>
+		
+	</div>
+
+	<div class="topStatements">
+
+		<div class="header">
+			<div class="selection">
+				<p>Sort by</p>
+				<select
+					ng-change="onEngagementSelection()"
+					ng-model="selectedEngagement"
+					ng-options="o.name for o in engagements" >
+				</select>
+			</div>
+			<div class="description">
+				<p>Reach</p>
+				<p>Engagements</p>
+				<p>Rate</p>
+			</div>
+		</div>
+
+		<div class="statementsData">
+
+			<no-data-indicator
+				ng-if="statements.length == 0"
+				icon-class="fa-users"
+				title="statements"
+				message="Post a statment to see the analysis">
+			</no-data-indicator>
+
+			<div class="strow" ng-repeat="st in statements">
+				<div class="statementWrap">
+					<statement statement-data="st" hide-actions="true"></statement>
+				</div>
+				<div class="statementDetails">
+					<div class="reach">
+						<span>
+							<i class="fa fa-eye"></i>
+							{{st.seenCount}}
+						</span>
+					</div>
+					<div class="engagements">
+						<span>
+							<i class="dux-medal blue small"></i>
+							{{st.likesCount}}
+						</span>
+						<span>
+							<i class="fa fa-comment"></i>
+							{{st.commentsCount}}
+						</span>
+						<span>
+							<i class="fa fa-share"></i>
+							{{st.sharesCount}}
+						</span>
+					</div>
+					<div class="rate">
+						<span>{{st.rate}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div> 

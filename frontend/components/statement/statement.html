@@ -1,0 +1,65 @@
+<p ng-if="!post" class="statementContainer">Statement was deleted.</p>
+
+<div ng-if="post" id="{{post._id}}" class="statementContainer">
+	
+	<div ng-if="editable" ng-class="editable ? 'editableStatement' : ''">
+		<i class="fa fa-edit fa-4x editPost" ng-click="onEdit()"></i>
+	</div>
+	<div class="duxPostDetails">
+		<div class="duxProfilePic"
+			ng-style="{'background-image': 'url(' + post.user.profilePicture + ')'}">
+		</div>
+		<a class="duxPostUser" ui-sref="app.profile({id: post.user._id})">
+			{{post.user.firstName}} {{post.user.secondName}}
+		</a>
+		<div class="duxPostAdvanced">
+			<a class="duxPostTime" ui-sref="app.status({id:post._id})">
+				{{ post.createdAt | humanizeTime }}
+			</a>
+			<i  ng-show="onDelete && userId == post.user._id"
+				ng-click="onDelete()"
+				class="fa fa-close"></i>
+		</div>
+	</div>
+	<p ng-bind-html="post.text | linky | imagify"></p>
+
+	<!-- koristit https://github.com/ritz078/ng-embed za videa? -->
+	<div ng-hide="post.link == null">
+		<iframe width="100%" height="315" ng-src="{{post.link}}" frameborder="0" allowfullscreen></iframe>
+	</div>
+
+	<div ng-show="post.media.img" class="imageContainer" ng-click="viewMedia()">
+		<img ng-src="/{{post.media.img}}">
+	</div>
+
+	<youtube-video ng-if="post.media.video" video-id="{{post.media.video}}" size="medium"></youtube-video>
+
+	<div ng-if="post.media.hasOwnProperty('post')">
+		<statement
+			statement-data="post.media.post"
+			on-share="onShare(post.media.post)">
+		</statement>
+	</div>
+
+	<div class="duxPostActions" ng-if="!hideActions">
+		<a ng-click="onCommentsClick()">
+			<i class="fa fa-comment"></i>
+			<span ng-show="post.comments.length>0">{{post.comments.length}}</span>
+		</a>
+		<a>
+			<i class="dux-medal"
+				ng-click="likeStatement()"
+				ng-class="post.liked ? 'liked' : 'unliked'"></i>
+			<span ng-click="getLikes()" ng-show="post.likes.length>0">
+				{{post.likes.length}}
+			</span>
+		</a>
+		<a>
+			<i ng-click="onShare({post: post})" class="fa fa-share"></i>
+			<span ng-show="post.shares.length>0">
+				{{post.shares.length}}
+			</span>
+		</a>
+	</div>
+	
+</div>

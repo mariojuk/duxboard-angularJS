@@ -1,0 +1,113 @@
+.settingsGeneral {
+  width: 100%;
+  margin-top: 5%;
+  padding-bottom: 20%;
+}
+.settingsGeneral .premiumSettings .premiumSpan {
+  font-weight: bold;
+  font-size: 20px;
+}
+.settingsGeneral .premiumSettings .premiumImg {
+  width: 40px;
+}
+.settingsGeneral .premiumSettings .bilingPlan {
+  font-size: 15px;
+}
+.settingsGeneral .premiumSettings .dux-button {
+  background-color: #496374;
+}
+.settingsGeneral .premiumSettings span {
+  font-weight: bold;
+}
+.settingsGeneral .freeSettings .freeSpan {
+  font-weight: bold;
+  font-size: 20px;
+}
+.settingsGeneral .freeSettings .freeImg {
+  width: 40px;
+}
+.settingsGeneral .freeSettings .bilingPlan {
+  font-size: 15px;
+}
+.settingsGeneral .freeSettings span {
+  font-weight: bold;
+}
+.settingsGeneral .dux-button {
+  margin-top: 20px;
+  height: 35px;
+}
+.settingsGeneral label {
+  display: block;
+  padding-top: 20px;
+  font-size: 16px;
+}
+.settingsGeneral p {
+  padding-top: 10px;
+}
+.settingsGeneral .leftContainer {
+  padding-left: 5%;
+  position: relative;
+  float: left;
+}
+@media only screen and (max-width: 767px) {
+  .settingsGeneral .leftContainer {
+    float: none !important;
+  }
+}
+.settingsGeneral .rightContainer {
+  position: relative;
+  float: left;
+  padding-top: 16%;
+  margin-left: 10%;
+}
+@media only screen and (max-width: 767px) {
+  .settingsGeneral .rightContainer {
+    float: none !important;
+  }
+}
+.settingsGeneral .btn-info {
+  text-align: left;
+  width: 100%;
+  margin: 0px;
+  margin-left: -55px;
+}
+.settingsGeneral .cssSlideUp {
+  height: 900px;
+  overflow: hidden;
+  transition: all 2s ease-in;
+}
+.settingsGeneral .cssSlideUp.ng-hide {
+  height: 0;
+}
+.settingsGeneral .settingsUpgrade {
+  margin-top: 47%;
+  padding-left: 5%;
+  padding-bottom: 10%;
+  background-color: #F4F7F8;
+  width: 100%;
+}
+.settingsGeneral .dux-input {
+  color: black;
+  border-bottom: 1px solid #7A979E;
+  border-radius: 0px;
+  font-size: 14px;
+}
+.settingsGeneral .tableBilling td,
+.settingsGeneral .tableInfo td {
+  padding-right: 50px;
+}
+.settingsGeneral .settingsSecurity {
+  margin-left: 10%;
+  margin-top: 5%;
+}
+.settingsGeneral .settingsSecurity .whoSeesMe {
+  background-color: #F4F7F8;
+  border: 1px solid transparent;
+  margin-top: 5%;
+  padding: 3%;
+  border-radius: 11px;
+  margin-right: 7%;
+}
+.settingsGeneral .settingsSecurity #securitySelect {
+  margin-left: 50%;
+}

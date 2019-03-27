@@ -1,0 +1,242 @@
+.online {
+  border-color: limegreen !important;
+  background-color: limegreen;
+}
+.offline {
+  border-color: gray !important;
+  background-color: gray;
+}
+.busy {
+  border-color: darkred !important;
+  background-color: darkred;
+}
+.away {
+  border-color: yellow !important;
+  background-color: yellow;
+}
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+body.ngdialog-open {
+  overflow: initial !important;
+}
+body {
+  font-family: Quicksand;
+  overflow-y: scroll;
+}
+a {
+  color: #496374;
+  font-weight: 600;
+}
+a:hover {
+  color: #68888E;
+}
+@-webkit-keyframes hang {
+  50% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  100% {
+    -webkit-transform: translateY(6px);
+            transform: translateY(6px);
+  }
+}
+@keyframes hang {
+  50% {
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  100% {
+    -webkit-transform: translateY(6px);
+            transform: translateY(6px);
+  }
+}
+[data-tip] {
+  position: relative;
+}
+[data-tip]:before {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #7A979E;
+  content: '';
+  display: none;
+  font-size: 0;
+  height: 0;
+  left: 20px;
+  line-height: 0;
+  margin-top: -5px;
+  position: absolute;
+  width: 0;
+  z-index: 4;
+}
+[data-tip]:after {
+  background-color: #7A979E;
+  border-radius: 5px;
+  color: white;
+  content: attr(data-tip);
+  display: none;
+  font-size: 14px;
+  height: 30px;
+  left: 10px;
+  margin-top: -35px;
+  padding: 5px 10px;
+  position: absolute;
+  white-space: nowrap;
+  word-wrap: normal;
+  z-index: 5;
+}
+[data-tip]:hover:before,
+[data-tip]:hover:after {
+  display: block;
+}
+#header {
+  width: 100%;
+  background-color: #C0D0D6;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+}
+#main {
+  overflow-x: hidden;
+}
+#main #mainContent {
+  max-width: 1012px;
+  display: -webkit-box;
+  display: flex;
+  margin: auto;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #sidebar {
+    left: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #sidebar {
+    position: fixed;
+    z-index: 15;
+    overflow-y: scroll;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 0 30px 0 #444;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .hide {
+    width: 0px;
+    transition: width 0.3s linear;
+  }
+  .slide {
+    width: 200px;
+    transition: width 0.3s linear;
+  }
+  .slideNav {
+    width: 300px;
+    transition: width 0.3s linear;
+  }
+}
+#content {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  max-width: 1012px;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100%;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #content {
+    right: 0;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  #content {
+    min-width: 812px !important;
+  }
+}
+.sideNavContainer {
+  width: 260px;
+}
+.sideNav {
+  width: auto;
+  margin-bottom: auto;
+  padding: 10px 0;
+  background-color: #D9E2E6;
+  border-radius: 5px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .sideNav {
+    width: 200px;
+  }
+}
+.sideNav .option {
+  padding: 10px 10px 10px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  color: #496374;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .sideNav .option {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+.sideNav .option:hover {
+  cursor: pointer;
+  background-color: #EBF0F2;
+}
+.sideNav .active {
+  background-color: #496374;
+  color: #FFFFFF;
+}
+.sideNav .active:hover {
+  background-color: #496374;
+}
+.pageTitle {
+  color: #68888E;
+  font-size: 16px;
+  text-transform: uppercase;
+  margin: 5px 0px;
+  font-weight: bold;
+}
+#inlineNotification {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  height: 0px;
+  width: 100%;
+  margin-top: 60px;
+  transition: 0.5s ease all;
+}
+#inlineNotification i {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#inlineNotification.active {
+  height: 60px;
+  transition: 0.5s ease all;
+}
+#inlineNotification.success {
+  background-color: #80d325;
+}
+#inlineNotification.error {
+  background-color: red;
+}
+#inlineNotification.warning {
+  background-color: #f5a623;
+}

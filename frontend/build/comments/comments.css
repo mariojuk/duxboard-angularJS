@@ -1,0 +1,93 @@
+.commentsContainer .imageContainer {
+  padding: 0 20px;
+  margin: 5px 0;
+  background-color: #DFE7EA;
+}
+.commentsContainer .imageContainer img {
+  /*ograničit*/
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+.commentsContainer .youtubeVideoContainer {
+  margin: 10px auto;
+}
+.commentsContainer .duxProfilePicSmall {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  margin: 10px;
+  background: #D9E2E6;
+  background: url('/img/default_user.jpg') no-repeat center;
+  -webkit-box-flex: 0;
+          flex: 0 0 40px;
+  background-size: contain;
+  align-self: flex-start;
+}
+.commentsContainer .newComment {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+.commentsContainer .newComment post {
+  width: calc(100% - 60px);
+  margin-bottom: 10px;
+}
+.commentsContainer .newComment post .newPostLimit {
+  display: none;
+}
+.commentsContainer .newComment post .newCommentLimit {
+  display: initial !important;
+}
+.commentsContainer .commentContainer {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+          align-items: center;
+  align-content: center;
+  position: relative;
+  word-wrap: break-word;
+  border-top: 1px solid #D9E2E6;
+}
+.commentsContainer .commentContainer .duxCommentAdvanced {
+  position: absolute;
+  align-self: flex-start;
+  right: 10px;
+  top: 10px;
+}
+@media only screen and (max-width: 767px) {
+  .commentsContainer .commentContainer .duxCommentAdvanced {
+    top: 5px;
+  }
+}
+.commentsContainer .commentContainer .duxCommentAdvanced .duxCommentTime {
+  font-weight: normal;
+}
+.commentsContainer .commentContainer .duxCommentAdvanced i {
+  color: #7A979E;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.commentsContainer .commentContainer .duxCommentAdvanced i:hover {
+  color: #496374;
+}
+.commentsContainer .commentContainer .duxComm {
+  width: calc(100% - 60px);
+}
+.commentsContainer .commentContainer .duxComm p {
+  word-wrap: break-word;
+}
+.commentsContainer .commentContainer .duxComm .commData {
+  min-height: 20px;
+  margin: 10px 0px;
+}
+@media only screen and (max-width: 767px) {
+  .commentsContainer .commentContainer .duxComm .commData {
+    margin-top: 20px;
+  }
+}

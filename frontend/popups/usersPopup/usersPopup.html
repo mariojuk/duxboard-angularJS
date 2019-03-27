@@ -1,0 +1,11 @@
+<p class="popupHeader">{{ngDialogData.title}}</p>
+<div class="popupContent" ng-controller="usersPopupController">
+	<div class="usersWrap"
+		set-height
+		scrollbar
+		name="{{ngDialogData.title}}"
+		always-show-tracks="true">
+		<loader data="users"></loader>	
+		<user-list users-data="users"></user-list>
+	</div>
+</div>

@@ -1,0 +1,43 @@
+<div class="ProfilePhotos" >
+
+    <div class="imageInput" ng-show="$parent.user.tisi">
+            <div class="imageUpload">
+                <div ngf-drop ngf-select ng-model="file"
+                     class="drop-box"
+                     ngf-drag-over-class="'dragover'"
+                     ngf-multiple="false"
+                     ngf-allow-dir="false"
+                     accept="image/*"
+                     ngf-drag-over-class="'dragover'"
+                     ng-change="publishPhoto();"
+                     ngf-pattern="'image/*'">
+                    <p ng-if="!pictures.length">There are no photos yet</p>
+
+                    <i class="fa fa-cloud-upload fa-3x"></i>
+                    <p>Upload Photo</p>
+                </div>
+                <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+            </div>
+    </div>
+
+    <no-data-indicator
+        ng-if="pictures.length == 0 && !$parent.user.tisi"
+        message="This user has't shared any of his photos with you."  
+        icon-class="fa-camera"
+        full-title="No photos to show!">
+    </no-data-indicator>
+
+
+    <div class="ProfilePicturesContainer" class="imageContainer" >
+            <div ng-repeat="photo in pictures" class="picture"
+                ng-click="!$parent.editable && showPhoto(photo)"
+                style="background-image: url('uploads/{{userId}}/profileMedias/{{photo}}'); ">
+                <div class="edit" ng-show="$parent.editable">
+                    <i class="fa fa-pencil fa-4x" alt="Picture"
+                        ng-click="deletMediaPhoto(photo, $index)">
+                    </i>
+                </div>
+            </div>
+    </div>
+
+</div>

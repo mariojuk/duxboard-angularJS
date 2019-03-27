@@ -1,0 +1,118 @@
+.paymentPlanContainer {
+  background: linear-gradient(rgba(65, 70, 101, 0.7), rgba(81, 107, 124, 0.3)), url("/img/bg/packages-bg.jpg") no-repeat center center fixed;
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+}
+.paymentPlanContainer .paymentPlan {
+  max-width: 1012px;
+  margin: auto;
+}
+@media only screen and (max-width: 767px) {
+  .paymentPlanContainer .paymentPlan {
+    padding: 20px 0px 0px;
+  }
+  .paymentPlanContainer .paymentPlan .title {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .paymentPlanContainer .paymentPlan {
+    padding: 80px 20px 0px;
+  }
+}
+.paymentPlanContainer .paymentPlan .title {
+  padding-bottom: 20px;
+  font-size: 28px;
+  color: #FFFFFF;
+  width: 100%;
+}
+.paymentPlanContainer .paymentPlan .paymentContainer {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+@media only screen and (max-width: 767px) {
+  .paymentPlanContainer .paymentPlan .paymentContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    padding: 30px 0px;
+    width: 100%;
+  }
+}
+.paymentPlanContainer .paymentPlan .paymentContainer .payment {
+  position: relative;
+  background-color: rgba(73, 99, 116, 0.65);
+  padding: 70px 20px 20px;
+  margin: 10px;
+  color: #FFFFFF;
+  height: 200px;
+  width: 200px;
+  box-shadow: 0 0 30px 0 #444;
+}
+@media only screen and (max-width: 767px) {
+  .paymentPlanContainer .paymentPlan .paymentContainer .payment {
+    margin: 20px auto;
+  }
+}
+.paymentPlanContainer .paymentPlan .paymentContainer .payment .name {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.paymentPlanContainer .paymentPlan .paymentContainer .payment .price {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  font-size: 16px;
+  line-height: 28px;
+}
+.paymentPlanContainer .paymentPlan .paymentContainer .payment .price .big {
+  font-size: 28px;
+}
+.paymentPlanContainer .paymentPlan .paymentContainer .payment .price .red {
+  color: #FF6666;
+}
+.paymentPlanContainer .paymentPlan .paymentContainer .payment .single {
+  font-size: 10px;
+}
+.paymentPlanContainer .paymentPlan .paymentContainer .payment .best {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  background: #E7D298;
+  color: white;
+  top: 10px;
+  right: 0px;
+  padding: 0px 10px 0px 20px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  height: 30px;
+}
+.paymentPlanContainer .paymentPlan .paymentContainer .payment .best:after {
+  content: "";
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 10px solid transparent;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

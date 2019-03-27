@@ -1,0 +1,52 @@
+@import "../../../styles/less/global.less";
+
+.editBannerPopup{
+  .inputWrap{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .bigInput{
+      width: 100%;
+      padding: 10px;
+    }
+    .smallInput{
+      width: 50%;
+      padding: 10px;
+    }
+
+    label{
+      margin-top: 10px;
+      color: @color-darkest;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    input{
+      width: 100%;
+      border-bottom: 2px solid @color-light;
+      &:active,&:focus{
+        border-bottom: 2px solid @color-darkest;
+      }
+    }
+  }
+
+  .imageContainer{
+    margin: 10px 0px;
+    min-height: 160px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    .img{
+      width: 30%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  button{
+    margin: auto;
+  }
+
+}

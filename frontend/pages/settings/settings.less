@@ -1,0 +1,120 @@
+@import "../../styles/less/global.less";
+.settingsGeneral{
+  width: 100%;
+  margin-top: 5%;
+  padding-bottom: 20%;
+  .premiumSettings{
+    .premiumSpan{
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .premiumImg{
+      width:40px;
+    }
+    .bilingPlan{
+      font-size: 15px;
+    }
+    .dux-button{
+      background-color:@color-darkest;
+
+    }
+    span{font-weight: bold}
+  }
+  .freeSettings{
+    .freeSpan{
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .freeImg{
+      width:40px;
+    }
+    .bilingPlan{
+      font-size: 15px;
+    }
+    span{font-weight: bold}
+  }
+  .dux-button{
+    margin-top: 20px;
+    height:35px
+  }
+  label{
+    display: block;
+    padding-top: 20px;
+    font-size: 16px;
+  }
+  p{
+    padding-top: 10px;
+  }
+  .leftContainer{
+    @media @mobile{
+      float:none !important;
+    }
+    padding-left: 5%;
+    position: relative;
+    float: left;
+  }
+  .rightContainer{
+    @media @mobile{
+      float:none !important;
+    }
+    position: relative;
+    float: left;
+    padding-top: 16%;
+    margin-left: 10%;
+  }
+  .btn-info{
+    text-align: left;
+    width: 100%;
+    margin: 0px;
+    margin-left: -55px;
+  }
+  .cssSlideUp {
+    height: 900px;
+    overflow: hidden;
+    transition: all 2s ease-in;
+  }
+  .cssSlideUp.ng-hide {
+    height:0;
+
+  }
+  .settingsUpgrade{
+    margin-top: 47%;
+    padding-left: 5%;
+    padding-bottom: 10%;
+    background-color: @color-lightest;
+    width: 100%;
+  }
+  .dux-input{
+    color:black;
+    border-bottom: 1px solid @color-dark;
+    border-radius:0px;
+    font-size: 14px;
+  }
+  .tableBilling, .tableInfo{
+    td{
+      padding-right: 50px;
+    }
+  }
+  .settingsSecurity{
+    margin-left: 10%;
+    margin-top:5%;
+    .whoSeesMe{
+      background-color: @color-lightest;
+      border: 1px solid transparent;
+      margin-top: 5%;
+      padding: 3%;
+      border-radius: 11px;
+      margin-right: 7%;
+    }
+    #securitySelect{
+      margin-left: 50%;
+    }
+  }
+  .animateIn {
+
+  }
+  .animateOut {
+
+  }
+}
+

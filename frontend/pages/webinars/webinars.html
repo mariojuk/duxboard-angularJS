@@ -1,0 +1,90 @@
+<div class="webinarsContainer">
+
+	<div class="selectView">
+		<div ng-click="toggleSelection()" class="live" ng-class="live ? 'selected' : ''">
+			Live
+		</div>
+		<div ng-click="toggleSelection()" class="archive" ng-class="live ? '' : 'selected'">
+			Archive
+		</div>
+	</div>
+
+	<div class="webinarsWrap">
+
+		<div class="webinarsFeed" ng-if="webinarsFeed.length != 0">
+			<div class="feed" ng-repeat="day in webinarsFeed">
+				
+				<div class="date">
+					<p>{{day.date | date: 'MMM d, y'}}</p>
+				</div>
+
+				<div class="webinar" ng-repeat="webinar in day.feed">
+					<p ng-show="live && isLive(webinar.startingDate)" class="liveIndicator">
+						<i class="fa fa-circle"></i>LIVE
+					</p>
+					<div class="title">{{webinar.title}}</div>
+					<div class="datetime" ng-class=" live ? 'live' : '' ">
+						{{webinar.startingDate | date: 'MMM d, y h:mm a' : '+0100'}} CET
+					</div>
+					<div class="description">{{webinar.description}}</div>
+					<div class="details">
+						<div class="presenters">
+							<p class="subtitle">Presenters</p>
+							<p>{{presentersString(webinar.presenters)}}</p>
+						</div>
+						<div class="detailsWrap">
+							<div class="duration">
+								<p class="subtitle">Duration</p>
+								<p>{{webinar.duration}} min</p>
+							</div>
+							<div class="rating" ng-if="!live">
+								<p class="subtitle">Rating</p>
+								<p>{{webinar.rating}}</p>
+							</div>
+							<div class="price" ng-if="!live">
+								<p class="subtitle">Price</p>
+								<p class="novaca">{{webinar.price}} $</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<no-data-indicator
+			ng-if="webinarsFeed.length == 0"
+			icon-class="fa-exclamation-circle"
+			title="webinars"
+			message="Come back later for free webinars or buy premium membership to see all webinars.">
+		</no-data-indicator>
+
+		<div class="webinarsSidebar" ng-if="live">
+			
+			<div class="calendar">
+				<div uib-datepicker ng-model="today" class="well well-sm" datepicker-options="calendarOptions"></div>
+			</div>
+
+			<div class="upcomingPresenters">
+				<p>Upcoming presenters</p>
+				<div class="presentersWrap">
+					<div class="presenter" ng-repeat="presenter in presenters">
+						<div class="picture" ng-style="{'background-image': 'url(' + presenter.profilePicture + ')'}">
+						</div>
+						<div class="details">
+							<p class="name">{{presenter.name}}</p>
+							<p class="bio">{{presenter.shortBio}}</p>
+							<p class="datetime">
+								{{ presenter.startingDate | date: 'MMM d, y h:mm a' : '+0100'}} CET
+							</p>
+							<p class="title">{{presenter.webinar}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	
+</div>

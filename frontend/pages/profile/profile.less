@@ -1,0 +1,297 @@
+@import "../../styles/less/global.less";
+
+.profileContainer{
+	width: 100%;
+	padding: 10px;
+	background-color: @color-lightest;
+	overflow-y: hidden;
+
+	@media @mobile{
+		padding: 0;
+	}
+
+	/*792 X 297 odnosno 8 : 3*/
+	/* bottom padding je 3/8 */
+	.profileCoverWrapper{
+	  width: 100%;
+	  /* whatever width you want */
+	  display: inline-block;
+	  position: relative;
+	}
+	.profileCoverWrapper:after {
+	  padding-top: 37.5%;
+	  /* 16:9 ratio */
+	  display: block;
+	  content: '';
+	}
+	.profileCover{
+		/*height: 220px;*/
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background-color: @color-lightest;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: left bottom;
+		// background-image: url(../../img/bg/m.jpg);
+		display: flex;
+		align-items: flex-end;
+
+		//BLUR - MAKNUTO ZBOG FIREFOXA
+		/*&:before{
+			content: " ";
+			height: 60px;
+			width: 100%;
+			background-color: @color-light;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: left bottom;
+			background-image: url(../../img/bg/m.jpg);
+			-webkit-filter: blur(10px);
+		    -moz-filter: blur(10px);
+		    -o-filter: blur(10px);
+		    filter: blur(10px);
+		    overflow: hidden;
+
+		};*/
+
+		.coverPhotoOptions{
+			position: absolute;
+			width: 100%;
+			bottom: 60px;
+			top: 0px;
+			background-color: rgba(0, 0, 0, 0.6);
+			.absolute-center;
+
+			i{ 
+				color: white;
+				font-size: 24px;
+				cursor: pointer;
+			}
+
+			div{
+				height: 80%;
+				width: 2px;
+				background-color: white;
+				margin: 0 20px;
+			}
+
+		}
+
+		.profileActions{
+			height: 60px;
+			width: 100%;
+			background-color: rgba(0,0,0,0.6);
+			/*position: absolute;*/
+			color: white;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			padding: 0 20px;
+			position: relative !important;
+
+
+			.profilePicture{
+				.profile-pic(90px);
+				position: absolute;
+				left: 20px;
+				bottom: 10px;
+				background-size: contain;
+
+				@media @mobile{ bottom: 0; left: 0; }
+
+				.profilePictureOptions{
+					.circle(90px);
+					width: 100%;
+					height: 100%;
+					background-color: rgba(0, 0, 0, 0.6);
+					.absolute-center;
+
+					i{ 
+						color: white;
+						font-size: 24px;
+						cursor: pointer;
+					}
+
+					div{
+						height: 80%;
+						width: 2px;
+						background-color: white;
+						margin: 0 10px;
+					}
+				}
+			}
+
+			.userInfo{
+				display: flex;
+				flex-direction: column;
+				margin-right: auto;
+				margin-left: 120px;
+
+				@media @mobile{
+					margin-left: 90px;
+					margin-top: -20px;
+				}
+
+				.userName{
+					font-size: 16px;
+					font-weight: bold;
+					@media @mobile{
+						font-size: 14px;
+						position: absolute;
+					}
+				}
+				.onlineStatus{
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					.onlineIcon{
+						.circle(6px);
+						margin: 0 5px;
+						@media @mobile{
+							.circle(15px);
+							margin-left: -25px;
+							margin-top: 20px;
+							z-index: 2;
+						}
+					}
+					p{
+						text-transform: capitalize;
+						@media @mobile{
+							display: none;
+						}
+					}
+				}
+			}
+			@media @mobile{
+				.profileButtons{
+					position: absolute;
+					height: 100%;
+					width: 100%;
+					margin-left: 20px;
+				}
+			}
+			.profileButtons{
+				display: flex;
+				position: initial;
+				flex-direction: row;
+				.dux-button{
+					margin-left: 10px;
+				}
+			}
+			.profileButtons .partnership{
+				display: flex;
+				flex-direction: row;
+				bottom: 15px;
+				@media @mobile{
+					margin-left: auto;
+					margin-right: 10px;
+					.dux-button{
+						height: 30px;
+						margin: auto 5px;
+					}
+				}
+				@media screen and (max-width: 480px) {
+					margin-right: -10px;
+					.dux-button{
+						margin-top: 25px;
+					}
+				}
+			}
+			.profileButtons .other{
+				display: flex;
+				flex-direction: row;
+				bottom: 15px;
+
+				@media @mobile{
+					position: absolute;
+					bottom: -50px;
+					width: 100%;
+					left: 0;
+					height: 50px;
+					padding: 5px;
+					z-index: 2;
+					background: transparent;
+					justify-content: space-around;
+
+					.dux-button{
+						color: @color-darkest !important;
+						border-color: @color-darkest !important;
+						font-weight: normal;
+						margin-top: 5px;
+						margin-bottom: 5px;
+						margin-left: 0px !important;
+					}
+
+				}
+			}
+		}
+	}
+
+	.profileBody{
+		padding: 10px;
+		display: flex;
+		flex-direction: row;
+
+		@media @mobile{
+			margin-top: 30px;
+		}
+
+		#profileContent{
+			width: 100%;
+			padding: 0px 10px;
+		}
+		@media @desktop, @tablet{
+			.sideNavContainer{
+				.sideNav{
+					.option i{ display: none; }
+				}
+			}
+		}
+		@media @mobile{
+			.sideNavContainer{
+				width: 100%;
+				position: fixed;
+				z-index: 4;
+				bottom: 10px;
+				right: 0px;
+				padding: 10px;
+				margin-left: -10px;
+				.sideNav{
+					.shadow(15px);
+					margin-left: auto;
+					transition: all 0.5s ease;
+				}
+				.sideNav:not(.visible){
+					padding: 5px;
+					.circle(45px);
+					display: flex;
+					flex-direction: column;
+					.option.active{
+						span{ display: none; }
+						background-color: transparent;
+						color: @color-darkest;
+						.absolute-center;
+					}
+					.option:not(.active){
+						display: none;
+					}
+				}
+				.sideNav.visible{
+					width: 100%;
+					height: 100%;
+					.option{
+						span{
+							display: initial;
+							white-space: nowrap;
+							overflow-x: hidden;
+						}
+						i{ display: none; }
+					}
+				}
+			}
+		}
+	}
+}

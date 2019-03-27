@@ -1,0 +1,111 @@
+@import "../../../../styles/less/global.less";
+
+.articleContainerr{
+
+p > img{
+  display:block;
+}
+
+.imageContainer{
+	img{
+		max-width:100%;
+		max-height: 100%;	
+	}
+}
+#Textdiv{
+	img{
+		max-width:100%;
+		max-height: 100%;
+    }                    
+    a{
+          // color: @color-darker;
+        font-weight: bold;
+     }
+    p{
+    	word-break: break-all;
+        white-space: -moz-pre-wrap; /* Mozilla */
+		white-space: -o-pre-wrap; /* Opera 7 */
+        white-space: pre-wrap;  /* CSS 2.1 */
+        white-space: pre-line; /* CSS 3 */
+        word-wrap: break-word; /* IE */
+    }
+}
+.articleCommentPicture{
+ 
+  border-radius: 20px;
+}
+.back{
+	display: flex;
+    flex-direction: row;
+	color: #68888E;
+	cursor: pointer;
+	text-decoration: none;
+	p{margin-left:10px;}
+}
+.previousNext{
+	display:flex;
+	justify-content:space-between;
+	margin-top:20px;
+	margin-bottom:20px;
+	
+	.previous{ 
+		display: flex;
+		flex-direction: row;
+		.absolute-center;
+		color: #68888E;
+		cursor: pointer;
+		text-decoration: none;
+		p{margin-left:10px;}
+		
+	}
+	.next{
+		display: flex;
+		flex-direction: row;
+		.absolute-center;
+		color: #68888E;
+		cursor: pointer;
+		text-decoration: none;
+		p{margin-right:10px;}
+	}
+}
+
+.duxCommentsContainer{
+  background-color: @color-lightest;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+a{
+  color: #68888E;
+  cursor: pointer;
+  text-decoration: none;
+}
+.commData >a{
+  padding-left: 45px;
+}
+.articletext{
+  padding-left: 73px;
+  poadding-top:10px;
+}
+.articleCommentPicture{
+  float: left;
+}
+.duxPostActions{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    a{
+      width: 50px;
+      position: relative;
+      .liked{ color: @color-badge; }
+      span{
+        position: absolute;
+        margin-left: 5px;
+      }
+      &:last-child{ width: auto;}
+    }
+    
+  }
+
+}
+

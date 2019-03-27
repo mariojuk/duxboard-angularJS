@@ -1,0 +1,23 @@
+.ngdialog-content .popupContent .notify {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+.ngdialog-content .popupContent .notify p {
+  padding: 10px;
+}
+.ngdialog-content .popupContent .success {
+  color: #80d325;
+}
+.ngdialog-content .popupContent .error {
+  color: red;
+}
+.ngdialog-content .popupContent .default {
+  color: #496374;
+}

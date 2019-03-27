@@ -1,0 +1,24 @@
+<form class="adminPreordersContainer" >
+<p>Broj preordersa:{{preorders}}</p>
+
+<button ng-click="getPreorders()" type="button" class="dux-button red round big no-border" ><b>GET PREORDERS</b></button>
+
+<div class="listPreorder" ng-repeat="p in preorderUsers">
+	<p>{{p.mail }}</p>
+	
+	 <input type="checkbox" name="" class="check" ng-model="select" ng-checked="exist(p)" ng-click="selection(p)"/>
+
+</div> 
+		<textarea
+				ng-model="subject"
+				placeholder="Type the title"
+				id="p" required/>
+		<textarea
+				ng-model="emailText"
+				placeholder="Type the text"
+				id="p" required/>
+	<div class="gmailFooter" >
+			<button ng-click="adminMail()" type="text" class="dux-button red round big no-border" ><b>SEND MAIL</b></button>
+	</div>
+	
+</form> 

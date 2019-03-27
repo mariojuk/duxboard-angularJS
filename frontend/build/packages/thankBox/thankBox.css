@@ -1,0 +1,53 @@
+.bodyThank {
+  background: linear-gradient(rgba(65, 70, 101, 0.7), rgba(81, 107, 124, 0.3)), url("/img/bg/packages-bg.jpg") no-repeat center center fixed;
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.bodyThank .thankBox {
+  background-color: rgba(73, 99, 116, 0.65);
+  padding: 20px 20px 20px;
+  width: 40%;
+  height: 20%;
+  margin: 10px;
+  color: #FFFFFF;
+  box-shadow: 0 0 30px 0 #444;
+}
+@media only screen and (max-width: 767px) {
+  .bodyThank .thankBox {
+    margin: 20px auto;
+    width: 90%;
+  }
+}
+.bodyThank .thankBox .thankDiv {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  justify-content: space-around;
+}
+.bodyThank .thankBox .thankDiv h1 {
+  font-weight: bold;
+  text-align: center;
+}
+.bodyThank .thankBox .thankDiv p {
+  text-align: center;
+  margin: 10px;
+}
+.bodyThank .thankBox .thankDiv .smallTxt {
+  font-size: 12.5px;
+  text-align: center;
+}
+.bodyThank .thankBox .thankDiv .smallTxt a {
+  color: #ff7a7a;
+  font-weight: bold;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app="lpApp" ng-controller="landingPageController">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="icon" sizes="256x256" href="/favicon.ico">
+
+		<title>Duxboard</title>
+
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Quicksand" >
+		<link rel="stylesheet" type="text/css" href="/styles/angular-flippy.min.css">
+		<link rel="stylesheet" type="text/css" href="/styles/landingPage.css">
+	</head>
+
+	<body>
+
+		<div class="lpContent">
+
+			<div class="lpBgImage">
+				<div class="lpHeader">
+					<img src="../img/logo.svg">
+				</div>
+				<p>
+					The first world business educative and social platform created for sports professionals
+				</p>
+			</div>
+
+			<flippy flip="['custom:signUpResponse']"
+				  	duration="800"
+				  	timing-function="ease-in-out" style="width: 100%;">
+				<flippy-front>
+					<div class="lpPromoBox">
+						<p>
+							To enjoy a <b>30 days free trial</b> to our premium features including webinars, guidance from our advisors and many other benefits enter your email below. No credit card is needed.
+						</p>
+						<form id="f" name="userForm" ng-submit="addToDatabase()" novalidate>
+							<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+
+								<div class="input-group">
+									<input id="mail" placeholder="Enter your email address" type="email" name="email" class="mailInput" ng-model="formData.mail" pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
+								</div>
+								<div align="center">
+									<button ng-click="addToDatabase()" type="button" class="singButton" data-ng-disabled="!userForm.$valid"><b>SIGN UP</b></button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</flippy-front>
+				<flippy-back ng-class="(toggleTransition) ? 'yes' : '' ">
+					<div class="lpPromoBox" ng-style="{'height': boxHeight, 'justify-content': 'center'}">
+						<p ng-bind="duxTrail"></p>
+					</div>
+				</flippy-back>
+			</flippy>
+
+			<div class="duxProvides">
+				<p>Duxboard Provides:</p>
+				<div class="listItem">
+					<img src="/img/stats.svg">
+					<div class="line"><div></div></div>
+					<p>ABILITY TO CULTIVATE PERSONAL AND PROFESSIONAL GROWTH</p>
+				</div>
+				<div class="listItem">
+					<img src="/img/handshake.svg">
+					<div class="line"><div></div></div>
+					<p>OPPORTUNITIES TO CONNECT WITH SPORTS EXECUTIVES</p>
+				</div>
+				<div class="listItem">
+					<img src="/img/presentation.svg">
+					<div class="line"><div></div></div>
+					<p>INOVATIVE EDUCATION CONTENT</p>
+				</div>
+				<div class="listItem">
+					<img src="/img/briefcase.svg">
+					<div class="line"><div></div></div>
+					<p>CAREER OPORTUNITIES</p>
+				</div>
+			</div>
+
+			<p id="soon">COMING SOON ...</p>
+
+			<div class="lpFooter">
+				<p> Copyright © 2017 Bibano Managment d.o.o.</p>
+			</div>
+		</div>
+
+		<script src="/vendor/jquery-1.11.3.min.js"></script>
+		<script src="/vendor/angular.min.js"></script>
+		<script src="/scripts/angular-flippy.min.js"></script>
+  		<script src="/scripts/app.js"></script>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-92645238-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+	</body>
+</html>

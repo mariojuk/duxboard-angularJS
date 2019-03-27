@@ -1,0 +1,20 @@
+<div class="paymentPlanContainer" >
+	
+	<div class="paymentPlan" >
+		<p class="title">Pick a payment plan:</p>
+		<div class="paymentContainer">
+			<div ng-repeat="p in payments" class="payment" ui-sref="thankBox">
+				<p ng-if="p.best" class="best">Best value</p>
+				<p class="name">{{p.name}}</p>
+				<span class="price" ng-init="color=p.best ? 'red' : ''">
+					<p ng-class="color">{{p.currency}}</p>
+					<p ng-class="color" class="big">{{p.monthlyPrice.toString().split(".")[0]}}</p>
+					<p ng-class="color">.{{p.monthlyPrice.toString().split(".")[1]}}</p>
+					<p>/month</p>
+				</span>
+				<p class="single" ng-if="p.singlePrice">Billed as one payment of {{p.currency + p.singlePrice}}</p>
+			</div>
+		</div>
+	</div>
+</div>	
+	

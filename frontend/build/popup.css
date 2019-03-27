@@ -1,0 +1,63 @@
+.ngdialog-content {
+  position: relative;
+  padding: 0px !important;
+  border-radius: 6px;
+  background-color: #FFFFFF !important;
+  box-shadow: 0 0 30px 0 #444;
+}
+.ngdialog-content .popupHeader {
+  width: 100%;
+  background-color: #496374;
+  color: white !important;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  border-top-right-radius: 4.16666667px;
+  border-top-left-radius: 4.16666667px;
+}
+.ngdialog-content .popupContent {
+  margin: 10px 10px;
+}
+.ngdialog-content .coverPhotoChange .dux-button,
+.ngdialog-content .profilePicChange .dux-button {
+  margin-top: 10px;
+}
+.ngdialog-content .coverPhotoChange .progress,
+.ngdialog-content .profilePicChange .progress {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  margin-bottom: 0;
+  height: 2px;
+}
+.ngdialog-content .coverPhotoChange .progress div,
+.ngdialog-content .profilePicChange .progress div {
+  background-color: #FF6666;
+  height: 2px;
+}
+.ngdialog-content .coverPhotoChange .cropArea,
+.ngdialog-content .profilePicChange .cropArea {
+  background: #E4E4E4;
+  overflow: hidden;
+  width: 100%;
+  height: 350px;
+}
+.ngdialog-content .coverPhotoChange .cropArea .imageUpload,
+.ngdialog-content .profilePicChange .cropArea .imageUpload {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+}
+.ngdialog-content .coverPhotoChange .cropArea .imageUpload .drop-box,
+.ngdialog-content .profilePicChange .cropArea .imageUpload .drop-box {
+  border: 5px dashed #EBF0F2;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}

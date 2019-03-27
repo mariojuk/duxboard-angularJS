@@ -1,0 +1,125 @@
+@import "../../styles/less/global.less";
+
+#rightSidebar{
+    background: @color-base;
+    color: @color-dark;
+    height: 100%;
+    width: @right-sidebar-width;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    .invite{
+        background-color: @color-darker;
+        color:@color-bg;
+        padding: 15px;
+        padding-left: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover{ background-color: @color-dark; }
+    }
+
+    .sectionTitle{
+        background-color: @color-medium;
+        color: @color-dark;
+        padding: 15px;
+        padding-left: 20px;
+        font-weight: bold;
+    }
+
+    .moreButton{
+        background-color: @color-lighter;
+        margin-top: 1px;
+        width: 100%;
+        font-weight: bolder;
+        text-align: center;
+        padding: 10px;
+        &:hover{
+            cursor: pointer;
+            // text-decoration: underline;
+            background-color: @color-light;
+            color: @color-darkest;
+        }
+    }
+
+    .mayknowSection{
+        .personContainer{
+            margin-top: 1px;
+            padding: 2px 5px;
+            background-color: @color-lighter;
+            display: flex;
+            flex-direction: row;
+
+            .personProfilePic{
+                .profile-pic(40px);
+                flex: 0 0 40px;
+                cursor: pointer;
+            }
+            .personInfo{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .name{ font-weight: bold;}
+                .mutual{ font-size: 13px;}
+            }
+        }
+    }
+
+    .articlesSection{
+        .article{
+            margin-top: 1px;
+            padding: 5px 5px 10px;
+            background-color: @color-lighter;
+            .articleAuthor{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .authorPic{
+                    .profile-pic(25px);
+                    // border: 1px solid @color-dark;
+                    cursor: pointer;   
+                }
+                .authorName{
+
+                }
+            }
+            .articleContent{
+                display: flex;
+                flex-direction: row;
+                
+                .articlePic{
+                    .square(80px);
+                    flex: 0 0 80px;
+                    margin: 5px 10px;
+                    background-size: cover;
+                    border: 1px solid @color-medium;
+                    cursor: pointer;
+                }
+                .articleText{
+                        
+                    a{
+                        // color: @color-darker;
+                        font-weight: bold;
+                    }
+
+                    p{
+                        word-break: break-all;
+                        white-space: -moz-pre-wrap; /* Mozilla */
+                        white-space: -o-pre-wrap; /* Opera 7 */
+                        white-space: pre-wrap;  /* CSS 2.1 */
+                        white-space: pre-line; /* CSS 3 */
+                        word-wrap: break-word; /* IE */
+                    }
+
+                    img{
+                        max-height: 100%;
+                        max-width: 100%;
+                    }
+                   
+                   
+                }
+            }
+        }
+    }
+
+}

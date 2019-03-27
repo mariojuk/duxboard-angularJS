@@ -1,0 +1,16 @@
+<p class="popupHeader">Edit article</p>
+<div class="editArticlePopup" ng-controller="editArticleController">
+
+	<article-post
+		article-title="article.title"
+		article-content="article.text"
+		image="file"
+		button-label="EDIT"
+		on-post="editArticle(title, text, file)">
+	</article-post>
+
+	<div align="center" style="margin-top: 10px;">
+        <button ng-click="deleteArticle()" type="button" class="dux-button big red round">Delete article</button>
+    </div>
+	
+</div>

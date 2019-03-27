@@ -1,0 +1,14 @@
+<p class="popupHeader">{{ngDialogData.title}}</p>
+<div class="popupContent">
+	<div class="confirmAction">	
+		<p>{{ngDialogData.text}}</p>
+		<div class="confirmButtons">
+			<div class="dux-button red no-border" ng-click="closeThisDialog(true)">
+				{{ngDialogData.confirm}}
+			</div>
+			<div class="dux-button gray no-border" ng-click="closeThisDialog(false)">
+				{{ngDialogData.cancel}}
+			</div>
+		</div>
+	</div>
+</div>

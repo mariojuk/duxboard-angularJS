@@ -1,0 +1,15 @@
+<p class="popupHeader">BLOCKED USERS</p>
+<div class="popupContent" ng-controller="unblockUsersController">
+    <div class="unblockUser">
+        <div class="blockedUsersRepeat" ng-repeat="item in blockedUSers">
+            <div class="info">
+                   <div class="blockedUserPicture" style="background-image: url('/uploads/{{item._id}}/profile.jpg');"> </div>
+                   <div class="name" >{{ item.firstName }} {{ item.secondName }}</div>
+                    <div class="fa fa-recycle" ng-click="removeFromBlocked(item._id)"></div>
+
+                </div>
+            </div>
+        </div>
+        <div ng-hide="blockedUSers.length">You have no blocked users yet</div>
+</div>
+

@@ -1,0 +1,32 @@
+@import "../../styles/less/global.less";
+
+.postContainer > statement >.statementContainer > .duxPostDetails > .duxProfilePic{
+	z-index: 3;
+}
+
+.postContainer{
+	&.ng-enter{
+		animation: fadeInUp 0.5s;
+	}
+	&.ng-leave{
+		animation: fadeOutDown 0.5s;
+	}
+
+	p{
+		word-wrap: break-word;
+		margin: 0 5px; 
+	}
+
+	margin-top: 10px;
+
+	comments{
+		.commentsContainer{
+			padding: 10px;
+			margin: 0px 5px;
+			background-color: lighten(@color-base, 1%);
+			// background-color: @color-base;
+			border-bottom-right-radius: @radius;  
+			border-bottom-left-radius:  @radius;  
+		}
+	}
+}

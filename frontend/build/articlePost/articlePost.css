@@ -1,0 +1,203 @@
+.articlePostContainer {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  background-color: #F4F7F8;
+  width: 100%;
+}
+.articlePostContainer [ng-quill-editor] {
+  display: block;
+}
+.articlePostContainer .ql-toolbar {
+  border: none !important;
+  border-bottom: 1px solid #DFE7EA !important;
+}
+.articlePostContainer .ql-container {
+  border: none !important;
+  min-height: 300px;
+}
+.articlePostContainer .ql-editor {
+  min-height: 400px;
+}
+.articlePostContainer .articleInput {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 1024px) {
+  .articlePostContainer .articleInput {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+.articlePostContainer .articleInput .titleInput {
+  border-width: 0px;
+  border-radius: 5px;
+  align-content: start;
+  display: -webkit-box;
+  display: flex;
+  height: 100px;
+  padding: 10px;
+  width: 70%;
+  background-color: #FFFFFF;
+  outline: none;
+  resize: none;
+  font-weight: bold;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 1024px) {
+  .articlePostContainer .articleInput .titleInput {
+    width: 100%;
+  }
+}
+.articlePostContainer .articleInput .imageInput {
+  height: 100px;
+  width: 28%;
+  border-radius: 5px;
+  background-color: transparent;
+  margin-left: auto;
+  position: relative;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 1024px) {
+  .articlePostContainer .articleInput .imageInput {
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+.articlePostContainer .articleInput .imageInput .imageUpload {
+  height: 100%;
+}
+.articlePostContainer .articleInput .imageInput .imageUpload .drop-box {
+  border: 5px dashed #EBF0F2;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  text-align: center;
+}
+.articlePostContainer .articleInput .imageInput .imageUpload .drop-box i,
+.articlePostContainer .articleInput .imageInput .imageUpload .drop-box p {
+  color: #68888E;
+}
+.articlePostContainer .articleInput .imageInput .imageUpload .dragover {
+  border-color: #7A979E;
+}
+.articlePostContainer .articleInput .imageInput .imageThumbnail {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 1024px) {
+  .articlePostContainer .articleInput .imageInput .imageThumbnail {
+    height: 100%;
+    width: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.articlePostContainer .articleInput .imageInput .removeImage {
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: gray;
+  cursor: pointer;
+}
+.articlePostContainer .articleInput .imageInput .removeImage i {
+  color: white;
+}
+.articlePostContainer .articleContent {
+  margin-top: 10px;
+  background: #FFFFFF;
+  border-radius: 5px;
+}
+.articlePostContainer .articleContent .footer {
+  height: 30px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  background-color: #EBF0F2;
+  border-bottom-left-radius: 5px;
+}
+.articlePostContainer .articleContent .footer .contentInfo {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  height: 30px;
+  line-height: 30px;
+  color: #496374;
+}
+.articlePostContainer .articleContent .footer .contentInfo p {
+  width: 120px;
+  text-align: right;
+  padding: 0px 10px;
+  border-right: 1px solid #F4F7F8;
+}
+@media only screen and (max-width: 767px) {
+  .articlePostContainer .articleContent .footer .contentInfo p {
+    width: 80px;
+  }
+}
+@media only screen and (min-width: 1025px), only screen and (min-width: 768px) and (max-width: 1024px) {
+  .articlePostContainer .articleContent .footer .contentInfo p:nth-child(1):after {
+    content: " letters";
+  }
+}
+@media only screen and (max-width: 767px) {
+  .articlePostContainer .articleContent .footer .contentInfo p:nth-child(1):after {
+    content: " l";
+  }
+}
+@media only screen and (min-width: 1025px), only screen and (min-width: 768px) and (max-width: 1024px) {
+  .articlePostContainer .articleContent .footer .contentInfo p:nth-child(2):after {
+    content: " words";
+  }
+}
+@media only screen and (max-width: 767px) {
+  .articlePostContainer .articleContent .footer .contentInfo p:nth-child(2):after {
+    content: " w";
+  }
+}
+.articlePostContainer .articleContent .footer .publishButton {
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  background-color: #496374;
+  border-bottom-right-radius: 5px;
+}
+.articlePostContainer .articleContent .footer .publishButton:hover {
+  cursor: pointer;
+  background-color: #7A979E;
+}

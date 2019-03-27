@@ -1,0 +1,144 @@
+#rightSidebar {
+  background: #EBF0F2;
+  color: #7A979E;
+  height: 100%;
+  width: 300px;
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+#rightSidebar .invite {
+  background-color: #68888E;
+  color: #FFFFFF;
+  padding: 15px;
+  padding-left: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#rightSidebar .invite:hover {
+  background-color: #7A979E;
+}
+#rightSidebar .sectionTitle {
+  background-color: #C0D0D6;
+  color: #7A979E;
+  padding: 15px;
+  padding-left: 20px;
+  font-weight: bold;
+}
+#rightSidebar .moreButton {
+  background-color: #DFE7EA;
+  margin-top: 1px;
+  width: 100%;
+  font-weight: bolder;
+  text-align: center;
+  padding: 10px;
+}
+#rightSidebar .moreButton:hover {
+  cursor: pointer;
+  background-color: #D9E2E6;
+  color: #496374;
+}
+#rightSidebar .mayknowSection .personContainer {
+  margin-top: 1px;
+  padding: 2px 5px;
+  background-color: #DFE7EA;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+#rightSidebar .mayknowSection .personContainer .personProfilePic {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  margin: 10px;
+  background: #D9E2E6;
+  background: url('/img/default_user.jpg') no-repeat center;
+  background-size: contain;
+  -webkit-box-flex: 0;
+          flex: 0 0 40px;
+  cursor: pointer;
+}
+#rightSidebar .mayknowSection .personContainer .personInfo {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+#rightSidebar .mayknowSection .personContainer .personInfo .name {
+  font-weight: bold;
+}
+#rightSidebar .mayknowSection .personContainer .personInfo .mutual {
+  font-size: 13px;
+}
+#rightSidebar .articlesSection .article {
+  margin-top: 1px;
+  padding: 5px 5px 10px;
+  background-color: #DFE7EA;
+}
+#rightSidebar .articlesSection .article .articleAuthor {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+}
+#rightSidebar .articlesSection .article .articleAuthor .authorPic {
+  height: 25px;
+  width: 25px;
+  border-radius: 25px;
+  margin: 10px;
+  background: #D9E2E6;
+  background: url('/img/default_user.jpg') no-repeat center;
+  background-size: contain;
+  -webkit-box-flex: 0;
+          flex: 0 0 25px;
+  cursor: pointer;
+}
+#rightSidebar .articlesSection .article .articleContent {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+#rightSidebar .articlesSection .article .articleContent .articlePic {
+  height: 80px;
+  width: 80px;
+  -webkit-box-flex: 0;
+          flex: 0 0 80px;
+  margin: 5px 10px;
+  background-size: cover;
+  border: 1px solid #C0D0D6;
+  cursor: pointer;
+}
+#rightSidebar .articlesSection .article .articleContent .articleText a {
+  font-weight: bold;
+}
+#rightSidebar .articlesSection .article .articleContent .articleText p {
+  word-break: break-all;
+  white-space: -moz-pre-wrap;
+  /* Mozilla */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 */
+  word-wrap: break-word;
+  /* IE */
+}
+#rightSidebar .articlesSection .article .articleContent .articleText img {
+  max-height: 100%;
+  max-width: 100%;
+}

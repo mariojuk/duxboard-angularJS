@@ -1,0 +1,153 @@
+<div id="leftSidebar" ng-class="smallmenu ? 'smallSideBar' : ''">
+    <!--profile part-->
+    <div class="profileInfo">
+        <div id="toggleSidebar" ng-click="toggleMenu()" >{{ smallmenu ? '>>' : '<<' }}</div> 
+
+        <a ui-sref="app.profile({id: currentUser._id})">
+            <div class="userProfilePic" class="userProfilePic" ng-style="{'background-image': 'url(' + currentUser.profilePicture + ')'}">
+                <i class="dux-medal"
+                    ng-class="[ {false: 'big'}[smallmenu],
+                    {true: 'free', false: 'premium'}[currentUser.package == 'free'] ]">
+                </i>
+            </div>
+            <div class="userName" ng-click="userInfo = !userInfo">{{currentUser.firstName}} {{currentUser.secondName}}<i class="fa fa-sort-desc" aria-hidden="true"></i></div>   
+        </a>
+                
+        <!-- dodati online vrijednosti -->
+		<div class="onlineInfo">
+			<div class="onlineIcon" ng-class="onlineStatus.option"></div>
+			<select class="onlineStat"
+				ng-model="onlineStatus"
+				ng-change="onStatusChange()"
+				ng-options="status.title for status in onlineOptions">
+			</select>
+		</div>
+
+		<div class="duxMedal">
+			<div class="duxBadgeLevel">
+				<i class="fa fa-certificate fa-1x"></i>
+				<b>{{currentUser.medals}}</b>
+			</div>
+
+			<div class="duxProgress">
+				<div class="duxCurrentProgress" ng-style="{'width': currentUser.medals/2.5 +'%'}"></div>
+			</div>
+
+			<p>DuxBoard medals</p>
+		</div>
+		
+		<div class="userInfoSty" ng-show="userInfo">
+			<div class="line"></div>
+			<div class="onlineInfo">
+				<div class="onlineIcon" ng-class="onlineStatus.option"></div>
+				<select class="onlineStat"
+					ng-model="onlineStatus"
+					ng-change="onStatusChange()"
+					ng-options="status.title for status in onlineOptions">
+				</select>
+			</div>
+
+			<div class="duxMedale">
+				<div class="duxBadgeLevel">
+					<i class="fa fa-certificate fa-1x"></i>
+					<b>{{currentUser.medals}}</b>
+				</div>
+
+				<div class="duxProgress">
+					<div class="duxCurrentProgress" ng-style="{'width': currentUser.medals/2.5 +'%'}"></div>
+				</div>
+
+				<p>DuxBoard medals</p>
+			</div>
+	    </div>
+    </div>
+    
+    <div class="ribbon">
+        <a href="/upgrade" class="upgrade"></a>
+    </div>
+    
+<!--  srednji dio sidebara  -->
+    
+    <table id="leftSideTable">
+        <tr>
+            <td><a ui-sref="app.messages">
+                <i ng-class="currentUser.conversations.length ? 'newNotification' : ''"
+                    class="fa fa-envelope fa-1x">        
+                </i>
+            </a></td>
+            <td><a ui-sref="app.messages">Messages
+                <span ng-if="currentUser.conversations.length">({{currentUser.conversations.length}})</span>
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a ui-sref="app.requests">
+                <i class="fa fa-users fa-1x" ng-class="currentUser.requests.length ? 'newNotification' : ''">
+                </i>
+            </a></td>
+            <td><a ui-sref="app.requests">Requests
+                <span ng-show="currentUser.requests.length">({{currentUser.requests.length}})</span>
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a ui-sref="app.notifications">
+                <i class="fa fa-bell fa-1x" ng-class="currentUser.notifications ? 'newNotification' : ''">
+                </i>
+            </a></td>
+            <td><a ui-sref="app.notifications">Notifications
+                <span ng-show="currentUser.notifications">({{currentUser.notifications}})</span>
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <td><a href="/settings"><i class="fa fa-gear fa-1x"></i></a></td>
+            <td><a href="/settings">Settings</a></td>
+        </tr>
+
+        <tr>
+            <td>
+                <a ui-sref="app.analysis"><i class="fa fa-bar-chart fa-1x"></i></a>
+            </td>
+            <td>
+                <a ui-sref="app.analysis">Analysis
+                </a>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td><a ng-click="logout()"><i class="fa fa-sign-out fa-1x"></i></a></td>
+            <td><a href ng-click="logout()">Log out</a></td>
+        </tr>
+         <tr ng-if="currentUser.isAdmin">
+             <td>
+                 <a ui-sref="app.admin"><i class="fa fa-lock fa-1x"></i></a>
+             </td>
+             <td>
+                 <a ui-sref="app.admin">Admin panel</a>
+             </td>
+         </tr>
+    </table>
+    
+    
+    <div class="usersListWrap">
+        <div class="usersList" sticky disabled-sticky="$parent.isMobile" use-placeholder="false" offset="60">
+            <div class="who"></div>
+    		<div class="user" ng-repeat="user in onlineUsers">
+    			<div class="userProfilePic"
+                    ng-style="{'background-image': 'url(' + user.profilePicture + ')'}">
+                    <div class="onlineIcon" ng-class="user.onlineStatus">   
+                    </div>
+                </div>
+    			<a ui-sref="app.profile({id: user._id})">
+                    {{user.firstName}} {{user.secondName}}
+                </a>
+    		</div>
+    	</div>
+    </div>
+
+</div>

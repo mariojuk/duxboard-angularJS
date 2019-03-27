@@ -1,0 +1,41 @@
+<p class="popupHeader">EDIT YOUR AD BANNER</p>
+<div class="popupContent editBannerPopup" ng-controller="editBannerController">
+    
+    <div class="inputWrap">
+        
+        <div class="bigInput">
+            <label>Headline</label>
+            <input type="text" placeholder="Headline" ng-model="banner.headline">
+        </div>
+
+        <div class="smallInput">
+            <label>Sport</label>
+            <input type="text" placeholder="Name a sport" autocomplete="off"  ng-model="banner.sport" uib-typeahead="sport for sport in sports | filter:$viewValue | limitTo:8"/>
+        </div>
+
+        <div class="smallInput">
+            <label>Position</label>
+            <input type="text" ng-model="banner.position" placeholder="Position"/>
+        </div>
+
+        <div class="smallInput">
+            <label>Former club</label>
+            <input id="formerclub" type="text" ng-model="banner.formerClub" placeholder="Former club name">
+        </div>
+
+     </div>
+
+    <div class="imageContainer" ng-show="banner.uploadedFiles.length">
+        <div class="img"
+            ng-click="viewMedia(img)"
+            ng-repeat="img in banner.uploadedFiles"
+            ng-style="{'background-image': 'url(' + img + ')'}">
+        </div>
+    </div>
+
+    <button class="dux-button big round no-border red" ng-click="updateBanner()">EDIT BANNER</button>
+    <div align="center" style="margin-top: 10px;">
+        <button ng-click="deleteBanner()" type="button" class="dux-button big red round">DELETE BANNER</button>
+    </div>
+</div>
+

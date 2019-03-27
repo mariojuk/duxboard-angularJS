@@ -1,0 +1,41 @@
+.youtubeVideoContainer {
+  background-color: black;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.youtubeVideoContainer .iframeContainer,
+.youtubeVideoContainer iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.youtubeVideoContainer .playButton {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  font-size: 16px;
+  box-shadow: 0 0 10px 0 #444;
+}
+.youtubeVideoContainer .playButton:hover {
+  box-shadow: 0 0 10px 0 #FF6666;
+}
+.youtubeVideoContainer .playButton i {
+  margin: auto !important;
+}
+.youtubeVideoContainer .playButton.ng-hide {
+  -webkit-animation: fadeOut 1s;
+          animation: fadeOut 1s;
+}

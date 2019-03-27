@@ -1,0 +1,100 @@
+@import "../../styles/less/global.less";
+    .inviteGmail{
+                 .gmailPicture{
+                        display:flex;
+                        flex-direction:column;
+                         align-items:center;  
+                         margin-top:10px;
+                            .gmailPic{
+                                .profile-pic(60px);
+                                background-color:@color-light;
+                                background-size: contain;
+                                cursor: pointer;
+                                z-index: 2;
+                                .absolute-center;
+
+                                .logoGmail{ .square(40px;) }
+                            }
+                    }
+        .gmailMainWrap{
+            margin-top: -50px;
+            background-color: @color-lighter;
+            border-radius: @radius;
+            padding: 10px;
+
+            .gmailMain{
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                position: relative;
+                background-color: @color-lighter;
+                  
+                .listGmailFriend{
+                    background-color: @color-bg;
+                    border-radius: @radius;
+                    margin: 7.5px 0px;
+                    width: 100%;
+                    display: -webkit-box;
+                    display: -moz-box;
+                    display: -ms-flexbox;
+                    display: -moz-flex;
+                    display: -webkit-flex;
+                    display: flex;
+                    -webkit-justify-content: space-between; 
+                    justify-content: space-between; 
+					
+                        .friendProfilePic{
+                            .profile-pic(30px);
+                            flex: 0 0 30px;
+                        }
+                        .infoWrap{
+                            width: 100%;
+                            display: flex;
+                            flex-direction: row;
+
+    						.infoField{
+    						width:50%;
+                            margin: auto 0px;
+                            padding: 0px 10px;
+    						
+    							.fieldData{
+                                    margin: auto;
+    								white-space: nowrap;
+    								overflow: hidden;
+    								text-overflow: ellipsis;
+    								color: @color-darker;
+    								
+    							}
+    						}
+                        }
+
+						.infoPositionThird{
+						  margin: 0px 10px;
+						  .absolute-center;
+
+                          input{ cursor: pointer; }
+                        }
+                }
+
+                   
+                
+            }
+        }
+      
+        .gmailFooter{
+            display:flex;
+            flex-direction:column;
+            align-items:center;  
+
+            .gmailButton{
+                background-color:@color-red;
+                border-radius: @radius;
+                border:0;
+                padding: 1.5vmin 9vmin;
+                color: white;
+                cursor: pointer;
+                margin: 20px;
+                }
+
+        }
+    }

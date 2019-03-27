@@ -1,0 +1,307 @@
+@import "../../styles/less/global.less";
+
+#leftSidebar{
+
+    .onlineIcon{ .circle(8px); }
+
+    .newNotification{ color: @color-red; }
+
+	background: @color-light;
+	color: @color-dark;
+	height: 100%;
+	width: @sidebar-width;
+    transition: width 0.3s ease;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	/*.shadow;*/
+
+    #toggleSidebar{
+        .circle(30px);
+        position: absolute;
+        text-align: center;
+        top: 10px;
+        right: 10px;
+        font-weight: bold;
+        font-size: 20px;
+        cursor: pointer;
+        &:hover{ background-color: @color-dark };
+
+        @media @desktop{
+            display: none;
+        }
+    }
+    
+	.profileInfo{
+        color:@color-bg;
+        padding: 15px;
+        padding-bottom: 40px;
+        background: @color-darkest;
+        text-align: center;
+        .userProfilePic{
+            .profile-pic(100px);
+            // border: 1px solid @color-dark;
+            transition: all 0.3s ease;
+            margin: auto;
+            background-size: contain;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            .fa-certificate{ color: @color-badge }
+        }
+        .userName{
+            font-weight: bold;
+            color:@color-bg;
+        }
+		.fa-sort-desc{
+			margin-left:30px;
+			@media @desktop{
+				display:none;
+			}
+			@media @tablet{
+				display:none;
+			}
+		
+		}
+		.onlineInfo{
+			@media @mobile{
+				display:none;
+			}
+			.absolute-center;
+
+			.onlineStat{
+				background:@color-darkest;
+				border: none;
+				margin: 10px;
+					
+				option{
+					background-color: inherit;
+				}
+			}
+		}
+		
+		.duxMedal{
+			@media @mobile{
+				display:none;
+			}
+			.duxBadgeLevel { color:  @color-bg }
+
+			.duxProgress{ 
+				width: auto;
+				height: 5px;
+				background-color: @color-dark;
+				border-radius: 2px;
+
+				.duxCurrentProgress{
+					height: 5px;
+					background-color: @color-bg;
+					border-radius: 2px;
+				}
+			}
+			p{ color: @color-lighter;}
+		}
+		
+        .userInfoSty{
+			height: 100%;
+			background:@color-darkest;
+	
+			@media @desktop{
+				display:none;
+			}
+			@media @tablet{
+				display:none;
+			}
+			.line{border:solid 1px @color-darker;}
+			.onlineInfo{
+				.absolute-center;
+
+				.onlineStat{
+					background:@color-darkest;
+					border: none;
+					margin: 10px;
+					
+					option{
+						background-color: inherit;
+					}
+				}
+			}
+		
+			.duxMedale{
+				.duxBadgeLevel { color:  @color-bg }
+
+				.duxProgress{ 
+					width: auto;
+					height: 5px;
+					background-color: @color-dark;
+					border-radius: 2px;
+
+					.duxCurrentProgress{
+						height: 5px;
+						background-color: @color-bg;
+						border-radius: 2px;
+					}
+				}
+				p{ color: @color-lighter;}
+			}
+       }
+    }
+    
+    .ribbon {
+        border-right: 16px solid transparent;
+        border-top: 20px solid @color-red;
+        border-bottom: 20px solid @color-red;
+        margin-right: 5%;
+        margin-top: -20px;
+        margin-left: -3px;
+        position: relative;
+		@media @mobile{
+		border-right: 16px solid transparent;
+        border-top: 20px solid @color-red;
+        border-bottom: 20px solid @color-red;
+		}
+
+        .upgrade{
+            position: absolute;
+            height: 100%;
+            margin: auto;
+            color: @color-bg;
+            padding-left: 10px;
+            font-size: 14px;
+            .absolute-center;
+            &:after{
+                animation: slideInLeft 0.5s;
+                content: "Upgrade your account";
+            }
+        }
+    }
+    
+    #leftSideTable{
+        margin: 10px auto;
+        color: @color-darkest;
+        a{ font-weight: normal; }
+        tr td:first-child{
+            .absolute-center;
+            }
+        td{
+            padding: 5px;
+        }
+    }
+
+    .who{
+        padding: 10px;
+        background: @color-darker;
+        color: @color-light;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        width: @sidebar-width;
+        transition: width 0.3s ease;
+        &:after{
+            content: "Who is online?"
+        }
+    }
+
+    .usersListWrap{
+        height: 100%;
+        background-color: @color-dark;
+    }
+
+	.usersList{
+        // background-color: @color-dark;
+        height: 100% !important;
+
+		.user{
+            
+			display: flex;
+			flex-direction: row;
+            margin: 0px 20px;
+			
+			a{ 
+				margin-top: auto; 
+				margin-bottom: auto;
+                color: @color-bg;
+                word-wrap: break-word;
+                width: 90px;
+			}
+            .userProfilePic{
+                .profile-pic(40px);
+                background-size: contain;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+			}
+		}
+	}
+}
+
+.smallSideBar{
+    #toggleSidebar { position: initial !important; margin: auto;};
+    width: 80px !important;
+    transition: width 0.3s ease;
+
+    .profileInfo{
+        padding: 10px 0 40px 0;
+        .userProfilePic{
+            .circle(50px) !important;
+            margin: 10px 0 !important;
+            .fa-certificate{ font-size: 14px;}
+        }
+        .userName{ display: none; }
+
+        .onlineInfo{
+            flex-direction: column;
+            margin-top: 20px;
+
+            .onlineStat{
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                text-indent: 1px;
+                text-overflow: '';
+                margin: 10px auto !important;
+                text-align: center;
+                text-align-last: center;
+                option{
+                    text-indent: 5px;
+                }
+            }
+        }
+
+        .duxMedal{
+            .duxBadgeLevel{
+                display: flex;
+                flex-direction: column;
+            }
+            .duxProgress{  display: none; }
+            p{ display: none;}
+        }
+    }
+
+
+
+    .upgrade{
+        padding-left: 0px !important;
+        &:after{
+            content: "Upgrade" !important;
+        }
+    }
+    #leftSideTable tr {
+        i{ font-size: 20px !important; }
+        td:nth-child(2) { display: none;} 
+    }
+
+    .who{
+        width: 80px !important;
+        &:after{
+            content: "Online" !important;
+        }
+    }
+
+    .ribbon{
+        margin-right: -10% !important;
+        .absolute-center;
+    }
+    .usersList .user {
+        .userProfilePic { margin: 5px 0 5px 0 !important;} ;
+         a {display: none; }
+     }
+}

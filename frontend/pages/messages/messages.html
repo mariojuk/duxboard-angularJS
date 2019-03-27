@@ -1,0 +1,104 @@
+<div class="messagesContainer">
+
+	<p class="menuButton" id="messageText" ng-show="showButton2">MESSAGES</p>
+	<div class="menuButton" ng-click="toggleContact()" ng-show="showButton">
+		<p class="pageTitle"><i class="fa fa-arrow-left"></i>MESSAGES</p>
+	</div>
+
+	<no-data-indicator
+		ng-if="conversations.length == 0"
+		icon-class="fa-envelope"
+		title="messages"
+		message="Say hi to someone and start a conversation.">
+	</no-data-indicator>
+
+	<div class="messagesWrap" ng-if="conversations.length">
+
+		<div class="contactsContainer" ng-show="showContacts">
+			<div ng-repeat="conv in conversations"
+				class="contact"
+				ng-click="loadConversation(conv)"
+				ng-class="conv._id == conversation._id ? 'selected' : ''">
+
+				<div class="contactPic"
+					ng-style="{'background-image': 'url(' + conv.participants[0].profilePicture + ')'}">
+				</div>
+				<p>
+					{{ conv.title || conv.altTitle }}
+				</p>
+				<div class="newMessages" ng-show="conv.newMessages">
+					{{ conv.newMessages}}
+				</div>
+			</div>
+		</div>
+
+		<p ng-hide="conversation" class="selectConv">Select conversation.</p>
+		<div class="convContainer" ng-show="conversation">
+
+			<div class="convTitle">
+				<div class="convPicture">
+					<div class="duxProfilePic"
+						ui-sref="app.profile({id: conversation.participants[0]._id})"
+						ng-style="{'background-image': 'url(' + conversation.participants[0].profilePicture + ')'}">
+					</div>
+				</div>
+				<p class="convName">
+					{{ conversation.title || conversation.altTitle }}
+				</p>
+			</div>
+
+			<div class="convMessages" ng-scroll-bottom="messages" scrollbar>
+				
+				<div class="loadMore">
+					<a ng-click="loadMore()">Load more messages</a>
+				</div>
+				<div ng-repeat="msg in messages track by msg._id"
+					class="message"
+					id="{{msg._id}}"
+					ng-class="msg.sender._id != userId ? 'received' : 'sent'">
+					<div class="msgPic"
+						ui-sref="app.profile({id: msg.sender._id})"
+						ng-if="msg.sender._id != messages[$index - 1].sender._id"
+						ng-style="{'background-image': 'url(' + msg.sender.profilePicture + ')'}">
+					</div>
+
+					<div class="msgArrow" ng-if="msg.sender._id != messages[$index - 1].sender._id">
+					</div>
+
+					<div class="msgBubble"
+						ng-style="{'margin' : msg.sender._id != messages[$index - 1].sender._id ? '0' : ''}">
+						<p ng-bind-html="msg.text | imagify"></p>
+						<p class="time">
+							{{msg.createdAt | humanizeTime}}
+							<i ng-show="hasSeen(msg)" class="fa fa-check"></i>
+						</p>
+					</div>
+				</div>
+				<div class="message"
+					ng-class="typing != userId ? 'received' : 'sent'"
+					ng-if="typing">
+					<div class="msgPic"
+						ng-style="{'background-image': 'url(' + typing.profilePicture + ')'}"></div>
+					<div class="msgArrow"></div>
+					<div class="msgBubble" ng-style="{'margin' : '0'}">
+						<div class="loader">
+							<span class="loader__dot">.</span>
+							<span class="loader__dot">.</span>
+							<span class="loader__dot">.</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<post on-post="sendMessage(text)"
+				on-typing-started="emitTypingStarted()"
+				on-typing-stopped="emitTypingStopped()"
+				placeholder="Write a message"
+				button-label="SEND"
+				max-chars=1000></post>
+
+		</div>
+
+	</div>
+
+</div>

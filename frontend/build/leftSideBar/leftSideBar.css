@@ -1,0 +1,373 @@
+#leftSidebar {
+  background: #D9E2E6;
+  color: #7A979E;
+  height: 100%;
+  width: 200px;
+  transition: width 0.3s ease;
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  /*.shadow;*/
+}
+#leftSidebar .onlineIcon {
+  height: 8px;
+  width: 8px;
+  border-radius: 8px;
+}
+#leftSidebar .newNotification {
+  color: #FF6666;
+}
+#leftSidebar #toggleSidebar {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  position: absolute;
+  text-align: center;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+#leftSidebar #toggleSidebar:hover {
+  background-color: #7A979E;
+}
+@media only screen and (min-width: 1025px) {
+  #leftSidebar #toggleSidebar {
+    display: none;
+  }
+}
+#leftSidebar .profileInfo {
+  color: #FFFFFF;
+  padding: 15px;
+  padding-bottom: 40px;
+  background: #496374;
+  text-align: center;
+}
+#leftSidebar .profileInfo .userProfilePic {
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
+  margin: 10px;
+  background: #D9E2E6;
+  background: url('/img/default_user.jpg') no-repeat center;
+  -webkit-box-flex: 0;
+          flex: 0 0 100px;
+  transition: all 0.3s ease;
+  margin: auto;
+  background-size: contain;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+#leftSidebar .profileInfo .userProfilePic .fa-certificate {
+  color: #E7D298;
+}
+#leftSidebar .profileInfo .userName {
+  font-weight: bold;
+  color: #FFFFFF;
+}
+#leftSidebar .profileInfo .fa-sort-desc {
+  margin-left: 30px;
+}
+@media only screen and (min-width: 1025px) {
+  #leftSidebar .profileInfo .fa-sort-desc {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #leftSidebar .profileInfo .fa-sort-desc {
+    display: none;
+  }
+}
+#leftSidebar .profileInfo .onlineInfo {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  #leftSidebar .profileInfo .onlineInfo {
+    display: none;
+  }
+}
+#leftSidebar .profileInfo .onlineInfo .onlineStat {
+  background: #496374;
+  border: none;
+  margin: 10px;
+}
+#leftSidebar .profileInfo .onlineInfo .onlineStat option {
+  background-color: inherit;
+}
+@media only screen and (max-width: 767px) {
+  #leftSidebar .profileInfo .duxMedal {
+    display: none;
+  }
+}
+#leftSidebar .profileInfo .duxMedal .duxBadgeLevel {
+  color: #FFFFFF;
+}
+#leftSidebar .profileInfo .duxMedal .duxProgress {
+  width: auto;
+  height: 5px;
+  background-color: #7A979E;
+  border-radius: 2px;
+}
+#leftSidebar .profileInfo .duxMedal .duxProgress .duxCurrentProgress {
+  height: 5px;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+}
+#leftSidebar .profileInfo .duxMedal p {
+  color: #DFE7EA;
+}
+#leftSidebar .profileInfo .userInfoSty {
+  height: 100%;
+  background: #496374;
+}
+@media only screen and (min-width: 1025px) {
+  #leftSidebar .profileInfo .userInfoSty {
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #leftSidebar .profileInfo .userInfoSty {
+    display: none;
+  }
+}
+#leftSidebar .profileInfo .userInfoSty .line {
+  border: solid 1px #68888E;
+}
+#leftSidebar .profileInfo .userInfoSty .onlineInfo {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+#leftSidebar .profileInfo .userInfoSty .onlineInfo .onlineStat {
+  background: #496374;
+  border: none;
+  margin: 10px;
+}
+#leftSidebar .profileInfo .userInfoSty .onlineInfo .onlineStat option {
+  background-color: inherit;
+}
+#leftSidebar .profileInfo .userInfoSty .duxMedale .duxBadgeLevel {
+  color: #FFFFFF;
+}
+#leftSidebar .profileInfo .userInfoSty .duxMedale .duxProgress {
+  width: auto;
+  height: 5px;
+  background-color: #7A979E;
+  border-radius: 2px;
+}
+#leftSidebar .profileInfo .userInfoSty .duxMedale .duxProgress .duxCurrentProgress {
+  height: 5px;
+  background-color: #FFFFFF;
+  border-radius: 2px;
+}
+#leftSidebar .profileInfo .userInfoSty .duxMedale p {
+  color: #DFE7EA;
+}
+#leftSidebar .ribbon {
+  border-right: 16px solid transparent;
+  border-top: 20px solid #FF6666;
+  border-bottom: 20px solid #FF6666;
+  margin-right: 5%;
+  margin-top: -20px;
+  margin-left: -3px;
+  position: relative;
+}
+@media only screen and (max-width: 767px) {
+  #leftSidebar .ribbon {
+    border-right: 16px solid transparent;
+    border-top: 20px solid #FF6666;
+    border-bottom: 20px solid #FF6666;
+  }
+}
+#leftSidebar .ribbon .upgrade {
+  position: absolute;
+  height: 100%;
+  margin: auto;
+  color: #FFFFFF;
+  padding-left: 10px;
+  font-size: 14px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+#leftSidebar .ribbon .upgrade:after {
+  -webkit-animation: slideInLeft 0.5s;
+          animation: slideInLeft 0.5s;
+  content: "Upgrade your account";
+}
+#leftSidebar #leftSideTable {
+  margin: 10px auto;
+  color: #496374;
+}
+#leftSidebar #leftSideTable a {
+  font-weight: normal;
+}
+#leftSidebar #leftSideTable tr td:first-child {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+#leftSidebar #leftSideTable td {
+  padding: 5px;
+}
+#leftSidebar .who {
+  padding: 10px;
+  background: #68888E;
+  color: #D9E2E6;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  width: 200px;
+  transition: width 0.3s ease;
+}
+#leftSidebar .who:after {
+  content: "Who is online?";
+}
+#leftSidebar .usersListWrap {
+  height: 100%;
+  background-color: #7A979E;
+}
+#leftSidebar .usersList {
+  height: 100% !important;
+}
+#leftSidebar .usersList .user {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  margin: 0px 20px;
+}
+#leftSidebar .usersList .user a {
+  margin-top: auto;
+  margin-bottom: auto;
+  color: #FFFFFF;
+  word-wrap: break-word;
+  width: 90px;
+}
+#leftSidebar .usersList .user .userProfilePic {
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  margin: 10px;
+  background: #D9E2E6;
+  background: url('/img/default_user.jpg') no-repeat center;
+  -webkit-box-flex: 0;
+          flex: 0 0 40px;
+  background-size: contain;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: end;
+          align-items: flex-end;
+}
+.smallSideBar {
+  width: 80px !important;
+  transition: width 0.3s ease;
+}
+.smallSideBar #toggleSidebar {
+  position: initial !important;
+  margin: auto;
+}
+.smallSideBar .profileInfo {
+  padding: 10px 0 40px 0;
+}
+.smallSideBar .profileInfo .userProfilePic {
+  height: 50px !important;
+  width: 50px !important;
+  border-radius: 50px !important;
+  margin: 10px 0 !important;
+}
+.smallSideBar .profileInfo .userProfilePic .fa-certificate {
+  font-size: 14px;
+}
+.smallSideBar .profileInfo .userName {
+  display: none;
+}
+.smallSideBar .profileInfo .onlineInfo {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin-top: 20px;
+}
+.smallSideBar .profileInfo .onlineInfo .onlineStat {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  margin: 10px auto !important;
+  text-align: center;
+  text-align-last: center;
+}
+.smallSideBar .profileInfo .onlineInfo .onlineStat option {
+  text-indent: 5px;
+}
+.smallSideBar .profileInfo .duxMedal .duxBadgeLevel {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+.smallSideBar .profileInfo .duxMedal .duxProgress {
+  display: none;
+}
+.smallSideBar .profileInfo .duxMedal p {
+  display: none;
+}
+.smallSideBar .upgrade {
+  padding-left: 0px !important;
+}
+.smallSideBar .upgrade:after {
+  content: "Upgrade" !important;
+}
+.smallSideBar #leftSideTable tr i {
+  font-size: 20px !important;
+}
+.smallSideBar #leftSideTable tr td:nth-child(2) {
+  display: none;
+}
+.smallSideBar .who {
+  width: 80px !important;
+}
+.smallSideBar .who:after {
+  content: "Online" !important;
+}
+.smallSideBar .ribbon {
+  margin-right: -10% !important;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.smallSideBar .usersList .user .userProfilePic {
+  margin: 5px 0 5px 0 !important;
+}
+.smallSideBar .usersList .user a {
+  display: none;
+}

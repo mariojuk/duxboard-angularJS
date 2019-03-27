@@ -1,0 +1,9 @@
+<p class="popupHeader">{{ngDialogData.title}}</p>
+<div class="popupContent">
+	<div class="notify" ng-class="{ true: 'success', false: 'error', undefined: 'default' }[ngDialogData.type]">
+		<i ng-class="{ true: 'fa-check', false: 'fa-times'}[ngDialogData.type]" class="fa fa fa-1x"></i>
+		<p>
+			{{ngDialogData.text}}
+		</p>	
+	</div>
+</div>

@@ -1,0 +1,56 @@
+<div class="userList">
+	<div ng-repeat="user in users" class="user" id="{{user._id}}">
+
+		<div class="picContainer">
+			<div class="profilePic" ng-style="{'background-image': 'url(' + user.profilePicture + ')'}"></div>
+		</div>
+
+		<div class="requestTime" ng-if="showTime && user.createdAt">
+			{{ user.createdAt | humanizeTime }}
+		</div>
+
+		<div class="info">
+			<div class="name">
+				<a ui-sref="app.profile({id: user._id})">
+					{{ user.firstName }} {{ user.secondName }}
+				</a>
+			</div>
+			<p>{{user.sport}} {{user.position}}</p>
+			<div class="details">
+				{{ user.sport }} {{ user.position }}
+			</div>
+			<div class="mutual" ng-if="user.mutualPartners" ng-click="getMutualPartners(user)">
+				<a>
+          			{{user.mutualPartners}} mutual partner{{user.mutualPartners > 1 ? 's' : ''}}
+          		</a>
+          	</div>
+		</div>
+
+		<div class="action" ng-if="!user.tisi">
+			<div class="act" ng-if="user.isPartner">
+				<i class="fa fa fa-check fa-1x"></i>
+				PARTNER
+			</div>
+			<div class="act" ng-if="user.isRequested">
+				PENDING
+			</div>
+			<div ng-if="user.hasRequested" class="act dux-button red no-border round" ng-click="acceptPartner(user, $index)">
+				<i class="fa fa fa-users fa-1x"></i>
+				ACCEPT REQUEST
+			</div>
+			<div ng-if="!user.isPartner && !user.hasRequested && !user.isRequested" class="act dux-button red no-border round" ng-click="addPartner(user)">
+				<i class="fa fa fa-users fa-1x"></i>
+				SEND REQUEST
+			</div>
+			<div ng-if="user.isRequested" class="deny" ng-click="cancelPartner(user, $index)">
+				<i class="fa fa fa-close fa-1x"></i>
+			</div>
+			<div ng-if="user.hasRequested" class="deny" ng-click="denyPartner(user, $index)">
+				<i class="fa fa fa-close fa-1x"></i>
+			</div>
+<!-- 		<div ng-if="user.isPartner" class="deny" ng-click="removePartner(user)">
+				<i class="fa fa fa-close fa-1x"></i>
+			</div> -->
+		</div>
+	</div>
+</div>

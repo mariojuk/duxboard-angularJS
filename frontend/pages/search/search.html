@@ -1,0 +1,15 @@
+<div class="searchContainer">
+
+	<p class="pageTitle">SEARCH</p>
+
+	<user-list users-data="users">
+	</user-list>
+
+	<no-data-indicator
+		ng-if="users.length == 0"
+		icon-class="fa-users"
+		full-title="No results!"
+		message="Make sure you typed the correct name.">
+	</no-data-indicator>	
+	
+</div>

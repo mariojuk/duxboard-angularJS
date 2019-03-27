@@ -1,0 +1,116 @@
+.statementContainer .statementContainer {
+  box-shadow: 0 0 7px 0 #444;
+  margin: 10px 5px;
+  background-color: #f1f5f6;
+}
+.editableStatement {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.editableStatement .editPost {
+  color: white;
+  display: none;
+}
+.editableStatement:hover {
+  background-color: rgba(73, 99, 116, 0.8);
+}
+.editableStatement:hover .editPost {
+  display: initial;
+  cursor: pointer;
+}
+.statementContainer {
+  background-color: #EBF0F2;
+  margin: auto;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+.statementContainer .duxPostAdvanced {
+  position: absolute;
+  align-self: flex-start;
+  right: 10px;
+  top: 10px;
+}
+.statementContainer .duxPostAdvanced .duxPostTime {
+  font-weight: normal;
+}
+.statementContainer .duxPostAdvanced i {
+  color: #7A979E;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.statementContainer .duxPostAdvanced i:hover {
+  color: #496374;
+}
+.statementContainer .imageContainer {
+  padding: 0 20px;
+  margin: 5px 0;
+  background-color: #DFE7EA;
+}
+.statementContainer .imageContainer img {
+  /*ograničit*/
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: auto;
+}
+.statementContainer .youtubeVideoContainer {
+  margin: 10px auto;
+}
+.statementContainer .duxPostDetails {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+          align-items: center;
+  align-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+.statementContainer .duxProfilePic {
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
+  margin: 10px;
+  background: #D9E2E6;
+  background: url('/img/default_user.jpg') no-repeat center;
+  -webkit-box-flex: 0;
+          flex: 0 0 60px;
+  background-size: contain;
+}
+.statementContainer .duxPostActions {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+}
+.statementContainer .duxPostActions a {
+  width: 50px;
+  position: relative;
+}
+.statementContainer .duxPostActions a .liked {
+  color: #E7D298;
+}
+.statementContainer .duxPostActions a span {
+  position: absolute;
+  margin-left: 5px;
+}
+.statementContainer .duxPostActions a:last-child {
+  width: 35px;
+}

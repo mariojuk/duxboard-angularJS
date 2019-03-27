@@ -1,0 +1,41 @@
+.font(){
+	font-family: Quicksand;
+}
+
+.absolute-center(){
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.square(@size){
+	height: @size;
+	width: @size;
+}
+
+.circle(@size){
+	.square(@size);
+	border-radius: @size;
+}
+
+.profile-pic(@size: 40px){
+	.circle(@size);
+	margin: 10px;
+	background: @color-light;
+	background: url('/img/default_user.jpg') no-repeat center;
+	background-size: contain;
+	flex: 0 0 @size;
+}
+
+.shadow(@size: 30px, @color: #444){
+	-webkit-box-shadow: 0 0 @size 0 @color;
+			box-shadow: 0 0 @size 0 @color;
+}
+
+.slide-transition(@duration: 0.5s){
+	-webkit-transition: width @duration linear;
+	   -moz-transition: width @duration linear;
+	    -ms-transition: width @duration linear;
+	     -o-transition: width @duration linear;
+	        transition: width @duration linear;
+}

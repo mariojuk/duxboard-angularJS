@@ -1,0 +1,16 @@
+<div class="youtubeVideoContainer"
+	ng-style="{
+		'height': height,
+		'width' : width,
+		'background-image': 'url(' + thumbnailSrc +')'}">
+
+	<div id="iframeContainer"></div>
+
+	<button ng-hide="playing"
+		class="playButton dux-button no-border red"
+		ng-click="playVideo()">
+		{{playing}}
+		<i class="fa fa-play"></i>
+	</button>
+
+</div>

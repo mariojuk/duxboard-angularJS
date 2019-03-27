@@ -1,0 +1,76 @@
+<form name="inviteFriendForm" class="inviteFriend" ng-controller="inviteFriendsController">
+    <h1 class="headerTxt"> Invite your friends!</h1>
+	
+	<p class="invTxt">Invite friends, and earn XX Dux Medals for each friend that create the
+	profile on Duxboard. Be generous to your friends. Upon registration, they will
+	enjoy one-month free trial Prime Membership</p>
+	
+    
+        
+		<div class="inp">
+			<input id="mail" placeholder="Enter email address" type="email" name="email" class="inviteMail" ng-model="userEmail" pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" required>
+		</div>
+		<p class="invTxt">Import contacts from:</p>
+		<div class="inviteMain">
+	
+					<div class="circleMain" ng-click="inviteGmail()"><a href="#"><img class="duxProfilePicSmall" src="../../img/1491856856_gmail.svg"></img></a></div>
+					<!-- <div class="circleMain"><a href="#"><img class="duxProfilePicSmall" src="../../img/1491841045_yahoo.svg"></img></a></div>
+					<div class="circleMain"><a href="#"><img class="duxProfilePicSmall" src="../../img/1491856441_Outlook.svg"></img></a></div> -->
+			
+		</div>
+		
+		<div align="center">
+			<button ng-click="invite(userEmail)" type="button" class="inviteButton" ><b>SEND INVITES</b></button>
+		</div>
+		<div class="footer">
+			<div class="footerDiv"><p class="footerTxt">SHARE</p></div>
+			<div class="footerDivSecond">
+				
+					<button class="circleFooter"
+						socialshare
+		                socialshare-provider="facebook"
+		                socialshare-type="sharer"
+		                socialshare-text="Join the first world business educative and social platform created for sports professionals!"
+		                socialshare-url="https://duxboard.com"
+		                socialshare-popup-height="300"
+		                socialshare-popup-width="400"
+						socialshare-trigger="click">
+						<i class="fa fa-facebook"></i>
+					</button>
+					<button class="circleFooter"
+                        socialshare
+                        socialshare-provider="twitter"
+                        socialshare-hashtags="duxboard"
+                        socialshare-via="twitter"
+                        socialshare-text="Join the first world business educative and social platform created for sports professionals!"
+                        socialshare-url="https://duxboard.com"
+                        socialshare-popup-height="300"
+                        socialshare-popup-width="400"
+						socialshare-trigger="click">
+						<i class="fa fa-twitter"></i>
+					</button>
+					<button class="circleFooter"
+						socialshare
+                        socialshare-provider="google"
+                        socialshare-url="https://duxboard.com"
+                        socialshare-popup-height="300"
+                        socialshare-popup-width="400"
+						socialshare-trigger="click">
+						<i class="fa fa-google-plus"></i>
+					</button>
+					<button class="circleFooter"
+					 	socialshare
+                        socialshare-provider="linkedin"
+                        socialshare-text="Join the first world business educative and social platform created for sports professionals!"
+                        socialshare-url="https://duxboard.com"
+                        socialshare-description="Duxboard linkedin summary"
+                        socialshare-source="duxboard"
+                        socialshare-popup-height="300"
+                        socialshare-popup-width="400"
+                        socialshare-trigger="click">
+                    	<i class="fa fa-linkedin"></i>
+					</button>
+				 
+			</div>
+		</div>
+</form>

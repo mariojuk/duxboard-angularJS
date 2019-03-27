@@ -1,0 +1,20 @@
+<div class="requestsContainer">
+	<p class="pageTitle">PARTNERSHIP REQUESTS</p>
+	<user-list
+		users-data="requests"
+		update-list="true"
+		show-time="true">
+	</user-list>
+	<no-data-indicator
+		ng-if="requests.length == 0"
+		icon-class="fa-users"
+		title="requests"
+		message="Invite friends to join Duxboard or find other people and make partners.">
+	</no-data-indicator>
+	<p class="pageTitle" ng-if="pending.length">SENT REQUESTS</p>
+	<user-list
+		users-data="pending"
+		update-list="true"
+		show-time="true">
+	</user-list>
+</div>

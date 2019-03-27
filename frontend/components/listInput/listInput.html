@@ -1,0 +1,26 @@
+<div ng-repeat="item in list track by $index"
+    style="display: inline-flex">
+    <input type="text"
+        ng-model="list[$index]"
+        on-enter="clearInput($index)">
+    <i ng-click="list[$index]=''; clearInput($index)"
+        ng-show="showInput"
+        class="fa fa-close"></i>
+</div>
+<div class="addNew">
+	<input type="text" placeholder="{{placeholder}}"
+	    ng-model="newItem"
+	    on-enter="addToList(newItem)"
+    	ng-show="showInput">
+    <i class="fa dropdownToggle"
+    	ng-show="sampleData.length && showInput"
+    	ng-class="showSamples ? 'fa-caret-up' : 'fa-caret-down'"
+    	ng-init="showSamples = false"
+    	ng-click="showSamples = !showSamples">
+    </i>
+</div>
+<div class="sample" ng-if="sampleData.length" ng-show="showSamples">
+	<div class="sampleItem" ng-repeat="s in sampleData" ng-click="addToList(s)">
+		{{s}}
+	</div>
+</div>

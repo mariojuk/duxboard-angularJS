@@ -1,0 +1,235 @@
+<div class="lpContainer">
+
+	<div id="top" class="lpMainCover" ng-style="{'min-height': coverHeight}">
+
+		<div class="backgroundImage"></div>
+
+		<div class="lpHeader">
+			<a scroll-to="#about">About</a>
+			<a scroll-to="#webinars">Webinars</a>
+			<a scroll-to="#packages">Packages</a>
+			<a ui-sref="login">Login</a>
+		</div>
+
+		<div class="lpSubscribe">
+			<img src="/img/logo1.png">
+			<form name="subForm" novalidate>
+				<input type="text"
+					name="name"
+					ng-model="name"
+					placeholder="your name"
+					ng-show="!subsucc" required>
+				<input type="email"
+					name="email"
+					ng-model="email"
+					placeholder="your email address"
+					ng-show="!subsucc" required>
+				<button type="submit"
+					class="dux-button red round no-border"
+					ng-class="!subForm.$invalid ? 'valid' : 'invalid'"
+					ng-click="!subForm.$invalid && subscribe()"
+					ng-disabled="subsucc">
+					{{ subsucc ? "Subscribed" : "Subscribe now" }}
+				</button>
+			</form>
+			<span ng-if="error" class="error">{{error}}</span>
+			<span>
+				<p><b>Subscribe now and get 30 days free trial to premium package!</b></p>
+			</span>
+		</div>
+
+		<div class="swipeDown" hide-on-scroll>
+			<i class="fa fa-chevron-down fa-2x"></i>
+		</div>
+
+	</div>
+
+	<div id="about" class="lpPromoFirst">
+		<div class="firstContent">
+			<div class="promoText">
+				<p class="title">
+					The first world business educative and social platform created for sports professionals.
+				</p>
+			</div>
+			<div class="promoVideo">
+				<youtube-video video-id="yLvw4zaGNFU"></youtube-video>
+			</div>	
+		</div>
+	</div>
+
+	<div class="lpPromoSecond">
+		<div class="secondContent">
+			<div class="promoItem">
+				<img src="/img/stats.svg">
+				<p>Ability to cultivate personal and professional growth</p>
+			</div>
+			<div class="promoItem">
+				<img src="/img/handshake.svg">
+				<p>Opportunities to connect with sports executives</p>
+			</div>
+			<div class="promoItem">
+				<img src="/img/presentation.svg">
+				<p>Inovative education content</p>
+			</div>
+			<div class="promoItem">
+				<img src="/img/briefcase.svg">
+				<p>Career oportunities</p>
+			</div>	
+		</div>
+	</div>
+
+	<div id="webinars" class="lpWebinars">
+		<div class="webinarsContent">
+			<div class="webinarsTitle">
+				<p><span></span>Webinars</p>
+				<p><span ng-bind="'&'"></span>Courses</p>
+			</div>
+			<p class="webinarsAbout">
+				Attend our Webinar sessions created by the industry experts to sharpen your skills.
+				Our E-Learning feature provides you access to the classes produced by the most reputable learning institutions in the world. Choose the courses from your interest and earn professional certificates.
+			</p>
+
+			<div class="upcoming" ng-if="presenters.length">
+				<p class="title">Upcoming webinar presenters</p>
+				<div class="presenters">
+					<div class="presenter" ng-repeat="pr in presenters">
+						<img ng-src="{{pr.profilePicture}}">
+						<p class="name">{{ pr.name }}</p>
+						<p class="info">{{ pr.shortBio }}</p>
+						<p class="webinar">{{ pr.webinar }}</p>
+						<p class="datetime">{{ pr.startingDate | date: 'MMM d, y h:mm a' : '+0100'}} CET</p>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="upcoming">
+				<p class="title">Upcoming courses</p>
+				<div class="courses">
+					<a class="course"
+						href="{{c.url}}"
+						ng-repeat="c in courses">
+						<div class="cover"
+							ng-style="{'background-image': 'url('+ c.image_url +')'}">
+							<div class="type" ng-class="c.certificate">
+								{{c.certificate}}
+							</div>
+						</div>
+						<div class="info">
+							<p class="org">{{c.org}}</p>
+							<p class="title">{{c.title}}</p>
+							<p class="start">{{c.current ? "Current" : c.date }}</p>
+							<img class="cert" ng-if="c.microMasters" ng-src="/img/microMasters.svg">
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<a class="edx" ng-href="https://www.edx.org/">
+				<p>Powered by</p>
+				<img src="/img/edxlogo.png">
+			</a>
+		</div>
+	</div>
+
+	<div id="packages" class="lpRegistration">
+		<div class="registrationContent">
+			<p class="title">Packages</p>
+			<div class="packages">
+				<div class="package free">
+					<p class="packageName">Free</p>
+					<p>E-Learning </p>
+					<p>See who visited your profile</p>
+					<p>Free Agent Board</p>
+					<p>Abitlity to receive Dux Medals and earn Premium Membership</p>
+					<button class="dux-button round no-border"
+						ui-sref="register({package: free})">
+						Get started
+					</button>
+				</div>
+				<div class="package premium">
+					<p class="packageName">Premium</p>
+					<p>E-learning</p>
+					<p>See who visited your profile</p>
+					<p>Free Agent Board</p>
+					<p>Webinars</p>
+					<p>Consulting services</p>
+					<p>Analytics data </p>
+					<button class="dux-button round red no-border"
+						ui-sref="register({package: premium})">
+						Get started
+					</button>
+				</div>		
+			</div>	
+		</div>
+	</div>
+
+	<div class="lpPayment">
+		<div class="paymentContainer">
+			<div ng-repeat="p in payments" class="payment">
+				<p ng-if="p.best" class="best">Best value</p>
+				<p class="name">{{p.name}}</p>
+				<p class="oldPrice" ng-if="p.oldPrice">{{p.currency}} {{ p.oldPrice | number: 2 }}</p>
+				<span class="price" ng-init="color=p.best ? 'red' : ''">
+					<p ng-class="color">{{p.currency}}</p>
+					<p ng-class="color" class="big">{{p.monthlyPrice.toString().split(".")[0]}}</p>
+					<p ng-class="color">.{{p.monthlyPrice.toString().split(".")[1]}}</p>
+					<p>/month</p>
+				</span>
+				<p class="single" ng-if="p.singlePrice">Billed as one payment of {{p.currency + p.singlePrice}}</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="lpSoon">
+		<p>COMING IN</p>
+		<p>
+			<span countdown='' date='July 7 2017 07:00:00 EST'></span>
+		</p>
+	</div>
+
+	<div id="footer" class="lpFooter">
+		<div class="footerContainer">
+			<div class="contact">
+				<p>Get in touch!</p>
+				<div class="socialMedia">
+					<a ng-href="https://www.facebook.com/Duxboard/">
+						<i class="fa fa-facebook"></i>
+					</a>
+					<a ng-href="https://twitter.com/Duxboard">
+						<i class="fa fa-twitter"></i>
+					</a>
+					<a ng-href="https://plus.google.com/112104139833427524410">
+						<i class="fa fa-google-plus"></i>
+					</a>
+					<a ng-href="https://www.linkedin.com/company/duxboard">
+						<i class="fa fa-linkedin"></i>
+					</a>
+				</div>
+				<a class="email" href="mailto:duxboard@info.com" target="_top">info@duxboard.com</a>
+			</div>
+			<div class="legal">
+				<div>
+					<a ng-click="showPrivacyPolicy()">Privacy policy</a>
+					<a ng-click="showTermsOfUse()">Terms of use</a>
+					<!-- <a>Contact us</a> -->
+					<a ng-href="http://blog.duxboard.com">Blog</a>
+				</div>
+				<p>Copyright © Duxboard 2017</p>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+<!-- Hotjar Tracking Code for www.duxboard.com -->
+<script>
+(function(h,o,t,j,a,r){
+h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+h._hjSettings={hjid:530282,hjsv:5};
+a=o.getElementsByTagName('head')[0];
+r=o.createElement('script');r.async=1;
+r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+a.appendChild(r);
+})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+</script>

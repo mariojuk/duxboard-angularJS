@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html ng-app="sportApp">
+
+	<head>
+		<meta charset="UTF-8">
+		<base href="/">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="mobile-web-app-capable" content="yes">
+    <meta property="og:url" content="https://duxboard.com"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Duxboard"/>
+    <meta property="og:image" content="https://duxboard.com/img/duxboard-fb.png"/>
+    <meta property="og:description" content="The first world business educative and social platform created for sports professionals."/>
+		<link rel="icon" sizes="256x256" href="favicon.ico">
+
+		<title>Duxboard</title>
+
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" >
+		<link rel="stylesheet" type="text/css" href="build/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="styles/css/ngDialog.min.css">
+		<link rel="stylesheet" type="text/css" href="styles/css/ngDialog-theme-plain.css">
+		<link rel="stylesheet" type="text/css" href="styles/css/ui-cropper.css">
+		<link rel="stylesheet" type="text/css" href="styles/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="styles/css/emoji-picker.css">
+    <link rel="stylesheet" type="text/css" href="styles/css/animate.min.css">
+		<link rel="stylesheet" href="//cdn.quilljs.com/1.1.5/quill.snow.css">
+			
+		<!-- inject:css -->
+  		<link rel="stylesheet" href="build/articlePost/articlePost.css">
+  		<link rel="stylesheet" href="build/banner/banner.css">
+  		<link rel="stylesheet" href="build/comments/comments.css">
+  		<link rel="stylesheet" href="build/feed/feed.css">
+  		<link rel="stylesheet" href="build/header/header.css">
+  		<link rel="stylesheet" href="build/leftSideBar/leftSideBar.css">
+  		<link rel="stylesheet" href="build/loader/loader.css">
+  		<link rel="stylesheet" href="build/noDataIndicator/noDataIndicator.css">
+  		<link rel="stylesheet" href="build/post/post.css">
+  		<link rel="stylesheet" href="build/rightSideBar/rightSideBar.css">
+  		<link rel="stylesheet" href="build/statement/statement.css">
+  		<link rel="stylesheet" href="build/toast/taste.css">
+  		<link rel="stylesheet" href="build/userList/userList.css">
+  		<link rel="stylesheet" href="build/youtubeVideo/youtubeVideo.css">
+  		<link rel="stylesheet" href="build/admin/admin.css">
+  		<link rel="stylesheet" href="build/admin/preorders/preorders.css">
+  		<link rel="stylesheet" href="build/admin/presenters/presenters.css">
+  		<link rel="stylesheet" href="build/admin/webinars/webinars.css">
+  		<link rel="stylesheet" href="build/analysis/analysis.css">
+  		<link rel="stylesheet" href="build/changepassword/changepassword.css">
+  		<link rel="stylesheet" href="build/consulting/consulting.css">
+  		<link rel="stylesheet" href="build/elearning/course/course.css">
+  		<link rel="stylesheet" href="build/elearning/courses/courses.css">
+  		<link rel="stylesheet" href="build/elearning/elearning.css">
+  		<link rel="stylesheet" href="build/forgotpassword/forgotpassword.css">
+  		<link rel="stylesheet" href="build/freeagent/freeAgent.css">
+  		<link rel="stylesheet" href="build/home/home.css">
+  		<link rel="stylesheet" href="build/landing/landing.css">
+  		<link rel="stylesheet" href="build/login/login.css">
+  		<link rel="stylesheet" href="build/messages/massages.css">
+  		<link rel="stylesheet" href="build/notifications/notifications.css">
+  		<link rel="stylesheet" href="build/packages/packages.css">
+  		<link rel="stylesheet" href="build/packages/paymentPlan/paymentPlan.css">
+  		<link rel="stylesheet" href="build/packages/thankBox/thankBox.css">
+  		<link rel="stylesheet" href="build/profile/profile.css">
+  		<link rel="stylesheet" href="build/profile/subpages/about/profileAbout.css">
+  		<link rel="stylesheet" href="build/profile/subpages/articles/articles.css">
+  		<link rel="stylesheet" href="build/profile/subpages/newArticle/newArticle.css">
+  		<link rel="stylesheet" href="build/profile/subpages/partners/profilePartners.css">
+  		<link rel="stylesheet" href="build/profile/subpages/photos/photos.css">
+  		<link rel="stylesheet" href="build/profile/subpages/singlearticle/article.css">
+  		<link rel="stylesheet" href="build/profile/subpages/statements/profileStatements.css">
+  		<link rel="stylesheet" href="build/register/register.css">
+  		<link rel="stylesheet" href="build/requests/requests.css">
+  		<link rel="stylesheet" href="build/search/search.css">
+  		<link rel="stylesheet" href="build/settings/settings.css">
+  		<link rel="stylesheet" href="build/webinars/webinars.css">
+  		<link rel="stylesheet" href="build/addCreditCardSettings/addCreditCard.css">
+  		<link rel="stylesheet" href="build/blockedUsersSettings/blockedUsers.css">
+  		<link rel="stylesheet" href="build/changeEmailSettings/changeEmailSettings.css">
+  		<link rel="stylesheet" href="build/changePasswordSettings/changePasswordSettings.css">
+  		<link rel="stylesheet" href="build/confirmAction/confirmAction.css">
+  		<link rel="stylesheet" href="build/deleteMediaPhoto/deleteMediaPhoto.css">
+  		<link rel="stylesheet" href="build/editArticle/editArticlePopup.css">
+  		<link rel="stylesheet" href="build/editPresenter/editPresenter.css">
+  		<link rel="stylesheet" href="build/editWebinar/editWebinar.css">
+  		<link rel="stylesheet" href="build/freeAgent/createBanner/createBanner.css">
+  		<link rel="stylesheet" href="build/freeAgent/editBanner/editBanner.css">
+  		<link rel="stylesheet" href="build/inviteFriends/inviteFriends.css">
+  		<link rel="stylesheet" href="build/inviteGmail/inviteGmail.css">
+  		<link rel="stylesheet" href="build/moreArticle/moreArticle.css">
+  		<link rel="stylesheet" href="build/newArticlePopup/newArticlePopup.css">
+  		<link rel="stylesheet" href="build/notify/notify.css">
+  		<link rel="stylesheet" href="build/popup.css">
+  		<link rel="stylesheet" href="build/postMedia/postMedia.css">
+  		<link rel="stylesheet" href="build/privacyPolicy/privacyPolicy.css">
+  		<link rel="stylesheet" href="build/terminateAccountSettings/terminateAccount.css">
+  		<link rel="stylesheet" href="build/termsOfUse/termsOfUse.css">
+  		<link rel="stylesheet" href="build/unblockUser/unblockUser.css">
+  		<link rel="stylesheet" href="build/animations.css">
+  		<link rel="stylesheet" href="build/elements.css">
+  		<link rel="stylesheet" href="build/global.css">
+  		<link rel="stylesheet" href="build/main.css">
+  		<link rel="stylesheet" href="build/medals.css">
+  		<link rel="stylesheet" href="build/mixins.css">
+  		<link rel="stylesheet" href="build/scrollbar.css">
+  		<link rel="stylesheet" href="build/variables.css">
+  		<!-- endinject -->
+	</head>
+
+	<body>
+		
+		<div id="header" ui-view="header"></div>
+    <div id="inlineNotification"></div>
+    <div id="main" ui-view="main" ng-style="{'min-height': contentHeight}">
+      <div id="mainContent" ng-style="{'min-height': contentHeight}">
+        <div id="sidebar" ui-view="sidebar" ng-class="{hide:!showmenu,slide:showmenu}"></div>
+        <div id="content" ng-style="{'min-width': contentWidth}" ui-view="content" ng-swipe-left="swipeLeft()" ng-swipe-right="swipeRight()"></div>
+        
+      </div>
+		</div>
+    <script src="vendor/jquery-1.11.3.min.js"></script> 
+		<script src="vendor/humanize-duration.js"></script>
+		<script src="vendor/lodash.min.js"></script>
+  	<script src="vendor/socket.io.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+    <script src="vendor/ui-bootstrap-tpls-2.5.0.min.js"></script>
+		<script src="vendor/angular-sanitize.min.js"></script>
+		<script src="vendor/angular-ui-router.min.js"></script>
+		<script src="vendor/angular-touch.min.js"></script>
+		<script src="vendor/emoji-picker.js"></script>
+		<script src="vendor/angular-inview.js"></script>
+		<script src="vendor/angular-match-media.js"></script>
+		<script src="vendor/ng-file-upload.min.js"></script>
+		<script src="vendor/ui-cropper.js"></script>
+		<script src="vendor/ngDialog.min.js"></script>
+		<script src="https://cdn.quilljs.com/1.2.2/quill.min.js"></script>
+		<script src="vendor/ng-quill.min.js"></script>
+    <script src="vendor/sticky.min.js"></script>
+    <script src="vendor/smooth-scrollbar.js"></script>
+    <script src="vendor/angular-smooth-scrollbar.js"></script>
+    <script src="vendor/angular-socialshare.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="vendor/angular-chart.min.js"></script>
+    <script src="vendor/ngMask.min.js"></script>
+		<script src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+		<script src="https://apis.google.com/js/client.js"></script>
+
+		<!-- inject:js -->
+  		<script src="app.js"></script>
+  		<script src="components/articlePost/articlePostController.js"></script>
+  		<script src="components/articlePost/articlePostDirective.js"></script>
+  		<script src="components/banner/bannerController.js"></script>
+  		<script src="components/banner/bannerDirective.js"></script>
+  		<script src="components/comments/commentsController.js"></script>
+  		<script src="components/comments/commentsDirective.js"></script>
+  		<script src="components/feed/feedController.js"></script>
+  		<script src="components/feed/feedDirective.js"></script>
+  		<script src="components/header/headerController.js"></script>
+  		<script src="components/leftSideBar/leftSideBar.js"></script>
+  		<script src="components/listInput/listInputController.js"></script>
+  		<script src="components/listInput/listInputDirective.js"></script>
+  		<script src="components/loader/loader.js"></script>
+  		<script src="components/noDataIndicator/noDataIndicator.js"></script>
+  		<script src="components/post/postController.js"></script>
+  		<script src="components/post/postDirective.js"></script>
+  		<script src="components/rightSideBar/rightSideBarController.js"></script>
+  		<script src="components/rightSideBar/rightSideBarDirective.js"></script>
+  		<script src="components/statement/statementController.js"></script>
+  		<script src="components/statement/statementDirective.js"></script>
+  		<script src="components/userList/userListController.js"></script>
+  		<script src="components/userList/userListDirective.js"></script>
+  		<script src="components/youtubeVideo/youtubeVideoDirective.js"></script>
+  		<script src="directives/autoGrow.js"></script>
+  		<script src="directives/countdown.js"></script>
+  		<script src="directives/hideOnScroll.js"></script>
+  		<script src="directives/onEnter.js"></script>
+  		<script src="directives/onSrcError.js"></script>
+  		<script src="directives/scrollBottom.js"></script>
+  		<script src="directives/scrollTo.js"></script>
+  		<script src="directives/setHeight.js"></script>
+  		<script src="filters/actionType.js"></script>
+  		<script src="filters/humanizeTime.js"></script>
+  		<script src="interceptor.js"></script>
+  		<script src="mainController.js"></script>
+  		<script src="pages/admin/adminController.js"></script>
+  		<script src="pages/admin/preorders/adminPreordersController.js"></script>
+  		<script src="pages/admin/presenters/adminPresentersController.js"></script>
+  		<script src="pages/admin/webinars/adminWebinarsController.js"></script>
+  		<script src="pages/analysis/analysisController.js"></script>
+  		<script src="pages/changepassword/changepasswordController.js"></script>
+  		<script src="pages/consulting/consultingController.js"></script>
+  		<script src="pages/elearning/course/elearningCourseController.js"></script>
+  		<script src="pages/elearning/courses/elearningCoursesController.js"></script>
+  		<script src="pages/elearning/elearningController.js"></script>
+  		<script src="pages/forgotpassword/forgotpasswordController.js"></script>
+  		<script src="pages/freeagent/freeAgentController.js"></script>
+  		<script src="pages/home/homeController.js"></script>
+  		<script src="pages/landing/landingController.js"></script>
+  		<script src="pages/login/loginController.js"></script>
+  		<script src="pages/messages/messagesController.js"></script>
+  		<script src="pages/notifications/notificationsController.js"></script>
+  		<script src="pages/packages/packagesController.js"></script>
+  		<script src="pages/packages/paymentPlan/paymentPlanController.js"></script>
+  		<script src="pages/packages/thankBox/thankBoxController.js"></script>
+  		<script src="pages/profile/profileController.js"></script>
+  		<script src="pages/profile/subpages/about/profileAboutCtrl.js"></script>
+  		<script src="pages/profile/subpages/articles/profileArticlesCtrl.js"></script>
+  		<script src="pages/profile/subpages/newArticle/newArticleController.js"></script>
+  		<script src="pages/profile/subpages/partners/profilePartnersCtrl.js"></script>
+  		<script src="pages/profile/subpages/photos/profilePhotosCtrl.js"></script>
+  		<script src="pages/profile/subpages/singlearticle/profileArticleCtrl.js"></script>
+  		<script src="pages/profile/subpages/statements/profileStatementsCtrl.js"></script>
+  		<script src="pages/register/registerController.js"></script>
+  		<script src="pages/requests/requestsController.js"></script>
+  		<script src="pages/search/searchController.js"></script>
+  		<script src="pages/settings/settingsController.js"></script>
+  		<script src="pages/status/statusController.js"></script>
+  		<script src="pages/webinars/webinarsController.js"></script>
+  		<script src="popups/addCreditCardSettings/addCreditCardController.js"></script>
+  		<script src="popups/blockedUsersSettings/blockedUsersController.js"></script>
+  		<script src="popups/changeCover/changeCoverController.js"></script>
+  		<script src="popups/changeEmailSettings/changeEmailSettingsController.js"></script>
+  		<script src="popups/changePasswordSettings/changePasswordSettingsController.js"></script>
+  		<script src="popups/changeProfile/changeProfileController.js"></script>
+  		<script src="popups/deleteMediaPhoto/deleteMediaPhotoController.js"></script>
+  		<script src="popups/editArticle/editArticleController.js"></script>
+  		<script src="popups/editPost/editPostController.js"></script>
+  		<script src="popups/editPresenter/editPresenterController.js"></script>
+  		<script src="popups/editWebinar/editWebinarController.js"></script>
+  		<script src="popups/freeAgent/createBanner/createBannerController.js"></script>
+  		<script src="popups/freeAgent/editBanner/editBannerController.js"></script>
+  		<script src="popups/inviteFriends/inviteFriendsController.js"></script>
+  		<script src="popups/inviteGmail/inviteGmailController.js"></script>
+  		<script src="popups/moreArticle/moreArticleController.js"></script>
+  		<script src="popups/newArticlePopup/newArticlePopupController.js"></script>
+  		<script src="popups/newMessage/newMessageController.js"></script>
+  		<script src="popups/sharePost/sharePostController.js"></script>
+  		<script src="popups/terminateAccountSettings/terminateAccountController.js"></script>
+  		<script src="popups/unblockUser/unblockUserController.js"></script>
+  		<script src="popups/usersPopup/usersPopupController.js"></script>
+  		<script src="router.js"></script>
+  		<script src="services/authService.js"></script>
+  		<script src="services/constantServices.js"></script>
+  		<script src="services/googleContactsService.js"></script>
+  		<script src="services/httpService.js"></script>
+  		<script src="services/notificationService.js"></script>
+  		<script src="services/popupService.js"></script>
+  		<script src="services/userService.js"></script>
+  		<!-- endinject -->
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-92645238-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>
+

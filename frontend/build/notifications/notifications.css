@@ -1,0 +1,122 @@
+.notificationsPageContainer {
+  width: 100%;
+  padding: 10px;
+  background-color: #F4F7F8;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+.notificationsPageContainer .selectView {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  margin: 10px auto;
+}
+.notificationsPageContainer .selectView .notif,
+.notificationsPageContainer .selectView .activity {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  width: 140px;
+  height: 35px;
+  border: 1px solid #7A979E;
+  background: transparent;
+  color: #496374;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.notificationsPageContainer .selectView .notif:hover,
+.notificationsPageContainer .selectView .activity:hover {
+  background-color: #D9E2E6;
+}
+.notificationsPageContainer .selectView .notif {
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+}
+.notificationsPageContainer .selectView .activity {
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+}
+.notificationsPageContainer .selectView .selected {
+  background-color: #496374;
+  color: white;
+  border: none;
+}
+.notificationsPageContainer .selectView .selected:hover {
+  background-color: #68888E;
+}
+.notificationsPageContainer .selectFilter {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  margin: 15px auto;
+  color: #496374;
+}
+.notificationsPageContainer .selectFilter .selected {
+  font-weight: bold;
+}
+.notificationsPageContainer .selectFilter p {
+  padding: 0px 30px;
+  text-transform: uppercase;
+  border-right: 1px solid #496374;
+}
+@media only screen and (max-width: 767px) {
+  .notificationsPageContainer .selectFilter p {
+    padding: 0px 5px;
+  }
+}
+.notificationsPageContainer .selectFilter p:last-child {
+  border-right: none;
+}
+.notificationsPageContainer .selectFilter p:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+.notificationsPageContainer .notifFeed {
+  width: 100%;
+}
+.notificationsPageContainer .notifFeed.activity .notif .reward,
+.notificationsPageContainer .notifFeed.activity .notif .dux-medal {
+  display: none;
+}
+.notificationsPageContainer .notifFeed .notif {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  background-color: #EBF0F2;
+  border-radius: 5px;
+  margin: 10px 0px;
+  padding: 10px 10px;
+  color: #496374;
+}
+.notificationsPageContainer .notifFeed .notif > p::first-letter {
+  text-transform: capitalize;
+}
+.notificationsPageContainer .notifFeed .notif i {
+  margin-left: 5px;
+}
+.notificationsPageContainer .notifFeed .notif .type80,
+.notificationsPageContainer .notifFeed .notif .type100,
+.notificationsPageContainer .notifFeed .notif .type200 {
+  color: #FF6666;
+  font-weight: bold;
+  cursor: pointer;
+}
+.notificationsPageContainer .notifFeed .notif .time {
+  margin-left: auto;
+  color: #97aeb4;
+}

@@ -1,0 +1,118 @@
+input,
+button,
+submit {
+  text-decoration: none;
+  border: none;
+  outline: 0;
+}
+select {
+  border: none;
+  background-color: transparent;
+}
+a {
+  color: #68888E;
+  cursor: pointer;
+  text-decoration: none;
+}
+button {
+  background-color: transparent;
+}
+p {
+  margin: 0;
+}
+/*BUTTONS*/
+input[type="button"].dux-button,
+input[type="submit"].dux-button,
+button.dux-button {
+  display: block;
+}
+div.dux-button {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.dux-button {
+  padding: 5px 10px;
+  font-size: 12px;
+  color: white;
+  border: 1px solid white;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  font-weight: normal;
+  cursor: pointer;
+}
+.dux-button i {
+  margin-right: 10px;
+}
+.dux-button:hover,
+.dux-button:visited,
+.dux-button:active,
+.dux-button:focus {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+.dux-button.red {
+  background-color: #FF6666;
+}
+.dux-button.red:hover {
+  background-color: #ff8080;
+}
+.dux-button.gray {
+  background-color: #777777;
+}
+.dux-button.gray:hover {
+  background-color: #848484;
+}
+.dux-button.no-border {
+  border: none;
+}
+.dux-button.round {
+  border-radius: 5px;
+}
+.dux-button.big {
+  padding: 10px 15px;
+  font-size: 16px;
+}
+.dux-input {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 5px;
+}
+.dux-input option {
+  background-color: #89a3a9;
+}
+.uib-datepicker-popup table {
+  margin: auto;
+}
+.uib-datepicker-popup button {
+  border: none;
+}
+.uib-datepicker-popup button:focus {
+  outline: none;
+}
+.uib-datepicker-popup .uib-right:after {
+  content: "\2192";
+}
+.uib-datepicker-popup .uib-left:after {
+  content: "\2190";
+}
+.uib-datepicker-popup .uib-datepicker-current,
+.uib-datepicker-popup .uib-clear {
+  background-color: #777777;
+}
+.uib-datepicker-popup .uib-close {
+  background-color: #FF6666;
+}
+.uib-datepicker-popup .btn-info.active {
+  background-color: #7A979E;
+}
+.uib-datepicker-popup .btn-info.active:hover {
+  background-color: #68888E;
+}

@@ -1,0 +1,73 @@
+@import "../styles/less/global.less";
+
+.ngdialog-content{
+    position: relative;
+    padding: 0px !important;
+    border-radius: @radius*1.2;
+    background-color: @color-bg !important;
+    .shadow;
+
+    .popupHeader{
+        width: 100%;
+        background-color: @color-darkest;
+        color: white !important;
+        padding: 5px 10px;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: bold;
+        border-top-right-radius: @radius/1.2;
+        border-top-left-radius: @radius/1.2;
+    }
+
+    .popupContent{
+        margin: 10px 10px;
+        //padding: 0px 10px;
+    }
+
+    // .popupHeader + .popupContent { background-color: @color-bg; }
+
+    .coverPhotoChange, .profilePicChange{
+
+        .dux-button{
+            margin-top: 10px;
+        }
+        
+        .progress{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 0;
+            margin-bottom: 0;
+            height: 2px;
+
+            div{
+                background-color: #FF6666;
+                height: 2px;
+            }
+        }
+
+        .cropArea {
+          background: #E4E4E4;
+          overflow: hidden;
+          width:100%;
+          height:350px;
+            .imageUpload{
+                position: relative;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                bottom: 0;
+                z-index: 999;
+
+                .drop-box {
+                    border: 5px dashed @color-base;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                }
+            }
+        }
+
+    }
+}

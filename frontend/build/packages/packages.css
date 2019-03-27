@@ -1,0 +1,118 @@
+.packagesContainer {
+  background: linear-gradient(rgba(65, 70, 101, 0.7), rgba(81, 107, 124, 0.3)), url("/img/bg/packages-bg.jpg") no-repeat center center fixed;
+  background-attachment: fixed;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+}
+.packagesContainer .packagesContent {
+  max-width: 1012px;
+  margin: auto;
+  padding: 100px 60px 0px;
+}
+@media only screen and (max-width: 767px) {
+  .packagesContainer .packagesContent {
+    padding: 20px 0px 0px;
+  }
+  .packagesContainer .packagesContent .title {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .packagesContainer .packagesContent {
+    padding: 80px 20px 0px;
+  }
+}
+.packagesContainer .packagesContent .title {
+  font-size: 28px;
+  color: #FFFFFF;
+  width: 100%;
+}
+.packagesContainer .packagesContent .packages {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+@media only screen and (max-width: 767px) {
+  .packagesContainer .packagesContent .packages {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+.packagesContainer .packagesContent .packages .package {
+  width: 50%;
+  padding: 30px 60px 70px;
+  position: relative;
+  background-color: rgba(73, 99, 116, 0.65);
+  outline: 10px solid rgba(73, 99, 116, 0.65);
+  transition: 0.5s outline ease;
+  color: #FFFFFF;
+}
+.packagesContainer .packagesContent .packages .package:hover {
+  background: rgba(73, 99, 116, 0.85);
+  outline: 10px solid transparent;
+  box-shadow: 0 0 30px 0 #444;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .packagesContainer .packagesContent .packages .package {
+    padding: 20px 30px 70px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .packagesContainer .packagesContent .packages .package {
+    width: 100%;
+    pading: 30px 15px 70px;
+  }
+}
+.packagesContainer .packagesContent .packages .package p {
+  margin: 10px 0px;
+  word-wrap: break-word;
+}
+.packagesContainer .packagesContent .packages .package button {
+  width: 50%;
+  height: 40px;
+  font-weight: bold;
+  position: absolute;
+  left: 60px;
+  bottom: 20px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .packagesContainer .packagesContent .packages .package button {
+    left: 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .packagesContainer .packagesContent .packages .package button {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+}
+.packagesContainer .packagesContent .packages .package .packageName {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+.packagesContainer .packagesContent .packages .free {
+  margin-top: 60px;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 767px) {
+  .packagesContainer .packagesContent .packages .free {
+    margin-top: 0px;
+  }
+}
+.packagesContainer .packagesContent .packages .free button {
+  background-color: #FFFFFF;
+  color: #496374;
+}
+.packagesContainer .packagesContent .packages .premium {
+  margin-left: 10px;
+}

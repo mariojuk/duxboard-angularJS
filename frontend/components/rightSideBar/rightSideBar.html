@@ -1,0 +1,57 @@
+<div id="rightSidebar">
+
+	<a href="/invite" class="invite"  ng-click="inviteFriend()">+Invite friends</a>
+    <div class="sectionTitle">Who you may know?</div>
+
+    <div class="mayknowSection">
+      <div class="personContainer" ng-repeat="person in mayknow">
+        <div class="personProfilePic"
+            ng-style="{'background-image': 'url(' + person.profilePicture + ')'}"
+            ui-sref="app.profile({id: person._id})">
+        </div>
+        <div class="personInfo">
+          <a class="name" ui-sref="app.profile({id: person._id})">
+            {{person.firstName}} {{person.secondName}}
+          </a>
+          <a class="mutual"
+            ng-if="person.mutualPartners"
+            ng-click="getMutualPartners(person)">
+            {{person.mutualPartners}} mutual partner{{person.mutualPartners > 1 ? 's' : ''}}
+          </a> 
+        </div> 
+      </div>
+      
+    </div>
+
+    <div class="moreButton" ng-click="morePeople()">• • •</div>
+    
+    <!--recommended articles-->
+    <div class="sectionTitle" ng-if="articles.length">Recommended articles</div>
+
+    <div class="articlesSection" ng-if="articles.length">
+      <div class="article" ng-repeat="article in articles">
+        <div class="articleAuthor">
+          <div class="authorPic"
+            ng-style="{'background-image': 'url(' + article.user.profilePicture + ')'}"
+            ui-sref="app.profile({id: article.user._id})">
+          </div>
+          <a class="authorName" ui-sref="app.profile({id: article.user._id})">
+            {{article.user.firstName}} {{article.user.secondName}}
+          </a>
+	</div>
+        <div class="articleContent"  ui-sref="app.profile.articles.article({id: article.user._id, aid: article._id})">
+          <div
+            class="articlePic"
+            ng-style="{'background-image': 'url(' + article.media.img + ')'}">
+          </div>
+          <div class="articleText" >
+            <a>{{article.title}}</a>
+            <p ng-bind-html="article.text| limitTo: 80"></p>
+		  {{article.text.length < 80 ? '' : '...'}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="moreButton" ng-if="articles.length" ng-click="moreArticle()">• • •</div>
+</div>

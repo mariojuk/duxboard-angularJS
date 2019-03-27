@@ -1,0 +1,31 @@
+@import "../../styles/less/global.less";
+
+.youtubeVideoContainer{
+	background-color: black;
+	background-size: cover;
+    background-position: center;
+    position: relative;
+    .absolute-center;
+
+	.iframeContainer, iframe{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.playButton{
+		.circle(40px);
+		.absolute-center;
+		font-size: 16px;
+		// z-index: 1;
+		.shadow(10px);
+		&:hover{
+			.shadow(10px, @color-red);
+		}
+		i{ margin: auto !important; }
+	}
+	.playButton.ng-hide{
+		animation: fadeOut 1s;
+	}
+
+}

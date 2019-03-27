@@ -1,0 +1,33 @@
+<div class="edxCoursesContainer">
+	<p class="pageTitle">COURSES</p>
+	<div class="paginator">
+		<ul 
+			uib-pagination
+			total-items="courses.pagination.count"
+			ng-model="courses.pagination.page"
+			max-size="10"
+			class="pagination-sm"
+			ng-change="goToPage(courses.pagination.page)"
+			boundary-link-numbers="true">
+		</ul>
+	</div>
+	<loader data="courses.results"></loader>
+	<div class="courses">
+		<div class="course"
+			ng-repeat="c in courses.results"
+			ui-sref="app.elearning.course">
+			<div class="cover"
+				ng-style="{'background-image': 'url('+ c.media.image.small +')'}">
+				<div class="type" ng-class="c.type">
+					{{c.type}}
+				</div>
+			</div>
+			<div class="info">
+				<p class="org">{{c.org}}</p>
+				<p class="title">{{c.name}}</p>
+				<p class="start">{{c.start_display}}</p>
+			</div>
+		</div>
+	</div>
+	
+</div>

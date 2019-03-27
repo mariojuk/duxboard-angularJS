@@ -1,0 +1,66 @@
+<p class="popupHeader">ADD CREDIT CARD</p>
+<div class="popupContent"  ng-controller="addCreditCardController">
+    <div class="addCreditForm">
+        <div class="CreditFormContent">
+        <div class="creditCardLeft">
+                    <label>FIRST NAME:</label>
+                    <input class="popup-input" placeholder="Enter first name here" type="text" ng-model="cardSettings.firstName" >
+            </div>
+        <div class="creditCardRight" >
+                    <label>LAST NAME:</label>
+                    <input class="popup-input" placeholder="Enter last name here" type="text" ng-model="cardSettings.lastName">
+            </div>
+        <div class="creditCardLeft">
+                    <label>CARD NUMBER</label>
+                    <input class="popup-input" placeholder="Enter card number"  type="text" ng-model="cardSettings.cardNumber" minlength="12" maxlength="12">
+            </div>
+        <div class="creditCardRight">
+                    <label>EXPIRATION DATE</label></br>
+                    <select class="popup-input"  ng-model="cardSettings.expirationMonth"   ng-options="month for month in monthss"></select>
+                    <span>/</span>
+                    <select class="popup-input" ng-model="cardSettings.expirationYear"   ng-options="year for year in yearss"></select>
+            </div>
+        <div class="creditCardLeft">
+                    <label>CVV</label>
+                    <input class="popup-input" placeholder="***" id="myPassword" ng-model="cardSettings.cvv"  type="password">
+            </div>
+        </div>
+        <div class="creditCardLeft">
+            <label>FIRST NAME:</label>
+            <input class="popup-input" placeholder="Enter first name here" ng-model="cardSettings.firstNameBilling">
+        </div>
+        <div class="creditCardRight" >
+            <label>LAST NAME:</label>
+            <input class="popup-input" placeholder="Enter last name here" type="text" ng-model="cardSettings.lastNameBilling">
+        </div>
+        <div class="creditCardLeft">
+            <label>STREET ADDRESS</label>
+            <input placeholder="Enter street adress here" class="popup-input" type="text"
+                   ng-model="cardSettings.streetAddress">
+        </div>
+        <div class="creditCardRight">
+            <label>STREET NUMBER</label>
+            <input placeholder="Enter street number here" class="popup-input" type="text"
+                   ng-model="cardSettings.streetNumber">
+        </div>
+        <div class="creditCardLeft">
+            <label>CITY</label>
+            <input placeholder="Enter city name here" ng-model="cardSettings.city" class="popup-input" type="text">
+        </div>
+        <div class="creditCardRight">
+            <label>STATE/PROVINCE</label>
+            <input placeholder="Eneter state province name" ng-model="cardSettings.state" class="popup-input" type="text">
+        </div>
+        <div class="creditCardLeft">
+            <label>ZIP/POSTAL CODE</label>
+            <input placeholder="Enter zip/postal code" ng-model="cardSettings.postalCode" class="popup-input" type="text">
+        </div>
+        <div class="creditCardRight">
+            <label>COUNTRY</label>
+            <input placeholder="Enter name of country" ng-model="cardSettings.country" class="popup-input" type="text">
+        </div>
+        <button class="dux-button red round big no-border" type="submit" ng-click="changePlan(cardSettings)">
+            SAVE CARD
+        </button>
+    </div>
+</div>

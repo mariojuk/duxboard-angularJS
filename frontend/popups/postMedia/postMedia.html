@@ -1,0 +1,20 @@
+<div class="postMediaContent">
+	<div class="userInfo">
+		<div class="profilePicture"
+			ng-style="{'background-image': 'url(/uploads/' + ngDialogData.user._id + '/profile.jpg)'}">
+		</div>
+		<p class="userName" ui-sref="app.profile({id: ngDialogData._id})">
+			{{ngDialogData.user.firstName}} {{ngDialogData.user.secondName}}
+		</p>
+		<i class="fa fa-close fa-1x" ng-click="closeThisDialog()"></i>
+	</div>
+	<div class="postText">
+		{{ngDialogData.text}}
+	</div>
+	<div class="postMedia" ng-if="ngDialogData.media.video">
+		<video ng-src="{{ngDialogData.media.img}}" controls autoplay></video>
+	</div>
+	<div class="postMedia" ng-if="!ngDialogData.media.video">
+		<img ng-src="/{{ngDialogData.media.img}}">
+	</div>
+</div>

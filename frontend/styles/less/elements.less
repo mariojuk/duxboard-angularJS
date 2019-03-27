@@ -1,0 +1,120 @@
+@import "./global.less";
+
+//RESET & DEFAULTS
+input, button, submit {
+	text-decoration: none;
+	border:none;
+	outline: 0;
+}
+
+select{
+	border: none;
+	background-color: transparent;
+	// appearance:none;
+	// -moz-appearance:none;
+	// -webkit-appearance:none;
+}
+
+a{
+	color: @color-darker;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+button{ background-color: transparent; }
+
+p{ margin: 0 }
+
+/*BUTTONS*/
+input[type="button"].dux-button,
+input[type="submit"].dux-button,
+button.dux-button{
+	display: block;
+}
+div.dux-button{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.dux-button{
+	padding: 5px 10px;
+	font-size: 12px;
+	color: white;
+	border: 1px solid white;
+	text-transform: uppercase;
+	text-decoration: none !important;
+	font-weight: normal;
+	cursor: pointer;
+	// font-weight: bold;
+	i{
+		margin-right: 10px;
+	}
+	&:hover, &:visited, &:active, &:focus{
+		background-color: rgba(0,0,0,0.2);
+		color: white;
+	}
+}
+
+.dux-button.red{
+	background-color: @color-red;
+	&:hover{
+		background-color: lighten(@color-red, 5%)
+	}
+}
+
+.dux-button.gray{
+	background-color: @color-gray;
+	&:hover{
+		background-color: lighten(@color-gray, 5%)
+	}
+}
+
+.dux-button.no-border{
+	border: none;
+}
+
+.dux-button.round{
+	border-radius: @radius;
+}
+
+.dux-button.big{
+	padding: 10px 15px;
+	font-size: 16px;
+}
+
+.dux-input{
+	color: white;
+	background-color: rgba(255,255,255,0.1);
+	border-radius:@radius;
+	padding: 5px;
+	option{
+		background-color: lighten(@color-dark, 5%);
+	}
+}
+
+.uib-datepicker-popup{
+	table{ margin: auto; }
+  	button{
+    	border: none;
+    	&:focus{ outline: none; }
+	}
+	.uib-right:after{
+		content: "\2192";
+	}
+	.uib-left:after{
+		content: "\2190";
+	}
+	.uib-datepicker-current, .uib-clear{
+		background-color: @color-gray;
+	}
+	.uib-close{
+		background-color: @color-red;
+	}
+	.btn-info.active{
+		background-color: @color-dark;
+		&:hover{
+			background-color: @color-darker;
+		}
+	}
+}

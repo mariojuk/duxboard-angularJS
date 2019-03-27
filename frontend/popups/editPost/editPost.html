@@ -1,0 +1,16 @@
+<p class="popupHeader">EDIT STATEMENT</p>
+<div class="popupContent" ng-controller="editPostController">
+
+	<post
+		placeholder="Edit your statement"
+		text="post.text"
+		media="post.media"
+		on-post="editPost(text, file)"
+		button-label="EDIT">
+	</post>
+
+	<div align="center" style="margin-top: 10px;">
+        <button ng-click="deletePost()" type="button" class="dux-button big red round">Delete Statement</button>
+    </div>
+	
+</div>

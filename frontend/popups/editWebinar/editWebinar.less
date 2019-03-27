@@ -1,0 +1,80 @@
+@import "../../styles/less/global.less";
+
+.editWebinarPopup{
+  .inputWrap{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .bigInput{
+      width: 100%;
+      padding: 10px;
+    }
+    .smallInput{
+      width: 50%;
+      padding: 10px;
+      position: relative;
+    }
+
+    .timepicker{
+      position: relative;
+      tr:nth-child(1){ margin-top: -5px; }
+      tr:nth-child(3){ margin-top: -30px; }
+      tr:nth-child(1), tr:nth-child(3){
+        pointer-events: none;
+        display: table;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        .btn{
+          pointer-events: auto;
+          text-decoration: none;
+          outline: none;
+        }
+        .uib-increment{
+          text-align: right;
+          span:after{ content: "\2192"; }
+        }
+        .uib-decrement{
+          text-align: left;
+          span:after{ content: "\2190"; }
+        }
+      }
+    }
+    .uib-time{
+      input{
+        border: none;
+        box-shadow: none;
+        border-radius: 0px;
+        border-bottom: 2px solid @color-light;
+        line-height: inherit;
+        height: auto;
+        padding: 1px 0px 0px;
+      }
+    }
+
+    label{
+      margin-top: 10px;
+      color: @color-darkest;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    input{
+      width: 100%;
+      border-bottom: 2px solid @color-light;
+      &:active,&:focus{
+        border-bottom: 2px solid @color-darkest;
+      }
+    }
+    .withButton{
+      display: flex;
+      min-height: 28px;
+      p, input{ width: 85%; }
+      .dux-button{
+        width: 15%;
+        i{ margin: auto; }
+      }
+    }
+  }
+}

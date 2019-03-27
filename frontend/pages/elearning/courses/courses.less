@@ -1,0 +1,107 @@
+@import "../../../styles/less/global.less";
+
+.edxCoursesContainer{
+	background-color: @color-lightest;
+	padding: 20px;
+	width: 100%;
+
+	.paginator{
+		display: flex;
+		justify-content: center;
+		margin-bottom: 10px;
+		ul { 
+			display: flex;
+			margin: 0px;
+			padding: 0px;
+			justify-content: center;
+		}
+		ul li{
+			display:inline-block;
+   			padding:0px 10px; 
+		}
+		.disabled a { color: gray; }
+		.active{
+			a{ color: white }
+			background-color: @color-darkest;
+			border-radius: 10px;
+		}
+	}
+
+	.courses{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		overflow-y: hidden;
+		.course{
+			animation: fadeInUp 0.5s;
+		}
+		.course.ng-leave{
+			animation: fadeOutDown 0.3s;
+		}
+		
+		.course{
+			.shadow(5px, #AAA);
+			display: flex;
+			flex-direction: column;
+			margin: 10px;
+			width: 220px;
+			@media @mobile{
+				margin: 10px auto;
+			}
+			.cover{
+				width: 220px;
+				height: 140px;
+				background-size: cover;
+				background-color: @color-lightest;
+				position: relative;
+				opacity: 0.8;
+				// .type{
+				// 	height: 24px;
+				// 	width: 100%;
+				// 	margin-top: auto;
+				// 	text-transform: capitalize;
+				// 	position: absolute;
+				// 	bottom: 0;
+				// 	padding: 4px 10px;
+				// 	color: white;
+				// 	text-align: right;
+				// 	font-size: @font-s;
+				// 	font-weight: bold;
+				// 	background-color: fade(#AA4466, 85%);
+				// }
+				// .MicroMasters{ background-color: fade(#4466AA, 85%); }
+				// .verified{ background-color: fade(#66AA44, 85%); }
+			}
+			&:hover{
+				cursor: pointer;
+				transform: scale(1.02);
+				.shadow(20px, #999);
+				.cover{ opacity: 1}
+			}
+			.info{
+				width: 220px;
+				height: 140px;
+				padding: 10px;
+				color: @color-darkest;
+				position: relative;
+				.org{
+					font-weight: bold;
+					font-size: 12px;
+					height: 15px;
+				}
+				.title{
+					font-size: 15px;
+					color: @color-dark;
+				}
+				.start{
+					position: absolute;
+					color: @color-red;
+					font-weight: bold;
+					bottom: 10px;
+					left: 10px;
+				}
+			}			
+		}
+	}
+}

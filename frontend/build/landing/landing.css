@@ -1,0 +1,982 @@
+.lpContainer .lpMainCover > div,
+.lpContainer .lpPromoFirst > div,
+.lpContainer .lpPromoSecond > div,
+.lpContainer .lpWebinars > div,
+.lpContainer .lpRegistration > div,
+.lpContainer .lpPayment > div,
+.lpContainer .lpSoon > div,
+.lpContainer .lpFooter > div {
+  max-width: 1012px;
+  margin: auto;
+}
+.lpContainer .lpMainCover {
+  position: relative;
+  background: linear-gradient(rgba(104, 136, 142, 0.6), rgba(255, 102, 102, 0.3));
+  box-shadow: 0 0 30px 0 #444;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+.lpContainer .lpMainCover .backgroundImage {
+  position: absolute;
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  background: url("/img/bg/landing-bg.jpg") no-repeat center bottom fixed;
+  background-size: cover;
+  opacity: 0;
+  -webkit-animation: fadeIn 2s forwards;
+          animation: fadeIn 2s forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  z-index: 0;
+}
+.lpContainer .lpMainCover * {
+  z-index: 1;
+}
+.lpContainer .lpMainCover .lpHeader {
+  width: 100%;
+  max-width: 100%;
+  height: 10%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  padding: 20px 20px 20px 0px;
+  opacity: 0;
+  -webkit-animation: fadeIn 2s forwards;
+          animation: fadeIn 2s forwards;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpMainCover .lpHeader {
+    padding: 10px 0px;
+  }
+}
+.lpContainer .lpMainCover .lpHeader a {
+  margin: 5px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  text-decoration: none;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpMainCover .lpHeader a {
+    margin: 5px;
+  }
+}
+.lpContainer .lpMainCover .lpHeader a:hover {
+  display: inline-block;
+  transition-duration: .5s;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+}
+.lpContainer .lpMainCover .lpHeader a:hover:hover {
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  -webkit-animation-name: hang;
+          animation-name: hang;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+.lpContainer .lpMainCover .lpHeader a:last-child {
+  color: #FF6666;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpMainCover .lpHeader {
+    justify-content: space-around;
+  }
+}
+.lpContainer .lpMainCover .lpSubscribe {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+          justify-content: flex-start;
+  margin-top: 10vh;
+  -webkit-box-flex: 1;
+          flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+.lpContainer .lpMainCover .lpSubscribe img {
+  max-width: 50%;
+  -webkit-animation: zoomIn 1.5s;
+          animation: zoomIn 1.5s;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpMainCover .lpSubscribe img {
+    max-width: 80%;
+  }
+}
+.lpContainer .lpMainCover .lpSubscribe form {
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  flex-wrap: wrap;
+  opacity: 0;
+  -webkit-animation: fadeInDown 1s forwards;
+          animation: fadeInDown 1s forwards;
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .lpContainer .lpMainCover .lpSubscribe form {
+    height: 140px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpMainCover .lpSubscribe form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    width: 80%;
+    height: 200px;
+  }
+}
+.lpContainer .lpMainCover .lpSubscribe form input {
+  border-radius: 5px;
+  background-color: white;
+  color: #68888E;
+  padding: 8px 10px;
+}
+.lpContainer .lpMainCover .lpSubscribe form input,
+.lpContainer .lpMainCover .lpSubscribe form button {
+  box-shadow: 0 0 30px 0 #444;
+  width: 180px;
+  height: 40px;
+  font-weight: bold;
+  margin: 10px 10px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .lpContainer .lpMainCover .lpSubscribe form input,
+  .lpContainer .lpMainCover .lpSubscribe form button {
+    width: 300px;
+    margin: 10px 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpMainCover .lpSubscribe form input,
+  .lpContainer .lpMainCover .lpSubscribe form button {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .lpContainer .lpMainCover .lpSubscribe form input.ng-hide {
+    -webkit-animation: fadeOutRight 1s;
+            animation: fadeOutRight 1s;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px), only screen and (max-width: 767px) {
+  .lpContainer .lpMainCover .lpSubscribe form input.ng-hide {
+    -webkit-animation: fadeOutDown 1s;
+            animation: fadeOutDown 1s;
+  }
+}
+@media only screen and (min-width: 1025px) {
+  .lpContainer .lpMainCover .lpSubscribe form input.ng-hide ~ button {
+    -webkit-animation: slideOutLeft 1s;
+            animation: slideOutLeft 1s;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px), only screen and (max-width: 767px) {
+  .lpContainer .lpMainCover .lpSubscribe form input.ng-hide ~ button {
+    -webkit-animation: slideOutUp 1s;
+            animation: slideOutUp 1s;
+  }
+}
+.lpContainer .lpMainCover .lpSubscribe form button.invalid:active,
+.lpContainer .lpMainCover .lpSubscribe form button.invalid:focus {
+  -webkit-animation: shake 1s;
+          animation: shake 1s;
+}
+.lpContainer .lpMainCover .lpSubscribe form button:disabled {
+  background-color: white;
+  color: #FF6666;
+  transition: width 1s ease, background-color 3s ease, color 3s ease;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpMainCover .lpSubscribe form button:disabled {
+    width: 90%;
+  }
+}
+.lpContainer .lpMainCover .lpSubscribe span {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  margin: 10px;
+  opacity: 0;
+  -webkit-animation: fadeInUp 1s forwards;
+          animation: fadeInUp 1s forwards;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+  color: #3f5664;
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpMainCover .lpSubscribe span {
+    text-shadow: 0.07em 0 5px white, 0 0.07em 5px white, -0.07em 0 5px white, 0 -0.07em 5px white;
+  }
+}
+.lpContainer .lpMainCover .lpSubscribe .error.ng-enter {
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+}
+.lpContainer .lpMainCover .lpSubscribe .error.ng-leave {
+  -webkit-animation: fadeOut 1s;
+          animation: fadeOut 1s;
+}
+.lpContainer .lpMainCover .swipeDown {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  color: #DFE7EA;
+  opacity: 0.8;
+  transition: opacity 1s ease;
+}
+@media only screen and (min-width: 1025px) {
+  .lpContainer .lpMainCover .swipeDown {
+    display: none;
+  }
+}
+.lpContainer .lpMainCover .swipeDown i {
+  display: inline-block;
+  transition-duration: .5s;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  -webkit-animation-name: hang;
+          animation-name: hang;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+.lpContainer .lpMainCover .swipeDown i:hover {
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  -webkit-animation-name: hang;
+          animation-name: hang;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+.lpContainer .lpPromoFirst {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.lpContainer .lpPromoFirst .firstContent {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px), only screen and (max-width: 767px) {
+  .lpContainer .lpPromoFirst .firstContent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+}
+.lpContainer .lpPromoFirst .firstContent .promoText {
+  padding: 60px 40px;
+}
+.lpContainer .lpPromoFirst .firstContent .promoVideo .youtubeVideoContainer {
+  margin: auto;
+}
+.lpContainer .lpPromoFirst .firstContent .promoText,
+.lpContainer .lpPromoFirst .firstContent .promoVideo {
+  max-width: 50%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .lpContainer .lpPromoFirst .firstContent .promoText,
+  .lpContainer .lpPromoFirst .firstContent .promoVideo {
+    max-width: 80%;
+    margin: auto;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpPromoFirst .firstContent .promoText,
+  .lpContainer .lpPromoFirst .firstContent .promoVideo {
+    max-width: 95%;
+    margin: auto;
+    text-align: center;
+  }
+}
+.lpContainer .lpPromoFirst .firstContent .promoText .title {
+  font-size: 28px;
+  color: #496374;
+}
+.lpContainer .lpPromoFirst .firstContent .promoText .text {
+  font-size: 16px;
+  color: #7A979E;
+  margin: 10px 0px;
+}
+.lpContainer .lpPromoSecond {
+  background-color: #C0D0D6;
+}
+.lpContainer .lpPromoSecond .secondContent {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 60px 40px;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpPromoSecond .secondContent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+  .lpContainer .lpPromoSecond .secondContent .promoItem {
+    margin: 10px auto;
+  }
+}
+.lpContainer .lpPromoSecond .secondContent .promoItem {
+  width: 200px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .lpContainer .lpPromoSecond .secondContent .promoItem {
+    margin: 10px 60px;
+  }
+}
+.lpContainer .lpPromoSecond .secondContent .promoItem img {
+  height: 60px;
+  width: 60px;
+  -webkit-filter: brightness(255);
+          filter: brightness(255);
+}
+.lpContainer .lpPromoSecond .secondContent .promoItem p {
+  color: white;
+  font-weight: bold;
+  margin: 10px 0px;
+}
+.lpContainer .lpWebinars .webinarsContent {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  align-content: center;
+}
+.lpContainer .lpWebinars .webinarsContent .webinarsTitle {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  margin: 60px auto 20px;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpWebinars .webinarsContent .webinarsTitle {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+.lpContainer .lpWebinars .webinarsContent .webinarsTitle span {
+  color: #FF6666;
+  font-size: 48px;
+}
+.lpContainer .lpWebinars .webinarsContent .webinarsTitle p {
+  color: #496374;
+  font-size: 28px;
+  line-height: 28px;
+  vertical-align: bottom;
+}
+.lpContainer .lpWebinars .webinarsContent .webinarsAbout {
+  max-width: 60%;
+  margin: 0px auto 60px;
+  text-align: center;
+  color: #7A979E;
+  font-size: 16px;
+  line-height: 28px;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming {
+  padding: 10px;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming > .title {
+  color: #496374;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming > .title:after {
+  content: ":";
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpWebinars .webinarsContent .upcoming > .title {
+    text-align: center;
+  }
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming > div {
+  padding: 10px 0px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .lpContainer .lpWebinars .webinarsContent .upcoming > div {
+    justify-content: space-around;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpWebinars .webinarsContent .upcoming > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .presenters .presenter {
+  font-weight: bold;
+  width: 200px;
+  margin: 10px;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .presenters .presenter img {
+  height: 200px;
+  width: 200px;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .presenters .presenter .name {
+  font-size: 16px;
+  color: #496374;
+  text-transform: capitalize;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .presenters .presenter .webinar {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #496374;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .presenters .presenter .datetime {
+  font-size: 12.5px;
+  color: #FF6666;
+  margin-bottom: 5px;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .presenters .presenter .info {
+  font-size: 12.5px;
+  color: #7A979E;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpWebinars .webinarsContent .upcoming .presenters .presenter {
+    margin: 10px auto;
+    width: 240px;
+  }
+  .lpContainer .lpWebinars .webinarsContent .upcoming .presenters .presenter img {
+    height: 240px;
+    width: 240px;
+  }
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .courses .course {
+  box-shadow: 0 0 5px 0 #AAA;
+  text-decoration: none;
+  cursor: pointer;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin: 10px;
+  width: 220px;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpWebinars .webinarsContent .upcoming .courses .course {
+    margin: 10px auto;
+  }
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .courses .course:hover {
+  box-shadow: 0 0 10px 0 #666;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .courses .course:hover .cover {
+  opacity: 1;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .courses .course .cover {
+  opacity: 0.8;
+  width: 220px;
+  height: 140px;
+  background-size: contain;
+  background-color: #F4F7F8;
+  position: relative;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .courses .course .cover .type {
+  height: 24px;
+  width: 100%;
+  margin-top: auto;
+  text-transform: capitalize;
+  position: absolute;
+  bottom: 0;
+  padding: 4px 10px;
+  color: white;
+  text-align: right;
+  font-size: 12.5px;
+  font-weight: bold;
+  background-color: rgba(170, 68, 102, 0.85);
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .courses .course .cover .MicroMasters {
+  background-color: rgba(68, 102, 170, 0.85);
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .courses .course .cover .verified {
+  background-color: rgba(102, 170, 68, 0.85);
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .courses .course .info {
+  width: 220px;
+  height: 140px;
+  padding: 10px;
+  color: #496374;
+  position: relative;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .courses .course .info .org {
+  font-weight: bold;
+  font-size: 12.5px;
+  height: 16px;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .courses .course .info .title {
+  font-size: 16px;
+  color: #7A979E;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .courses .course .info .start {
+  position: absolute;
+  color: #FF6666;
+  font-weight: bold;
+  bottom: 10px;
+  left: 10px;
+}
+.lpContainer .lpWebinars .webinarsContent .upcoming .courses .course .info .cert {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  max-height: 60px;
+  max-width: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.lpContainer .lpWebinars .webinarsContent .edx {
+  width: 100px;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin: 80px auto;
+  text-decoration: none;
+}
+.lpContainer .lpWebinars .webinarsContent .edx p {
+  text-transform: uppercase;
+  color: #C0D0D6;
+}
+.lpContainer .lpWebinars .webinarsContent .edx p:after {
+  content: ":";
+}
+.lpContainer .lpWebinars .webinarsContent .edx img {
+  max-width: 80px;
+  opacity: 0.6;
+}
+.lpContainer .lpWebinars .webinarsContent .edx:hover {
+  cursor: pointer;
+}
+.lpContainer .lpWebinars .webinarsContent .edx:hover img {
+  opacity: 1;
+}
+.lpContainer .lpWebinars .webinarsContent .edx:hover p {
+  color: #7A979E;
+}
+.lpContainer .lpRegistration {
+  background-color: #F4F7F8;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpRegistration {
+    background-color: white;
+  }
+}
+.lpContainer .lpRegistration .registrationContent {
+  padding: 100px 60px 0px;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpRegistration .registrationContent {
+    padding: 20px 0px 0px;
+  }
+  .lpContainer .lpRegistration .registrationContent .title {
+    text-align: center;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .lpContainer .lpRegistration .registrationContent {
+    padding: 80px 20px 0px;
+  }
+}
+.lpContainer .lpRegistration .registrationContent .title {
+  font-size: 28px;
+  color: #496374;
+  width: 100%;
+}
+.lpContainer .lpRegistration .registrationContent .packages {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpRegistration .registrationContent .packages {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+.lpContainer .lpRegistration .registrationContent .packages .package {
+  width: 50%;
+  padding: 30px 60px 70px;
+  position: relative;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .lpContainer .lpRegistration .registrationContent .packages .package {
+    padding: 20px 30px 70px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpRegistration .registrationContent .packages .package {
+    width: 100%;
+    pading: 30px 15px 70px;
+  }
+}
+.lpContainer .lpRegistration .registrationContent .packages .package p {
+  margin: 10px 0px;
+  word-wrap: break-word;
+}
+.lpContainer .lpRegistration .registrationContent .packages .package button {
+  width: 50%;
+  height: 40px;
+  font-weight: bold;
+  position: absolute;
+  left: 60px;
+  bottom: 20px;
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .lpContainer .lpRegistration .registrationContent .packages .package button {
+    left: 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpRegistration .registrationContent .packages .package button {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+}
+.lpContainer .lpRegistration .registrationContent .packages .package .packageName {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.lpContainer .lpRegistration .registrationContent .packages .free {
+  background-color: white;
+  color: #496374;
+  margin-top: 60px;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpRegistration .registrationContent .packages .free {
+    margin-top: 0px;
+  }
+}
+.lpContainer .lpRegistration .registrationContent .packages .free button {
+  background-color: #496374;
+}
+.lpContainer .lpRegistration .registrationContent .packages .free button:hover {
+  background-color: #68888E;
+}
+.lpContainer .lpRegistration .registrationContent .packages .premium {
+  background-color: #496374;
+  color: white;
+}
+.lpContainer .lpPayment .paymentContainer {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  justify-content: space-around;
+  padding: 100px;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpPayment .paymentContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    padding: 30px 0px;
+    width: 100%;
+  }
+}
+.lpContainer .lpPayment .paymentContainer .payment {
+  position: relative;
+  padding: 60px 20px 20px;
+  margin: 10px;
+  color: #496374;
+  height: 200px;
+  width: 200px;
+  box-shadow: 0 0 20px 0 #AAA;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpPayment .paymentContainer .payment {
+    margin: 20px auto;
+  }
+}
+.lpContainer .lpPayment .paymentContainer .payment .name {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.lpContainer .lpPayment .paymentContainer .payment .oldPrice {
+  text-decoration: line-through;
+}
+.lpContainer .lpPayment .paymentContainer .payment .price {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  font-size: 16px;
+  line-height: 28px;
+}
+.lpContainer .lpPayment .paymentContainer .payment .price .big {
+  font-size: 28px;
+}
+.lpContainer .lpPayment .paymentContainer .payment .price .red {
+  color: #FF6666;
+}
+.lpContainer .lpPayment .paymentContainer .payment .single {
+  font-size: 10px;
+}
+.lpContainer .lpPayment .paymentContainer .payment .best {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  background: #E7D298;
+  color: white;
+  top: 10px;
+  right: 0px;
+  padding: 0px 10px 0px 20px;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: absolute;
+  height: 30px;
+}
+.lpContainer .lpPayment .paymentContainer .payment .best:after {
+  content: "";
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 10px solid white;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.lpContainer .lpSoon {
+  background-color: #EBF0F2;
+  padding: 60px 10px;
+}
+.lpContainer .lpSoon p {
+  text-align: center;
+  font-size: 28px;
+  color: #496374;
+}
+.lpContainer .lpFooter {
+  padding: 60px 5px;
+  background-color: #C0D0D6;
+  color: white;
+}
+.lpContainer .lpFooter .footerContainer {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  text-align: center;
+}
+.lpContainer .lpFooter .footerContainer .contact {
+  padding-bottom: 20px;
+}
+.lpContainer .lpFooter .footerContainer .contact p {
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.lpContainer .lpFooter .footerContainer .contact .socialMedia {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+.lpContainer .lpFooter .footerContainer .contact .socialMedia a {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+  color: white;
+  border: 2px solid white;
+  padding: 5px;
+  margin: 10px 15px;
+  text-decoration: none;
+  transition: background-color 0.5s ease;
+  transition: background 0.5s ease;
+}
+.lpContainer .lpFooter .footerContainer .contact .socialMedia a i {
+  font-size: 22px;
+}
+.lpContainer .lpFooter .footerContainer .contact .socialMedia a:hover {
+  border: none;
+}
+.lpContainer .lpFooter .footerContainer .contact .socialMedia a:nth-child(1):hover {
+  background-color: #3b5998;
+}
+.lpContainer .lpFooter .footerContainer .contact .socialMedia a:nth-child(2):hover {
+  background-color: #4099FF;
+}
+.lpContainer .lpFooter .footerContainer .contact .socialMedia a:nth-child(3):hover {
+  background-color: #dd4b39;
+}
+.lpContainer .lpFooter .footerContainer .contact .socialMedia a:nth-child(4):hover {
+  background-color: #0077b5;
+}
+.lpContainer .lpFooter .footerContainer .contact .email {
+  color: #68888E;
+  font-size: 16px;
+}
+.lpContainer .lpFooter .legal {
+  font-size: 16px;
+  position: relative;
+}
+.lpContainer .lpFooter .legal:before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 80%;
+  border-top: 1px solid white;
+}
+.lpContainer .lpFooter .legal div {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 767px) {
+  .lpContainer .lpFooter .legal div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+}
+.lpContainer .lpFooter .legal div a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 20px 40px;
+  min-width: 120px;
+}
+.lpContainer .lpFooter .legal div a:hover {
+  color: #e5ebee;
+}

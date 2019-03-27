@@ -1,0 +1,16 @@
+
+	<feed class="profileFeed"
+		feed-data="feed"
+		show-comments="false"
+		editable="$parent.editable"
+		on-edit="editPost(post, index)"
+		update-on-share="$parent.user.tisi"
+		update-feed="updateFeed(nextId)" >	
+	</feed>
+
+	<no-data-indicator
+		ng-if="feed.length == 0"
+		icon-class="fa-users"
+		title="statements"
+		message="{{$parent.user.tisi ? 'Make a statement or share something.' : 'This user has not made a statement yet.'}}">
+	</no-data-indicator>

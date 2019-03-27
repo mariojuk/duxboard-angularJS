@@ -1,0 +1,52 @@
+<p class="popupHeader">{{ngDialogData.title}}</p>
+<div class="popupContent editPresenterPopup" ng-controller="editPresenterController">
+	
+	<div class="inputWrap">
+        
+        <div class="bigInput">
+            <label>Name</label>
+            <input type="text" ng-model="presenter.name"/>
+        </div>
+
+        <div class="bigInput">
+            <label>Short bio</label>
+            <input type="text" ng-model="presenter.shortBio"/>
+        </div>
+
+        <div class="smallInput">
+            <label>Upload picture</label>
+            <div class="imageInput">
+                <div class="imageUpload">
+                    <div ngf-drop ngf-select ng-model="file"
+                        class="drop-box"
+                        ngf-drag-over-class="'dragover'"
+                        ngf-multiple="false"
+                        ngf-allow-dir="false"
+                        accept="image/*"
+                        ngf-pattern="'image/*'">
+
+                        <i class="fa fa-cloud-upload fa-3x"></i>
+                        <p>Upload picture</p>
+                    </div>
+                    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="smallInput">
+            <label>Picture</label>
+            <div class="imageUpload">
+                <img class="imgThumbnail" ngf-thumbnail='file'/>
+                <img class="imgThumbnail" ng-if="!file" src="{{presenter.profilePicture}}">
+                <p ng-if="!file && !presenter.profilePicture">No picture</p>
+            </div>
+        </div>
+
+	</div>
+
+	<div align="center" style="margin-top: 10px;">
+        <button ng-click="submit()" type="button" class="dux-button big red round">Submit</button>
+    </div>
+	
+</div>

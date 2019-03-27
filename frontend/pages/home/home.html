@@ -1,0 +1,26 @@
+<div class="homeContent">
+
+	<post on-post="postStatus(text, file, video)"
+		show-article-button="true"
+		placeholder="Make your statement">	
+	</post>
+	
+	<feed
+		feed-data="feed"
+		show-comments="false"
+		update-on-share="true"
+		update-feed="updateFeed(lastId)" >
+	</feed>
+
+
+	<no-data-indicator
+		ng-if="feed.length == 0"
+		icon-class="fa-users"
+		title="statements"
+		message="Make partners or make your own statement">
+	</no-data-indicator>
+
+</div>
+
+<right-side-bar articles="articles" mayknow="mayknow">	
+</right-side-bar>

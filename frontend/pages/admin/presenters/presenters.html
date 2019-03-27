@@ -1,0 +1,47 @@
+<div class="adminPresentersContainer">
+
+	<div class="buttons">
+		<div class="dux-button round gray no-border"
+			ng-click="addPresenter()">
+			<i class="fa fa-plus"></i>
+			ADD PRESENTER
+		</div>
+		<!-- <div class="dux-button round red no-border">
+			<i class="fa fa-trash"></i>
+			DELETE ALL
+		</div> -->
+	</div>
+
+	<loader data="presenters"></loader>
+	<p ng-if="!presenters.length" style="margin: auto;">No presenters.</p>
+
+	<div class="presenter" ng-repeat="pr in presenters | orderBy: 'createdAt':true">
+		<img ng-src="{{pr.profilePicture}}">
+		<div class="detailsWrap">		
+			<div class="details">
+				<p class="name">{{ pr.name }}</p>
+				<p class="about">{{ pr.shortBio }}</p>
+			</div>
+
+			<div class="buttons">
+				<div class="dux-button round gray no-border"
+					ng-click="addWebinar(pr)">
+					<i class="fa fa-plus"></i>
+					NEW WEBINAR
+				</div>
+				<div class="dux-button round gray no-border"
+					ng-click="editPresenter(pr)">
+					<i class="fa fa-edit"></i>
+					EDIT
+				</div>
+				<div class="dux-button round red no-border"
+					ng-click="deletePresenter(pr)">
+					<i class="fa fa-trash"></i>
+					DELETE
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+</div>

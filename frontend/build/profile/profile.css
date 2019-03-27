@@ -1,0 +1,350 @@
+.profileContainer {
+  width: 100%;
+  padding: 10px;
+  background-color: #F4F7F8;
+  overflow-y: hidden;
+  /*792 X 297 odnosno 8 : 3*/
+  /* bottom padding je 3/8 */
+}
+@media only screen and (max-width: 767px) {
+  .profileContainer {
+    padding: 0;
+  }
+}
+.profileContainer .profileCoverWrapper {
+  width: 100%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
+}
+.profileContainer .profileCoverWrapper:after {
+  padding-top: 37.5%;
+  /* 16:9 ratio */
+  display: block;
+  content: '';
+}
+.profileContainer .profileCover {
+  /*height: 220px;*/
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #F4F7F8;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: end;
+          align-items: flex-end;
+  /*&:before{
+			content: " ";
+			height: 60px;
+			width: 100%;
+			background-color: @color-light;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: left bottom;
+			background-image: url(../../img/bg/m.jpg);
+			-webkit-filter: blur(10px);
+		    -moz-filter: blur(10px);
+		    -o-filter: blur(10px);
+		    filter: blur(10px);
+		    overflow: hidden;
+
+		};*/
+}
+.profileContainer .profileCover .coverPhotoOptions {
+  position: absolute;
+  width: 100%;
+  bottom: 60px;
+  top: 0px;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.profileContainer .profileCover .coverPhotoOptions i {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+.profileContainer .profileCover .coverPhotoOptions div {
+  height: 80%;
+  width: 2px;
+  background-color: white;
+  margin: 0 20px;
+}
+.profileContainer .profileCover .profileActions {
+  height: 60px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /*position: absolute;*/
+  color: white;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+          align-items: center;
+  padding: 0 20px;
+  position: relative !important;
+}
+.profileContainer .profileCover .profileActions .profilePicture {
+  height: 90px;
+  width: 90px;
+  border-radius: 90px;
+  margin: 10px;
+  background: #D9E2E6;
+  background: url('/img/default_user.jpg') no-repeat center;
+  -webkit-box-flex: 0;
+          flex: 0 0 90px;
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  background-size: contain;
+}
+@media only screen and (max-width: 767px) {
+  .profileContainer .profileCover .profileActions .profilePicture {
+    bottom: 0;
+    left: 0;
+  }
+}
+.profileContainer .profileCover .profileActions .profilePicture .profilePictureOptions {
+  height: 90px;
+  width: 90px;
+  border-radius: 90px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.profileContainer .profileCover .profileActions .profilePicture .profilePictureOptions i {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+.profileContainer .profileCover .profileActions .profilePicture .profilePictureOptions div {
+  height: 80%;
+  width: 2px;
+  background-color: white;
+  margin: 0 10px;
+}
+.profileContainer .profileCover .profileActions .userInfo {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  margin-right: auto;
+  margin-left: 120px;
+}
+@media only screen and (max-width: 767px) {
+  .profileContainer .profileCover .profileActions .userInfo {
+    margin-left: 90px;
+    margin-top: -20px;
+  }
+}
+.profileContainer .profileCover .profileActions .userInfo .userName {
+  font-size: 16px;
+  font-weight: bold;
+}
+@media only screen and (max-width: 767px) {
+  .profileContainer .profileCover .profileActions .userInfo .userName {
+    font-size: 14px;
+    position: absolute;
+  }
+}
+.profileContainer .profileCover .profileActions .userInfo .onlineStatus {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.profileContainer .profileCover .profileActions .userInfo .onlineStatus .onlineIcon {
+  height: 6px;
+  width: 6px;
+  border-radius: 6px;
+  margin: 0 5px;
+}
+@media only screen and (max-width: 767px) {
+  .profileContainer .profileCover .profileActions .userInfo .onlineStatus .onlineIcon {
+    height: 15px;
+    width: 15px;
+    border-radius: 15px;
+    margin-left: -25px;
+    margin-top: 20px;
+    z-index: 2;
+  }
+}
+.profileContainer .profileCover .profileActions .userInfo .onlineStatus p {
+  text-transform: capitalize;
+}
+@media only screen and (max-width: 767px) {
+  .profileContainer .profileCover .profileActions .userInfo .onlineStatus p {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .profileContainer .profileCover .profileActions .profileButtons {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin-left: 20px;
+  }
+}
+.profileContainer .profileCover .profileActions .profileButtons {
+  display: -webkit-box;
+  display: flex;
+  position: initial;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+.profileContainer .profileCover .profileActions .profileButtons .dux-button {
+  margin-left: 10px;
+}
+.profileContainer .profileCover .profileActions .profileButtons .partnership {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  bottom: 15px;
+}
+@media only screen and (max-width: 767px) {
+  .profileContainer .profileCover .profileActions .profileButtons .partnership {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  .profileContainer .profileCover .profileActions .profileButtons .partnership .dux-button {
+    height: 30px;
+    margin: auto 5px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .profileContainer .profileCover .profileActions .profileButtons .partnership {
+    margin-right: -10px;
+  }
+  .profileContainer .profileCover .profileActions .profileButtons .partnership .dux-button {
+    margin-top: 25px;
+  }
+}
+.profileContainer .profileCover .profileActions .profileButtons .other {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  bottom: 15px;
+}
+@media only screen and (max-width: 767px) {
+  .profileContainer .profileCover .profileActions .profileButtons .other {
+    position: absolute;
+    bottom: -50px;
+    width: 100%;
+    left: 0;
+    height: 50px;
+    padding: 5px;
+    z-index: 2;
+    background: transparent;
+    justify-content: space-around;
+  }
+  .profileContainer .profileCover .profileActions .profileButtons .other .dux-button {
+    color: #496374 !important;
+    border-color: #496374 !important;
+    font-weight: normal;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 0px !important;
+  }
+}
+.profileContainer .profileBody {
+  padding: 10px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+@media only screen and (max-width: 767px) {
+  .profileContainer .profileBody {
+    margin-top: 30px;
+  }
+}
+.profileContainer .profileBody #profileContent {
+  width: 100%;
+  padding: 0px 10px;
+}
+@media only screen and (min-width: 1025px), only screen and (min-width: 768px) and (max-width: 1024px) {
+  .profileContainer .profileBody .sideNavContainer .sideNav .option i {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .profileContainer .profileBody .sideNavContainer {
+    width: 100%;
+    position: fixed;
+    z-index: 4;
+    bottom: 10px;
+    right: 0px;
+    padding: 10px;
+    margin-left: -10px;
+  }
+  .profileContainer .profileBody .sideNavContainer .sideNav {
+    box-shadow: 0 0 15px 0 #444;
+    margin-left: auto;
+    transition: all 0.5s ease;
+  }
+  .profileContainer .profileBody .sideNavContainer .sideNav:not(.visible) {
+    padding: 5px;
+    height: 45px;
+    width: 45px;
+    border-radius: 45px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+  }
+  .profileContainer .profileBody .sideNavContainer .sideNav:not(.visible) .option.active {
+    background-color: transparent;
+    color: #496374;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+            align-items: center;
+  }
+  .profileContainer .profileBody .sideNavContainer .sideNav:not(.visible) .option.active span {
+    display: none;
+  }
+  .profileContainer .profileBody .sideNavContainer .sideNav:not(.visible) .option:not(.active) {
+    display: none;
+  }
+  .profileContainer .profileBody .sideNavContainer .sideNav.visible {
+    width: 100%;
+    height: 100%;
+  }
+  .profileContainer .profileBody .sideNavContainer .sideNav.visible .option span {
+    display: initial;
+    white-space: nowrap;
+    overflow-x: hidden;
+  }
+  .profileContainer .profileBody .sideNavContainer .sideNav.visible .option i {
+    display: none;
+  }
+}

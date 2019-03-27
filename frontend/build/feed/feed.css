@@ -1,0 +1,25 @@
+.postContainer > statement > .statementContainer > .duxPostDetails > .duxProfilePic {
+  z-index: 3;
+}
+.postContainer {
+  margin-top: 10px;
+}
+.postContainer.ng-enter {
+  -webkit-animation: fadeInUp 0.5s;
+          animation: fadeInUp 0.5s;
+}
+.postContainer.ng-leave {
+  -webkit-animation: fadeOutDown 0.5s;
+          animation: fadeOutDown 0.5s;
+}
+.postContainer p {
+  word-wrap: break-word;
+  margin: 0 5px;
+}
+.postContainer comments .commentsContainer {
+  padding: 10px;
+  margin: 0px 5px;
+  background-color: #eef2f4;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}

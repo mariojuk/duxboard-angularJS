@@ -1,0 +1,25 @@
+.newArticleContainer .back {
+  color: #496374;
+  margin: 5px;
+  font-weight: bold;
+}
+.newArticleContainer .back i {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.newArticleContainer .back:hover {
+  cursor: pointer;
+  color: #7A979E;
+}
+.newArticleContainer .back:hover i {
+  margin-right: 10px;
+  margin-left: 0px;
+}
+.newArticleContainer .ql-editor {
+  min-height: 400px;
+  word-wrap: break-word;
+  width: 506px;
+}
+.newArticleContainer .articlePostContainer {
+  max-width: 552px;
+}

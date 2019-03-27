@@ -1,0 +1,26 @@
+.ngdialog-content .popupContent .confirmAction {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+}
+.ngdialog-content .popupContent .confirmAction p {
+  padding: 10px;
+  color: #496374;
+}
+.ngdialog-content .popupContent .confirmAction .confirmButtons {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+.ngdialog-content .popupContent .confirmAction .confirmButtons .dux-button {
+  min-width: 60px;
+  margin: 5px;
+}

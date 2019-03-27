@@ -1,0 +1,330 @@
+.border {
+  border: 1px solid #D9E2E6;
+}
+.newPostContainer {
+  border: 1px solid #D9E2E6;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #FFFFFF;
+  color: #7A979E;
+  position: relative;
+  min-height: 80px;
+}
+.newPostContainer .slideContainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  transition: max-height 0.3s ease, min-height 0.3s ease;
+}
+.newPostContainer .imageUpload,
+.newPostContainer .emojiPicker,
+.newPostContainer .emoji-popover,
+.newPostContainer .youtubeVideo {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  position: absolute;
+}
+.newPostContainer .statementContainer {
+  box-shadow: 0 0 7px 0 #444;
+  margin: 20px 10px;
+  background-color: #f1f5f6;
+}
+.newPostContainer .youtubeVideo {
+  height: 160px;
+}
+.newPostContainer .youtubeVideo .preview {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 130px;
+}
+.newPostContainer .youtubeVideo .preview ng-youtube-embed {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.newPostContainer .youtubeVideo .preview ng-youtube-embed > div {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.newPostContainer .youtubeVideo .preview .removeVideo {
+  z-index: 2;
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  background-color: gray;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-left: -10px;
+  margin-top: 2px;
+}
+.newPostContainer .youtubeVideo .preview .removeVideo i {
+  color: white;
+}
+.newPostContainer .youtubeVideo .videoInput {
+  height: 30px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  border-top: 1px solid #D9E2E6;
+  border-bottom: 1px solid #D9E2E6;
+}
+.newPostContainer .youtubeVideo .videoInput p {
+  background-color: #F4F7F8;
+  border-right: 1px solid #D9E2E6;
+  height: 28px;
+  line-height: 28px;
+  padding: 0px 5px;
+}
+.newPostContainer .youtubeVideo .videoInput input {
+  padding: 2px;
+  width: 100%;
+}
+.newPostContainer .youtubeVideo .videoInput input::-webkit-input-placeholder {
+  color: #D9E2E6;
+}
+.newPostContainer .youtubeVideo .videoInput input:-moz-placeholder {
+  color: #D9E2E6;
+}
+.newPostContainer .youtubeVideo .videoInput input::-moz-placeholder {
+  color: #D9E2E6;
+}
+.newPostContainer .youtubeVideo .videoInput input:-ms-input-placeholder {
+  color: #D9E2E6;
+}
+.newPostContainer .imageUpload {
+  height: 160px;
+  padding: 10px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.newPostContainer .imageUpload .drop-box {
+  border: 5px dashed #D9E2E6;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.newPostContainer .imageUpload .dragover {
+  border-color: #7A979E;
+}
+.newPostContainer .imageUpload .imgThumbnail {
+  height: 100%;
+  width: auto;
+}
+.newPostContainer .imageUpload .removeImage {
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  background-color: gray;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-left: -10px;
+  margin-top: -5px;
+}
+.newPostContainer .imageUpload .removeImage i {
+  color: white;
+}
+.newPostContainer .fileInfo {
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
+  padding: 0 10px;
+  background: #F4F7F8;
+}
+.newPostContainer .fileInfo p {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  margin-right: 5px;
+}
+.newPostContainer .fileInfo i {
+  cursor: pointer;
+}
+.newPostContainer .newCommentLimit {
+  display: none;
+  margin-top: -20px;
+  position: absolute;
+  right: 15px;
+}
+.newPostContainer .newPostInput {
+  border: none;
+  align-content: start;
+  display: -webkit-box;
+  display: flex;
+  min-height: 80px;
+  overflow: hidden;
+  padding: 10px;
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  resize: none;
+}
+.newPostOptions {
+  height: 30px;
+  background-color: #EBF0F2;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: #68888E;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+.newPostOptions div {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.newPostOptions .newPostButton {
+  background-color: #D9E2E6;
+  height: 100%;
+  margin-left: 1px;
+  width: 40px;
+}
+@media only screen and (max-width: 767px) {
+  .newPostOptions .newPostButton {
+    width: 30px;
+  }
+}
+.newPostOptions .newPostButton:first-child {
+  border-bottom-left-radius: 5px;
+  margin-left: 0px;
+}
+.newPostOptions .newPostButton:hover {
+  background-color: #7A979E;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.newPostOptions .newPostButton[disabled],
+.newPostOptions .newPostButton[disabled]:hover {
+  background-color: #DFE7EA;
+  cursor: initial;
+  color: #BBB;
+}
+.newPostOptions .selectedButton {
+  background-color: #7A979E;
+  color: #FFFFFF;
+}
+.newPostOptions .newPostLimit {
+  -webkit-box-flex: 1;
+          flex-grow: 1;
+}
+.newPostOptions .newPostPublish {
+  background-color: #496374;
+  border-bottom-right-radius: 5px;
+  color: #FFFFFF;
+  margin-left: auto;
+  width: 100px;
+}
+@media only screen and (max-width: 767px) {
+  .newPostOptions .newPostPublish {
+    width: 70px;
+  }
+}
+.newPostOptions .newPostPublish:hover {
+  background-color: #68888E;
+  cursor: pointer;
+}
+/*emoji ovverides - gadno*/
+.emoji-groups .btn-backspace,
+.newPostContainer > .slideContainer > span > .emoji-picker,
+.emoji-popover .close-button-holder,
+.popover .close-button-holder {
+  display: none;
+}
+.emoji-popover {
+  left: 0 !important;
+  position: relative !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 5;
+}
+.emoji-popover-content {
+  background: transparent;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  height: 160px;
+  width: 100% !important;
+}
+.emoji-groups {
+  background: #F4F7F8;
+  border-bottom: 1px solid #D9E2E6;
+  border-top: 1px solid #D9E2E6;
+  height: 30px;
+  padding: 2px 10px 0px;
+}
+.emoji-groups i[class$="selected"] {
+  background-color: #FFFFFF;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border: 1px solid #D9E2E6;
+  opacity: 1 !important;
+}
+.emoji-groups i[class$="selected"]:hover {
+  color: red;
+}
+.emoji-picker {
+  height: 22px;
+  width: 22px;
+  cursor: pointer;
+  display: inline-block;
+}
+.emoji-container {
+  background: #FFFFFF;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 5px 2px;
+}
+.emoji-container:before {
+  /*probat namistit da je apsolutan na samog sebe*/
+  bottom: 0px;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  left: 0px;
+  top: 30px;
+  width: 100%;
+  box-shadow: inset 0px -40px 40px -40px #FFFFFF, inset 0px 40px 40px -40px #FFFFFF;
+}

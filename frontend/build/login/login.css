@@ -1,0 +1,110 @@
+.loginBodyClass {
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(rgba(65, 70, 101, 0.7), rgba(81, 107, 124, 0.3)), url("/img/bg/login-bg.jpg") no-repeat center center fixed;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.loginBodyClass .loginContainer {
+  padding-top: 5%;
+  height: auto;
+}
+.loginBodyClass #logo {
+  position: relative;
+  width: 24%;
+  margin-left: 8%;
+}
+@media only screen and (max-width: 767px) {
+  .loginBodyClass #logo {
+    width: 90% !important;
+    margin-left: 5% !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .loginBodyClass #logo {
+    width: 40% !important;
+    margin-left: 7% !important;
+  }
+}
+.loginBodyClass .loginForm {
+  padding-left: 10%;
+  padding-top: 2%;
+}
+@media only screen and (max-width: 767px) {
+  .loginBodyClass .loginForm {
+    padding: 10px 30px;
+  }
+}
+.loginBodyClass .loginForm {
+  padding-left: 10%;
+  padding-top: 2%;
+}
+@media only screen and (max-width: 767px) {
+  .loginBodyClass .loginForm {
+    padding: 10px 30px;
+  }
+}
+.loginBodyClass .resetLink {
+  font-size: 15px;
+  margin-top: 10px;
+}
+.loginBodyClass .resetLink a {
+  color: #ff7a7a;
+  font-weight: bold;
+}
+.loginBodyClass .registrationlink {
+  font-size: 22px;
+  margin-top: 45px;
+}
+.loginBodyClass .registrationlink a {
+  color: #ff7a7a;
+  font-weight: bold;
+}
+.loginBodyClass p {
+  color: white;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 13px;
+}
+@media only screen and (min-width: 1025px) {
+  .loginBodyClass .dux-button {
+    width: 220px !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .loginBodyClass .dux-button {
+    width: 220px !important;
+  }
+}
+.loginBodyClass .dux-button,
+.loginBodyClass .dux-input,
+.loginBodyClass .radioParagraph {
+  width: 330px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 767px) {
+  .loginBodyClass .dux-button,
+  .loginBodyClass .dux-input,
+  .loginBodyClass .radioParagraph {
+    width: 100%;
+  }
+}
+.loginBodyClass .radioParagraph {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.loginBodyClass .radioParagraph #checkbox {
+  margin-right: 5px;
+}
+.loginBodyClass .forgot {
+  font-weight: bold;
+}

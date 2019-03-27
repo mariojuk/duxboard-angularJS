@@ -1,0 +1,40 @@
+<div class="articleContainerr">
+    <a  class="back" href="/profile/{{article.user._id}}/articles">
+	<i class="fa fa-level-up fa-rotate-270 " aria-hidden="true"></i><p>Back to articles</p></a>
+    <h1>{{article.title}}</h1>
+    <div  class="imageContainer" ng-click="viewMedia(post)">
+        <img ng-src="/{{article.media.img}}">
+    </div>
+    <br>
+    <div id="Textdiv" ng-bind-html="article.text"></div>
+	<div class="previousNext">
+		<a class="previous" ui-sref="app.profile.articles.article({id: article.user._id, aid: article.nextId})"  ng-if="article.nextId" >
+			<i class="fa fa-long-arrow-left" aria-hidden="true"></i> <p>Previous article</p></a>
+		<a class="next" ui-sref="app.profile.articles.article({id: article.user._id, aid: article. previousId})" ng-if="article.previousId">
+			<p>Next article</p> <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>	
+	</div>
+		
+	<div class="duxPostActions">
+		<a ng-click="onCommentsClick()">
+			<i class="fa fa-comment"></i>
+			<span ng-show="article.comments.length>0">{{article.comments.length}}</span>
+		</a>
+		<a>
+			<i class="dux-medal"
+				ng-click="likeStatement()"
+				ng-class="article.liked ? 'liked' : 'unliked'">
+			</i>
+			<span ng-click="getLikes()" ng-show="article.likes.length>0">
+				{{article.likes.length}}
+			</span>
+		</a>
+		<a><i ng-click="onShare({post: post})" class="fa fa-share"></i></a>
+	</div>
+    <comments
+            comments-data="article.comments"
+            on-comment="postComment(text, file)"
+            on-delete="deleteComment(commId, commIndex)"
+            >
+    </comments>
+
+</div>

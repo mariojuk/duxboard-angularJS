@@ -1,0 +1,15 @@
+.hanghover(){
+	transform: translateY(6px);
+	animation-name: hang;
+	animation-duration: 1.5s;
+	animation-delay: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+.hang(){
+	display: inline-block;
+	transition-duration: .5s;
+	transition-property: transform;
+	&:hover{ .hanghover; }
+}

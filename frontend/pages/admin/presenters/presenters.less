@@ -1,0 +1,37 @@
+@import "../../../styles/less/global.less";
+
+.adminPresentersContainer{
+	display: flex;
+	flex-direction: column;
+
+	.presenter{
+		display: flex;
+		flex-direction: row;
+		background-color: @color-lightest;
+		padding: 10px;
+		border-radius: @radius;
+		margin-top: 10px;
+		img{
+			.circle(100px);
+		}
+		.detailsWrap{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			flex: 1;
+			.details{
+				padding: 0px 10px;
+				color: @color-darkest;
+				.name{
+					font-weight: bold;
+					font-size: 18px;
+				}
+			}
+			.buttons{
+				border-bottom: none;
+				padding-bottom: 0px;
+				align-self: flex-end;
+			}
+		}
+	}
+}

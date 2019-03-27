@@ -1,0 +1,73 @@
+@import "../../styles/less/global.less";
+
+.userList{
+	position: relative;
+
+	.requestTime{
+		position: absolute;
+		right: 10px;
+		top: 5px;
+		color: @color-darkest;
+	}
+
+	.user{
+		padding: 10px;
+		margin: 5px;
+		background-color: @color-light;
+		border-radius: @radius;
+		display: flex;
+		flex-direction: row;
+		position: relative;
+
+		@media @mobile{
+			flex-direction: column;
+			text-align: center;
+			.absolute-center;
+		}
+		.picContainer{
+			width: 80px;
+			.profilePic{
+				.profile-pic(60px);
+				background-size: contain;
+				background-color: @color-dark;
+			}
+		}
+		
+		.info{
+
+		}
+		.action{
+			display: flex;
+			flex-direction: row;
+			margin: auto;
+			margin-right: 0px;
+			@media @mobile{ margin-right: auto }
+			justify-content: space-around;
+			padding: 10px;
+			padding-right: 0px;
+			// prominit
+			.act{
+				width: 160px;
+				.absolute-center;
+			}
+			.deny{
+				i{ 
+					margin: 5px;
+					margin-left: 10px;
+					color: @color-dark;
+
+					&:hover{
+						color: @color-darker;
+						cursor: pointer;
+						transform: scale(1.2);
+					}
+				}
+				@media @mobile{
+					position: absolute;
+					top: 10px;
+					right: 10px;
+				}
+			}
+		}		
+	}
+}

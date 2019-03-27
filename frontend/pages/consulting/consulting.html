@@ -1,0 +1,53 @@
+<div class="consultingContainer">
+
+	<div class="welcomeWrap">
+		<div class="welcome">
+			<p>Welcome to the Duxboard consulting service!</p>
+			<p>Our experts are here to help you reach your dreams and goals.</p>
+			<div class="categories">
+				<p>We have detailed content to assist with:</p>
+				<ul>
+					<li>Physical preparation</li>
+					<li>Sports psychology</li>
+					<li>Nutrition</li>
+					<li>Conflict resolution</li>
+					<li>Leadership and motivation</li>
+					<li>Agent acquisition</li>
+					<li>Post-career advisement</li>
+				</ul>
+			</div>
+			<p>Complete our contact form below and a member of our team will reach out to discuss your individual needs and concerns! <span>We cannot wait to hear from you!</span></p>
+		</div>
+	</div>
+
+	<div class="formWrap">
+		
+		<form ng-submit="sendQuestion()">
+			<p class="pageTitle">Consulting</p>
+
+			<label for="email">Your email</label>
+			<input id="email" type="email" ng-model="question.email" required/>
+
+			<label for="category">Category</label>
+            <select id="category"
+            	ng-model="question.category"
+            	ng-options="o as o for o in categories"
+            	placeholder="Select category" required>
+            	<option value="" disabled selected>Select category...</option>
+            </select>
+
+			<label for="subject">Subject</label>		
+			<input id="subject" type="text" placeholder="e.g. Magnets" ng-model="question.subject" required/>
+
+			<label for="question">Question</label>
+			<textarea
+				ng-model="question.description"
+				placeholder="e.g. How do magnets work?"
+				id="question" required/>
+
+			<button class="dux-button big red round" type="submit">Ask your question</button>
+			
+		</form>	
+	</div>
+
+</div>

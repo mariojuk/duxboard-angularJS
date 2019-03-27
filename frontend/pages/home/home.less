@@ -1,0 +1,20 @@
+@import "../../styles/less/global.less";
+
+.homeContent{
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	max-width: 600px;
+	width: 100%;
+	border: transparent solid 8px; 
+	margin: 0 auto;
+	@media @tablet {
+		min-width: 400px;
+	}
+	overflow-y: hidden;
+}
+
+right-side-bar{
+	@media @mobile { display: none; }
+}
+
